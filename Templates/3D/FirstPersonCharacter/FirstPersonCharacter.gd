@@ -31,12 +31,13 @@ func _physics_process(delta):
 		
 		if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 			velocity.y = jump_height
-	
+		
+		velocity.y -= GRAVITY # Gravity
+		velocity.y = clamp(velocity.y, -max_falling_speed, max_falling_speed)
+		
 	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().quit()
 	
-	velocity.y -= GRAVITY # Gravity
-	velocity.y = clamp(velocity.y, -max_falling_speed, max_falling_speed)
 	velocity = move_and_slide(velocity, Vector3.UP, true)
 	
 # ----------------------------------
