@@ -3,12 +3,6 @@
 [ext_resource path="res://Templates/3D/FirstPersonCharacter/FirstPersonCharacter.gd" type="Script" id=1]
 [ext_resource path="res://Templates/3D/FirstPersonCharacter/Camera/Raycast/RayCast.tscn" type="PackedScene" id=2]
 
-
-
-
-
-
-
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.5
 
@@ -19,6 +13,7 @@ script = ExtResource( 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0 )
 
 [node name="RayCast" parent="Camera" instance=ExtResource( 2 )]
+collision_mask = 2
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 1, 0 )
