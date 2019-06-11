@@ -6,5 +6,5 @@ sun_longitude = -45.0
 [resource]
 background_mode = 2
 background_sky = SubResource( 1 )
-tonemap_mode = 2
+tonemap_mode = 3
 tonemap_white = 16.0
