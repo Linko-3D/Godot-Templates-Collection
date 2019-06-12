@@ -5,7 +5,6 @@ var target
 var vector = Vector3()
 var speed = 1
 
-# Optionnal
 var keepHeight = Vector3()
 var heightDifference
 var moveHeightMargin = 2
@@ -22,5 +21,4 @@ func _process(delta):
 	if heightDifference.y > -moveHeightMargin and heightDifference.y < moveHeightMargin:
 		move_and_slide(vector * speed)
 	
-	#Optionnal
 	translation.y = keepHeight # Keep the same height
