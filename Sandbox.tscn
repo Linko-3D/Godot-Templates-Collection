@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Templates/3D/FirstPersonCharacter/FirstPersonCharacter.tscn" type="PackedScene" id=1]
 [ext_resource path="res://checker.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Templates/3D/AI/LookAt/LookAt.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Templates/3D/AI/MoveTo/MoveTo.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Templates/3D/FirstPersonCharacter/Camera/Projectile/Projectile.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Templates/3D/Interactive/Area/Area.tscn" type="PackedScene" id=7]
 
 [sub_resource type="ConvexPolygonShape" id=1]
 points = PoolVector3Array( 10, 0, 10, -10, 0, 10, 10, 0, -10, -10, 0, -10 )
@@ -20,6 +21,7 @@ uv1_scale = Vector3( 10, 10, 10 )
 [node name="Level" type="Spatial"]
 
 [node name="FirstPersonCharacter" parent="." instance=ExtResource( 1 )]
+collision_mask = 5
 
 [node name="Sun" type="DirectionalLight" parent="."]
 transform = Transform( -0.707107, 0.40558, -0.579228, 0, 0.819152, 0.573577, 0.707107, 0.40558, -0.579228, 0, 10, 0 )
@@ -48,3 +50,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.103, 1.5, -8.171 )
 
 [node name="Projectile" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.54573, 0.43867, -1.34127 )
+
+[node name="Area" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.04 )
