@@ -43,6 +43,9 @@ material/0 = SubResource( 3 )
 [node name="Target" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -9 )
 
+[node name="Target2" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.84643, 2, -9 )
+
 [node name="LookAt" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.098, 1.5, -7.25 )
 
