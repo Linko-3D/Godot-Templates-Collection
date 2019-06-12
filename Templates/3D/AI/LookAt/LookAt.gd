@@ -1,8 +1,8 @@
 extends Spatial
 
 var target = "FirstPersonCharacter"
-var playerPosition
+var targetPosition
 
 func _process(delta):
-	playerPosition = get_tree().get_root().find_node(target, true, false)
-	look_at(playerPosition.translation, Vector3.UP)
+	targetPosition = get_tree().get_root().find_node(target, true, false)
+	look_at(targetPosition.translation, Vector3.UP)
