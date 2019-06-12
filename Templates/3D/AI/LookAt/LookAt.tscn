@@ -2,8 +2,8 @@
 
 [ext_resource path="res://Templates/3D/AI/LookAt/LookAt.gd" type="Script" id=1]
 
-[sub_resource type="PrismMesh" id=1]
-size = Vector3( 2, 2, 0.5 )
+[sub_resource type="CylinderMesh" id=1]
+bottom_radius = 0.001
 
 [node name="LookAt" type="Spatial"]
 script = ExtResource( 1 )

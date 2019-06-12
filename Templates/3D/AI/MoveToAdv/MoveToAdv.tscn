@@ -1,11 +1,14 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Templates/3D/AI/MoveToAdv/MoveToAdv.gd" type="Script" id=1]
 
 [sub_resource type="PrismMesh" id=1]
 size = Vector3( 2, 2, 0.5 )
 
-[sub_resource type="ConvexPolygonShape" id=2]
+[sub_resource type="CubeMesh" id=2]
+size = Vector3( 0.2, 0.2, 1.5 )
+
+[sub_resource type="ConvexPolygonShape" id=3]
 points = PoolVector3Array( 0, 1, 0.25, 0, 1, -0.25, 0, 1, 0.25, 0, 1, -0.25, -1, -1, 0.25, 1, -1, -0.25, 1, -1, 0.25, -1, -1, -0.25, 0, 1, 0.25, 0, 1, -0.25, 0, 1, -0.25, 0, 1, 0.25, 1, -1, 0.25, -1, -1, -0.25, 1, -1, -0.25, -1, -1, 0.25, -1, -1, 0.25, 1, -1, 0.25, -1, -1, -0.25, 1, -1, -0.25 )
 
 [node name="MoveToAdv" type="KinematicBody"]
@@ -16,6 +19,11 @@ transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, 0, 0,
 mesh = SubResource( 1 )
 material/0 = null
 
+[node name="MeshInstance" type="MeshInstance" parent="MeshInstance"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0.976 )
+mesh = SubResource( 2 )
+material/0 = null
+
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, 0, 0, 0 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
