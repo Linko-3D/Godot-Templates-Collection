@@ -1,7 +1,7 @@
 extends KinematicBody
 # This version keeps the same height and moves only inside an height margin
-var target = "FirstPersonCharacter"
-var targetPosition
+
+var target
 var vector = Vector3()
 var speed = 1
 
