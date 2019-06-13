@@ -1,8 +1,7 @@
 extends Spatial
 
-var target = "FirstPersonCharacter"
-var targetPosition
+var target
 
 func _process(delta):
-	targetPosition = get_tree().get_root().find_node(target, true, false) # Get the target node by his name
-	look_at(targetPosition.translation, Vector3.UP) # Look at the target
+	target = get_tree().get_root().find_node("FirstPersonCharacter", true, false) # Get the target node by his name
+	look_at(target.translation, Vector3.UP) # Look at the target
