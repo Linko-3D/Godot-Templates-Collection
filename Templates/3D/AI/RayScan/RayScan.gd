@@ -1,13 +1,13 @@
 extends RayCast
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var target
+var i = 0
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print(get_collider())
+	rotate_y(.1)
+	
+	target = get_tree().get_root().find_node("FirstPersonCharacter", true, false) # Get the target node by his name
+	
+	if get_collider() == target:
+		i+= 1
+		print(i, " I see you")

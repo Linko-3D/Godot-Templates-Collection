@@ -3,6 +3,7 @@
 [ext_resource path="res://Templates/3D/AI/RayScan/RayScan.gd" type="Script" id=1]
 
 [node name="RayScan" type="RayCast"]
+transform = Transform( 0.173648, 0, 0.984808, 0, 1, 0, -0.984808, 0, 0.173648, 0, 0, 0 )
 enabled = true
 cast_to = Vector3( 0, 0, 100 )
 script = ExtResource( 1 )

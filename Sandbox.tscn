@@ -66,4 +66,4 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.33687, 1.5, -7.93298 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.56665, 1.50978, 5.41308 )
 
 [node name="RayScan" parent="." instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.54832, 1.39, -8.32323 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.54832, 0.760416, -8.32323 )
