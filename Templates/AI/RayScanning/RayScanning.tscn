@@ -1,4 +1,0 @@
-[gd_scene format=2]
-
-[node name="RayScanning" type="RayCast"]
-cast_to = Vector3( 0, 0, 100 )
