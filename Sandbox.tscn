@@ -30,11 +30,9 @@ uv1_scale = Vector3( 10, 10, 10 )
 [node name="Level" type="Spatial"]
 
 [node name="Meshes" type="Spatial" parent="."]
-editor/display_folded = true
 
 [node name="Wall" type="StaticBody" parent="Meshes"]
-editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.77213, 1, 1.21021 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Meshes/Wall"]
 shape = SubResource( 1 )
