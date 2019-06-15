@@ -11,19 +11,19 @@
 [ext_resource path="res://Templates/3D/Interactive/Area/Area.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Templates/3D/Interactive/Target/Target.tscn" type="PackedScene" id=10]
 
-[sub_resource type="ConvexPolygonShape" id=5]
+[sub_resource type="ConvexPolygonShape" id=1]
 points = PoolVector3Array( -0.5, 1, 0.5, 0.5, 1, -0.5, 0.5, 1, 0.5, -0.5, 1, -0.5, -0.5, -1, 0.5, 0.5, -1, -0.5, 0.5, -1, 0.5, -0.5, -1, -0.5, 0.5, 1, 0.5, -0.5, 1, -0.5, 0.5, 1, -0.5, -0.5, 1, 0.5, 0.5, -1, 0.5, -0.5, -1, -0.5, 0.5, -1, -0.5, -0.5, -1, 0.5, 0.5, 1, 0.5, -0.5, -1, 0.5, -0.5, 1, 0.5, 0.5, -1, 0.5, 0.5, 1, -0.5, -0.5, -1, -0.5, -0.5, 1, -0.5, 0.5, -1, -0.5 )
 
-[sub_resource type="CubeMesh" id=4]
+[sub_resource type="CubeMesh" id=2]
 size = Vector3( 1, 2, 1 )
 
-[sub_resource type="ConvexPolygonShape" id=1]
+[sub_resource type="ConvexPolygonShape" id=3]
 points = PoolVector3Array( 10, 0, 10, -10, 0, 10, 10, 0, -10, -10, 0, -10 )
 
-[sub_resource type="PlaneMesh" id=2]
+[sub_resource type="PlaneMesh" id=4]
 size = Vector2( 20, 20 )
 
-[sub_resource type="SpatialMaterial" id=3]
+[sub_resource type="SpatialMaterial" id=5]
 albedo_texture = ExtResource( 1 )
 uv1_scale = Vector3( 10, 10, 10 )
 
@@ -37,10 +37,10 @@ editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Meshes/Wall"]
-shape = SubResource( 5 )
+shape = SubResource( 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Meshes/Wall"]
-mesh = SubResource( 4 )
+mesh = SubResource( 2 )
 material/0 = null
 
 [node name="Ground" type="StaticBody" parent="Meshes"]
@@ -48,11 +48,11 @@ editor/display_folded = true
 collision_mask = 0
 
 [node name="CollisionShape" type="CollisionShape" parent="Meshes/Ground"]
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Meshes/Ground"]
-mesh = SubResource( 2 )
-material/0 = SubResource( 3 )
+mesh = SubResource( 4 )
+material/0 = SubResource( 5 )
 
 [node name="FirstPersonCharacter" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0 )

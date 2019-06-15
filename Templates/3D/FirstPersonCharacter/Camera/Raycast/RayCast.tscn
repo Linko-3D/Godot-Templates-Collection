@@ -1,9 +1,8 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Templates/3D/FirstPersonCharacter/Camera/Raycast/RayCast.gd" type="Script" id=1]
+[ext_resource path="res://Templates/3D/FirstPersonCharacter/Camera/RayCast/RayCast.gd" type="Script" id=1]
 
 [node name="RayCast" type="RayCast"]
 enabled = true
-cast_to = Vector3( 0, 0, -10 )
-collision_mask = 2
+cast_to = Vector3( 0, 0, -100 )
 script = ExtResource( 1 )
