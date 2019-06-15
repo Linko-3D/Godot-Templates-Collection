@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=2]
 
 [sub_resource type="SphereMesh" id=1]
-radius = 0.25
-height = 0.5
+radius = 0.128
+height = 0.25
 
 [sub_resource type="SphereShape" id=2]
-radius = 0.25
+radius = 0.13
 
 [node name="Projectile" type="RigidBody"]
 
