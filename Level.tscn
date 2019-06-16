@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Templates/3D/FirstPersonCharacter/FirstPersonCharacter.tscn" type="PackedScene" id=1]
+
+[sub_resource type="ConvexPolygonShape" id=2]
+points = PoolVector3Array( 10, 0, 10, -10, 0, 10, 10, 0, -10, -10, 0, -10 )
+
+[sub_resource type="PlaneMesh" id=1]
+size = Vector2( 20, 20 )
+
+[node name="Level" type="Spatial"]
+
+[node name="Map" type="Spatial" parent="."]
+
+[node name="StaticBody" type="StaticBody" parent="Map"]
+editor/display_folded = true
+
+[node name="CollisionShape" type="CollisionShape" parent="Map/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Map/StaticBody"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="FirstPersonCharacter" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
