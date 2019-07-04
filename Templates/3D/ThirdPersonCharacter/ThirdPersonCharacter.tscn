@@ -23,6 +23,7 @@ material/0 = null
 [node name="Yaw" type="Position3D" parent="."]
 
 [node name="Pitch" type="Position3D" parent="Yaw"]
+transform = Transform( 1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 0, 0 )
 
 [node name="Camera" type="Camera" parent="Yaw/Pitch"]
-transform = Transform( 1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 2, 4 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5 )

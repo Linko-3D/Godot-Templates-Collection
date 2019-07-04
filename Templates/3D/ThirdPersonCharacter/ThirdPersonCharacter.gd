@@ -35,13 +35,12 @@ func _physics_process(delta):
 		velocity.y = jump_height
 	
 	velocity.y -= GRAVITY # Gravity
-	#velocity.y = clamp(velocity.y, -max_falling_speed, max_falling_speed)
+	velocity.y = clamp(velocity.y, -max_falling_speed, max_falling_speed)
 		
 	velocity = move_and_slide(velocity, Vector3.UP, true)
-	print(velocity.y)
 
 func _input(event): 
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		$Yaw.rotate_y(deg2rad(-event.relative.x * mouse_sensitivity)) #yaw
 		$Yaw/Pitch.rotate_x(deg2rad(-event.relative.y * mouse_sensitivity))
-		#$Yaw/Pitch.rotation.x = clamp($Camera.rotation.x, deg2rad(-90), deg2rad(90))
+		$Yaw/Pitch.rotation.x = clamp($Yaw/Pitch.rotation.x, deg2rad(-50), deg2rad(0))
