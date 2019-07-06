@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Templates/3D/FirstPersonCharacter/FirstPersonCharacter.gd" type="Script" id=1]
 [ext_resource path="res://Templates/3D/FirstPersonCharacter/Camera/RayCast.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Templates/3D/FirstPersonCharacter/Camera/HUD.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Templates/3D/FirstPersonCharacter/Camera/Shoot/Shoot.gd" type="Script" id=4]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.5
@@ -16,8 +17,9 @@ script = ExtResource( 1 )
 
 [node name="HUD" parent="Camera" instance=ExtResource( 3 )]
 
-[node name="Position3D" type="Position3D" parent="Camera"]
+[node name="Shoot" type="Position3D" parent="Camera"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1 )
+script = ExtResource( 4 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, -0.8, 0 )
