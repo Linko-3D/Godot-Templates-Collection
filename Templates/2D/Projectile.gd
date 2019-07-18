@@ -8,7 +8,7 @@ func _ready():
 	$Timer.start()
 
 func _process(delta):
-	position.x += speed
+	position.y += -speed
 
 func _on_Timer_timeout():
 	queue_free()
