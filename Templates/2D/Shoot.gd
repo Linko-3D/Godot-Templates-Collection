@@ -1,13 +1,10 @@
 extends Position2D
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var force = 25
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _input(event): 
+	if event is InputEventMouseButton and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+		if event.button_index == 1 and event.pressed == true:
+			var projectile = load("res://Templates/2D/Projectile.tscn").instance()
+			add_child(projectile)
+			#projectile.set_as_toplevel(true)
