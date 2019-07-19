@@ -53,11 +53,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, -1 )
 [node name="Character" parent="." instance=ExtResource( 5 )]
 position = Vector2( 512, 550 )
 
-[node name="LookAt" parent="." instance=ExtResource( 6 )]
+[node name="AI" type="Spatial" parent="."]
+
+[node name="LookAt" parent="AI" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.77504, -8.77296 )
 
-[node name="MoveTo" parent="." instance=ExtResource( 7 )]
+[node name="MoveTo" parent="AI" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.98299, 2, -7.326 )
 
-[node name="CanSee" parent="." instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1.62847, 1.18778 )
+[node name="CanSee" parent="AI" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2, 7 )
