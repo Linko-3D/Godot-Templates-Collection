@@ -8,7 +8,9 @@ radius = 0.5
 [sub_resource type="CapsuleMesh" id=2]
 radius = 0.5
 
-[node name="ThirdPersonCharacter" type="KinematicBody"]
+[node name="ThirdPersonCharacter" type="KinematicBody" groups=[
+"Player",
+]]
 script = ExtResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]

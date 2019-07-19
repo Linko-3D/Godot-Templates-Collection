@@ -11,6 +11,7 @@ var mouse_sensitivity = 0.15
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	print( get_tree().get_nodes_in_group("Player"))
 
 # ----------------------------------
 # Keyboard controls and gravity
