@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://checker.png" type="Texture" id=1]
 [ext_resource path="res://Templates/3D/Interactive/Target/Target.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Templates/3D/FirstPersonCharacter/FirstPersonCharacter.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Templates/2D/Character.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Templates/3D/AI/LookAt/LookAt.tscn" type="PackedScene" id=5]
 
 [sub_resource type="ConvexPolygonShape" id=1]
 points = PoolVector3Array( 10, 0, 10, -10, 0, 10, 10, 0, -10, -10, 0, -10 )
@@ -44,3 +45,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
 
 [node name="Character" parent="." instance=ExtResource( 4 )]
 position = Vector2( 512, 550 )
+
+[node name="LookAt" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.77504, -8.77296 )
