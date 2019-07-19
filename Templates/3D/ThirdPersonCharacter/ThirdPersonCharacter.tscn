@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Templates/3D/ThirdPersonCharacter/ThirdPersonCharacter.gd" type="Script" id=1]
+[ext_resource path="res://Templates/3D/FirstPersonCharacter/Camera/Shoot/Shoot.tscn" type="PackedScene" id=2]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.5
@@ -29,3 +30,6 @@ transform = Transform( 1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 
 
 [node name="Camera" type="Camera" parent="Yaw/Pitch"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5 )
+
+[node name="Shoot" parent="Yaw/Pitch/Camera" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.939693, -0.34202, 0, 0.34202, 0.939693, 0, 0.34202, -5.93969 )

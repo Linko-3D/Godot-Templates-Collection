@@ -5,7 +5,7 @@ var vector = Vector3()
 var keepHeight = Vector3()
 
 func _ready():
-	target = get_tree().get_root().find_node("FirstPersonCharacter", true, false) # Get the target node by his name
+	target = get_tree().get_nodes_in_group("Player")[0] # Get the target with the first node in the Player group
 	keepHeight = translation.y
 	
 func _process(delta):
