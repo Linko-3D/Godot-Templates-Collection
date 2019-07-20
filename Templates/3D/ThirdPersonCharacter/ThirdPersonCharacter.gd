@@ -42,7 +42,7 @@ func _physics_process(delta):
 	velocity.y -= GRAVITY # Gravity
 	velocity.y = clamp(velocity.y, -max_falling_speed, max_falling_speed)
 		
-	velocity = move_and_slide_with_snap(velocity, snap, Vector3.UP, true, 4, 90)
+	velocity = move_and_slide_with_snap(velocity, snap, Vector3.UP, true, 4, 90, false)
 
 func _input(event): 
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:

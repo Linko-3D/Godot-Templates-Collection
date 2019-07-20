@@ -44,7 +44,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().quit()
 		
-	velocity = move_and_slide_with_snap(velocity, snap, Vector3.UP, true, 4, 90)
+	velocity = move_and_slide_with_snap(velocity, snap, Vector3.UP, true, 4, 90, false)
 	
 # ----------------------------------
 # Mouse controls
