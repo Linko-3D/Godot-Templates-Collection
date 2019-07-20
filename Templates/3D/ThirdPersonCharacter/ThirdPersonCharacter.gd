@@ -40,7 +40,7 @@ func _physics_process(delta):
 			snap = Vector3.DOWN
 	
 	velocity.y -= GRAVITY # Gravity
-	velocity.y = clamp(velocity.y, -max_falling_speed, max_falling_speed)
+	velocity.y = clamp(velocity.y, -max_falling_speed, max_falling_speed) # Max falling speed
 		
 	velocity = move_and_slide_with_snap(velocity, snap, Vector3.UP, true, 4, 90, false)
 
