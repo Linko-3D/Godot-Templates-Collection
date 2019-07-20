@@ -22,15 +22,24 @@ uv1_scale = Vector3( 10, 10, 10 )
 [node name="Level" type="Spatial"]
 
 [node name="Map" type="Spatial" parent="."]
-editor/display_folded = true
 
 [node name="StaticBody" type="StaticBody" parent="Map"]
-editor/display_folded = true
 
 [node name="CollisionShape" type="CollisionShape" parent="Map/StaticBody"]
 shape = SubResource( 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Map/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0079422, 0.0259247, 0.088954 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="StaticBody2" type="StaticBody" parent="Map"]
+transform = Transform( 0.0347296, 0.196962, 0, -0.196962, 0.0347296, 0, 0, 0, 0.2, -5.27635, 1.21558, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Map/StaticBody2"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Map/StaticBody2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0079422, 0.0259247, 0.088954 )
 mesh = SubResource( 2 )
 material/0 = SubResource( 3 )
