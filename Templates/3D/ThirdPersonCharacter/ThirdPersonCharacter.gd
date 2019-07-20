@@ -9,6 +9,8 @@ var jump_height = 4
 
 var mouse_sensitivity = 0.15
 
+var snap = Vector3.DOWN
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -31,13 +33,16 @@ func _physics_process(delta):
 		if Input.is_action_pressed("ui_right"):
 			velocity += $Yaw.global_transform.basis.x * speed
 	
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = jump_height
+		if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+			snap = Vector3()
+			velocity.y = jump_height
+		else:
+			snap = Vector3.DOWN
 	
 	velocity.y -= GRAVITY # Gravity
 	velocity.y = clamp(velocity.y, -max_falling_speed, max_falling_speed)
 		
-	velocity = move_and_slide(velocity, Vector3.UP, true)
+	velocity = move_and_slide_with_snap(velocity, snap, Vector3.UP, true, 4, 90)
 
 func _input(event): 
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:

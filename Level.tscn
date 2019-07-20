@@ -22,8 +22,10 @@ uv1_scale = Vector3( 10, 10, 10 )
 [node name="Level" type="Spatial"]
 
 [node name="Map" type="Spatial" parent="."]
+editor/display_folded = true
 
 [node name="StaticBody" type="StaticBody" parent="Map"]
+editor/display_folded = true
 
 [node name="CollisionShape" type="CollisionShape" parent="Map/StaticBody"]
 shape = SubResource( 1 )
@@ -33,19 +35,32 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0079422, 0.0259247, 0.088954
 mesh = SubResource( 2 )
 material/0 = SubResource( 3 )
 
-[node name="StaticBody2" type="StaticBody" parent="Map"]
-transform = Transform( 0.0347296, 0.196962, 0, -0.196962, 0.0347296, 0, 0, 0, 0.2, -5.27635, 1.21558, 0 )
+[node name="80" type="StaticBody" parent="Map"]
+editor/display_folded = true
+transform = Transform( 0.0347296, -0.984808, 0, 0.196962, 0.173648, 0, 0, 0, 0.2, 9.85205, 5.85923, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Map/StaticBody2"]
+[node name="CollisionShape" type="CollisionShape" parent="Map/80"]
 shape = SubResource( 1 )
 
-[node name="MeshInstance" type="MeshInstance" parent="Map/StaticBody2"]
+[node name="MeshInstance" type="MeshInstance" parent="Map/80"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0079422, 0.0259247, 0.088954 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="70" type="StaticBody" parent="Map"]
+editor/display_folded = true
+transform = Transform( 0.068404, -0.939693, 0, 0.187939, 0.34202, 0, 0, 0, 0.2, 8.79626, 2, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Map/70"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Map/70"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0079422, 0.0259247, 0.088954 )
 mesh = SubResource( 2 )
 material/0 = SubResource( 3 )
 
 [node name="Sun" type="DirectionalLight" parent="."]
-transform = Transform( -0.707106, -0.40558, 0.579228, 0, 0.819152, 0.573576, -0.707106, 0.40558, -0.579228, 0, 10, 0 )
+transform = Transform( 0.739947, 0.458629, -0.492075, -0.00280257, 0.733626, 0.679547, 0.672659, -0.50145, 0.54413, 0, 10, 0 )
 light_energy = 5.0
 light_indirect_energy = 5.0
 shadow_enabled = true
@@ -54,7 +69,7 @@ shadow_enabled = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.171, 2, -8 )
 
 [node name="FirstPersonCharacter" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 
 [node name="ThirdPersonCharacter" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, -1 )
