@@ -1,7 +1,9 @@
 extends KinematicBody2D
 
-var speed = 100
+var speed = 150
 var velocity = Vector2()
+
+var coins = 0
 
 func _physics_process(delta):
 	velocity = Vector2()
@@ -17,3 +19,4 @@ func _physics_process(delta):
 	velocity = velocity.normalized() * speed
 	
 	move_and_slide(velocity)
+	print(coins)
