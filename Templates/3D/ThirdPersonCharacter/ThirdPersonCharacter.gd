@@ -1,11 +1,11 @@
 extends KinematicBody
 
-const GRAVITY = 0.15
+const GRAVITY = 0.2
 
 var velocity = Vector3()
 var speed = 6
 var max_falling_speed = 20
-var jump_height = 4
+var jump_height = 5
 
 var mouse_sensitivity = 0.15
 
