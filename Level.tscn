@@ -148,8 +148,8 @@ material/0 = SubResource( 3 )
 
 [node name="Sun" type="DirectionalLight" parent="."]
 transform = Transform( 0.739947, 0.458629, -0.492075, -0.00280257, 0.733626, 0.679547, 0.672659, -0.50145, 0.54413, 0, 10, 0 )
-light_energy = 5.0
-light_indirect_energy = 5.0
+light_energy = 3.0
+light_indirect_energy = 3.0
 shadow_enabled = true
 
 [node name="Target" parent="." instance=ExtResource( 2 )]
