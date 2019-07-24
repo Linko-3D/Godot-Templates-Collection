@@ -7,6 +7,8 @@ var speed = 6
 var max_falling_speed = 20
 var jump_height = 4
 
+var snap = Vector3.DOWN
+
 var mouse_sensitivity = 0.15
 
 # Called when the node enters the scene tree for the first time.
@@ -32,13 +34,16 @@ func _physics_process(delta):
 			velocity += $Yaw.global_transform.basis.x * speed
 	
 		if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+			snap = Vector3()
 			velocity.y = jump_height
-	
+		else:
+			snap = Vector3.DOWN
+
 	velocity.y -= GRAVITY # Gravity
 	velocity.y = clamp(velocity.y, -max_falling_speed, max_falling_speed) # Max falling speed
 		
-	velocity = move_and_slide(velocity, Vector3.UP, true)
-
+	velocity =  move_and_slide_with_snap(velocity, snap, Vector3.UP, true, 4, 90)
+	
 func _input(event): 
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		$Yaw.rotate_y(deg2rad(-event.relative.x * mouse_sensitivity)) #yaw
