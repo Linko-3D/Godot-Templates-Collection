@@ -23,13 +23,13 @@ func _physics_process(delta):
 
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		if Input.is_action_pressed("ui_up"):
-			velocity += -transform.basis.z * speed
+			velocity += -global_transform.basis.z * speed
 		if Input.is_action_pressed("ui_down"):
-			velocity += transform.basis.z * speed
+			velocity += global_transform.basis.z * speed
 		if Input.is_action_pressed("ui_left"):
-			velocity += -transform.basis.x * speed
+			velocity += -global_transform.basis.x * speed
 		if Input.is_action_pressed("ui_right"):
-			velocity += transform.basis.x * speed
+			velocity += global_transform.basis.x * speed
 		
 		if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 			snap = Vector3()
