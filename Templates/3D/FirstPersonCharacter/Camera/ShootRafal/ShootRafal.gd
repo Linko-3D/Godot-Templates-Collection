@@ -12,20 +12,17 @@ func _ready():
 	$Timer.wait_time = cadence
 
 func _process(delta):
-	print($Timer.time_left)
 	if hold_shoot and $Timer.is_stopped():
 		$Timer.start()
-	else:
-		print(hold_shoot)
 
 func _input(event): 
 	if event is InputEventMouseButton and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		if event.button_index == 1 and event.pressed == true:
-			shoot()
+			shoot() # Does a first shoot to avoid delay because the other shoots are done when the timer reaches at 0
 			hold_shoot = true
 		else:
 			hold_shoot = false
-			$Timer.stop()
+			$Timer.stop() # Stops the timer to avoid a shoot after the button is released
 
 func _on_Timer_timeout():
 	shoot()
