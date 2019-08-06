@@ -10,7 +10,6 @@ var jump_height = 4
 var snap_distance = -0.1
 var snap = Vector3(0, snap_distance,0)
 
-
 var mouse_sensitivity = 0.15
 
 func _ready():
