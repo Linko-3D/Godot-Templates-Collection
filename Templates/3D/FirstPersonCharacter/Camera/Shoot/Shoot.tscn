@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Templates/3D/FirstPersonCharacter/Camera/Shoot/Shoot.gd" type="Script" id=1]
-[ext_resource path="res://Templates/3D/FirstPersonCharacter/Camera/Shoot/Projectile.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Templates/3D/FirstPersonCharacter/Camera/Shoot/ProjectileSticky.tscn" type="PackedScene" id=2]
 
 [node name="Shoot" type="Position3D"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1 )
