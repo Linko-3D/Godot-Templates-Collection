@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Templates/3D/FirstPersonCharacter/FirstPersonCharacter.gd" type="Script" id=1]
 [ext_resource path="res://Templates/3D/FirstPersonCharacter/Camera/RayCast.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Templates/3D/FirstPersonCharacter/Camera/HUD.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Templates/3D/FirstPersonCharacter/Camera/Shoot/Shoot.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Templates/3D/FirstPersonCharacter/Camera/ShootAuto/ShootAuto.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Templates/3D/FirstPersonCharacter/Camera/Shoot/Projectile.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Templates/3D/FirstPersonCharacter/Camera/ShootAuto/ShootAuto.tscn" type="PackedScene" id=6]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.5
@@ -21,8 +22,12 @@ script = ExtResource( 1 )
 [node name="HUD" parent="Camera" instance=ExtResource( 3 )]
 
 [node name="Shoot" parent="Camera" instance=ExtResource( 4 )]
+bullet = ExtResource( 5 )
 
-[node name="ShootRafal" parent="Camera" instance=ExtResource( 5 )]
+[node name="Shoot2" parent="Camera" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.68837, 0, -1 )
+
+[node name="ShootAuto" parent="Camera" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.699363, 0, -1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]

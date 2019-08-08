@@ -10,6 +10,7 @@ height = 0.5
 radius = 0.25
 
 [node name="ProjectileSticky" type="RigidBody"]
+contact_monitor = true
 script = ExtResource( 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
