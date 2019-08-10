@@ -1,14 +1,13 @@
 extends KinematicBody
 
-const GRAVITY = 0.15
+const GRAVITY = 9.8
 
 var velocity = Vector3()
 var speed = 6
-var max_falling_speed = 20
-var jump_height = 4
+var jump_height = 6.5
 
 var snap_distance = -0.1
-var snap = Vector3(0, snap_distance,0)
+var snap = Vector3(0, snap_distance, 0)
 
 var mouse_sensitivity = 0.15
 
@@ -38,8 +37,7 @@ func _physics_process(delta):
 		else:
 			snap = Vector3(0, snap_distance, 0)
 		
-		velocity.y -= GRAVITY # Gravity
-		velocity.y = clamp(velocity.y, -max_falling_speed, max_falling_speed) # Max falling speed
+		velocity.y -= GRAVITY * delta # Gravity
 		
 	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().quit()

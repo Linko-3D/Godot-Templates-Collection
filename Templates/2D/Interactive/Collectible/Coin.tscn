@@ -3,7 +3,6 @@
 [ext_resource path="res://Templates/2D/Interactive/Collectible/Coin.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 
 [node name="Coin" type="Area2D"]

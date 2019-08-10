@@ -10,6 +10,7 @@ height = 0.5
 radius = 0.25
 
 [node name="Projectile" type="RigidBody"]
+mass = 1000.0
 script = ExtResource( 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]

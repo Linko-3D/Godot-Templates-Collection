@@ -8,7 +8,6 @@ export (PackedScene) var bullet
 var projectile
 
 func _ready():
-	projectile = bullet.instance() # Avoid to have a lag on the first shoot by preloading the projectile
 	$Timer.wait_time = cadence
 
 func _process(delta):
