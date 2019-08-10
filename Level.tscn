@@ -80,7 +80,7 @@ material/0 = ExtResource( 3 )
 
 [node name="90" type="StaticBody" parent="Map/Ramp"]
 editor/display_folded = true
-transform = Transform( -4.37114e-09, -1, 0, 0.1, -4.37114e-08, 0, 0, 0, 0.2, 18.0417, 11.4521, 0 )
+transform = Transform( -4.37114e-009, -1, 0, 0.1, -4.37114e-008, 0, 0, 0, 0.2, 18.0417, 11.4521, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Map/Ramp/90"]
 shape = SubResource( 1 )
