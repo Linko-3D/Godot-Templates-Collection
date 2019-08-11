@@ -39,6 +39,7 @@ func shoot():
 	else:
 		rotation_degrees.x = rand_range(-recoil,recoil) # Recoil vibration
 		rotation_degrees.y = rand_range(-recoil,recoil) # Recoil vibration
+	
 	projectile = bullet.instance() # We instance the scene
 
 	add_child(projectile) # The instance is added as a child of the shoot node

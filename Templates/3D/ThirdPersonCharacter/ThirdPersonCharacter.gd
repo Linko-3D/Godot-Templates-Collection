@@ -7,7 +7,7 @@ var speed = 6
 var jump_height = 6.5
 
 var snap_distance = -0.1
-var snap = Vector3(0, snap_distance,0)
+var snap = Vector3(0, snap_distance, 0)
 
 var mouse_sensitivity = 0.15
 
@@ -49,6 +49,6 @@ func _physics_process(delta):
 
 func _input(event): 
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-		$Yaw.rotate_y(deg2rad(-event.relative.x * mouse_sensitivity)) #yaw
+		rotate_y(deg2rad(-event.relative.x * mouse_sensitivity)) #yaw
 		$Yaw/Pitch.rotate_x(deg2rad(-event.relative.y * mouse_sensitivity))
-		$Yaw/Pitch.rotation.x = clamp($Yaw/Pitch.rotation.x, deg2rad(-50), deg2rad(0))
+		$Yaw/Pitch.rotation.x = clamp($Yaw/Pitch.rotation.x, deg2rad(-80), deg2rad(0))
