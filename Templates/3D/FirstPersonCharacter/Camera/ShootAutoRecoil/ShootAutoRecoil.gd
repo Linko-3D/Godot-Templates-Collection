@@ -13,19 +13,18 @@ func _ready():
 	$Timer.wait_time = cadence
 
 func _process(delta):
-	rotation_degrees.x = rand_range(-recoil,recoil) # Recoil vibration
-	rotation_degrees.y = rand_range(-recoil,recoil) # Recoil vibration
 	if hold_shoot and $Timer.is_stopped():
 		$Timer.start()
 
 func _input(event): 
 	if event is InputEventMouseButton and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		if event.button_index == 1 and event.pressed == true:
-			rotation_degrees.x = 0
-			rotation_degrees.y = 0
+
 			shoot() # Does a first shoot to avoid delay because the other shoots are done when the timer reaches at 0
 			hold_shoot = true
 		else:
+			rotation_degrees.x = 0
+			rotation_degrees.y = 0
 			hold_shoot = false
 			$Timer.stop() # Stops the timer to avoid a shoot after the button is released
 
@@ -33,6 +32,8 @@ func _on_Timer_timeout():
 	shoot()
 
 func shoot():
+	rotation_degrees.x = rand_range(-recoil,recoil) # Recoil vibration
+	rotation_degrees.y = rand_range(-recoil,recoil) # Recoil vibration
 	projectile = bullet.instance() # We instance the scene
 
 	add_child(projectile) # The instance is added as a child of the shoot node
