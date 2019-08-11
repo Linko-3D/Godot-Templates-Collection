@@ -12,7 +12,7 @@
 [ext_resource path="res://Templates/2D/Interactive/Collectible/Coin.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Templates/2D/CharacterTop/CharacterTop.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Templates/2D/VehicleTop/VehicleTop.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Templates/3D/Interactive/AddCube/Surface.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Templates/3D/Interactive/AddCube/Cube.tscn" type="PackedScene" id=13]
 
 [sub_resource type="ConvexPolygonShape" id=1]
 points = PoolVector3Array( 10, 0, 10, -10, 0, 10, 10, 0, -10, -10, 0, -10 )
@@ -207,5 +207,5 @@ position = Vector2( 512, 550 )
 [node name="VehicleTop" parent="." instance=ExtResource( 12 )]
 position = Vector2( 353.404, 387.228 )
 
-[node name="Surface" parent="." instance=ExtResource( 13 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 6 )
+[node name="Spatial" parent="." instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 7 )
