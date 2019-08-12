@@ -1,9 +1,5 @@
 extends StaticBody
 
-var spawn = false
-
-func _process(delta):
-	if spawn:
+func spawn():
 		$Spawn.visible = true
 		$Spawn/SpawnCollision.disabled = false
-	#print(spawn)

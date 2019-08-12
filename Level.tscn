@@ -207,5 +207,5 @@ position = Vector2( 512, 550 )
 [node name="VehicleTop" parent="." instance=ExtResource( 12 )]
 position = Vector2( 353.404, 387.228 )
 
-[node name="Spatial" parent="." instance=ExtResource( 13 )]
+[node name="Cube" parent="." instance=ExtResource( 13 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 7 )
