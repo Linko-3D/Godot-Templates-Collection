@@ -12,7 +12,8 @@ func _ready():
 
 func _process(delta):
 	if target != null:
-		translation = target.translation + offset
+		#translation = target.translation + offset
+		pass
 
 func _on_Area_body_entered(body):
 	target = body

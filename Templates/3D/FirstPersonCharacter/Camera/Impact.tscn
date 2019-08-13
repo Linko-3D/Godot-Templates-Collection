@@ -14,8 +14,10 @@ height = 0.1
 rings = 1
 
 [node name="Impact" type="Particles"]
+emitting = false
 amount = 50
 lifetime = 2.0
+one_shot = true
 explosiveness = 1.0
 process_material = SubResource( 1 )
 draw_pass_1 = SubResource( 2 )
