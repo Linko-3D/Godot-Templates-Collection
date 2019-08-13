@@ -6,11 +6,12 @@
 emission_shape = 1
 emission_sphere_radius = 0.01
 angular_velocity = 1.05
-radial_accel = 20.0
+radial_accel = 15.0
 
 [sub_resource type="SphereMesh" id=2]
 radius = 0.05
 height = 0.1
+radial_segments = 4
 rings = 1
 
 [node name="Impact" type="Particles"]
