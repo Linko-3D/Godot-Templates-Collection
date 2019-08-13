@@ -17,11 +17,8 @@ script = ExtResource( 1 )
 mesh = SubResource( 1 )
 material/0 = null
 
-[node name="Timer" type="Timer" parent="."]
-
 [node name="Area" type="Area" parent="."]
 
 [node name="CollisionShape" type="CollisionShape" parent="Area"]
 shape = SubResource( 2 )
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]

@@ -7,15 +7,12 @@ var current_coordinates = Vector3()
 var offset = Vector3()
 
 func _ready():
-	$Timer.wait_time = lifespan
-	$Timer.start()
+	yield(get_tree().create_timer(lifespan), "timeout")
+	queue_free()
 
 func _process(delta):
 	if target != null:
 		translation = target.translation + offset
-
-func _on_Timer_timeout():
-	queue_free()
 
 func _on_Area_body_entered(body):
 	target = body
