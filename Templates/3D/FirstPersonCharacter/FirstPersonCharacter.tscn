@@ -5,7 +5,7 @@
 [ext_resource path="res://Templates/3D/FirstPersonCharacter/Camera/RayCastAutoRecoil/RayCastAutoRecoil.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Templates/3D/HUD/HUD.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Templates/3D/FirstPersonCharacter/Camera/Shoot/Shoot.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Templates/3D/FirstPersonCharacter/Camera/Shoot/ProjectileImpact.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Templates/3D/FirstPersonCharacter/Camera/Shoot/Projectile.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Templates/3D/FirstPersonCharacter/Camera/ShootAuto/ShootAuto.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Templates/3D/FirstPersonCharacter/Camera/ShootAutoRecoil/ShootAutoRecoil.tscn" type="PackedScene" id=8]
 
@@ -32,15 +32,12 @@ bullet = ExtResource( 6 )
 
 [node name="Shoot2" parent="Camera" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.68837, 0, -1 )
-visible = false
 
 [node name="ShootAuto" parent="Camera" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.699363, 0, -1 )
-visible = false
 
 [node name="ShootAutoRecoil" parent="Camera" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -1 )
-visible = false
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, -0.8, 0 )
