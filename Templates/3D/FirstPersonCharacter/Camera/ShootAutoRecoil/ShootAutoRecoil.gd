@@ -1,6 +1,6 @@
 extends Position3D
 
-var recoil = 2
+var recoil_angle = 2
 
 var force = 25
 var hold_shoot = false
@@ -37,8 +37,8 @@ func shoot():
 	if first_shoot == true: # Remove recoil on the first shoot
 		first_shoot = false
 	else:
-		rotation_degrees.x = rand_range(-recoil,recoil) # Recoil vibration
-		rotation_degrees.y = rand_range(-recoil,recoil) # Recoil vibration
+		rotation_degrees.x = rand_range(-recoil_angle,recoil_angle) # Recoil vibration
+		rotation_degrees.y = rand_range(-recoil_angle,recoil_angle) # Recoil vibration
 	
 	projectile = bullet.instance() # We instance the scene
 
