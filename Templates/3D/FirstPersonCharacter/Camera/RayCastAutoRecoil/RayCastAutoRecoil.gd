@@ -1,9 +1,12 @@
 extends RayCast
 
-export (PackedScene) var impact
 var hold_shoot = false
 var cadence = 0.1
 
+var recoil_angle = 2
+var first_shoot = true
+
+export (PackedScene) var impact
 var explosion
 
 func _ready():
@@ -21,6 +24,9 @@ func _input(event):
 			hold_shoot = true
 		else:
 			hold_shoot = false
+			rotation_degrees.x = 0
+			rotation_degrees.y = 0
+			first_shoot = true
 			$Timer.stop()
 
 func _on_Timer_timeout():
@@ -28,6 +34,12 @@ func _on_Timer_timeout():
 
 func shoot():
 	if get_collider() != null:
+		if first_shoot == true: # Remove recoil on the first shoot
+			first_shoot = false
+		else:
+			rotation_degrees.x = rand_range(-recoil_angle,recoil_angle) # Recoil vibration
+			rotation_degrees.y = rand_range(-recoil_angle,recoil_angle) # Recoil vibration
+		
 		explosion = impact.instance() # We instance the scene
 	
 		add_child(explosion) # The instance is added as a child of the shoot node

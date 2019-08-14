@@ -1,9 +1,9 @@
 extends RayCast
 
-export (PackedScene) var impact
 var hold_shoot = false
 var cadence = 0.1
 
+export (PackedScene) var impact
 var explosion
 
 func _ready():

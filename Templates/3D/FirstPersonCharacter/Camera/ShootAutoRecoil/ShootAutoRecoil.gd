@@ -8,7 +8,6 @@ var cadence = 0.1
 var first_shoot = true
 
 export (PackedScene) var bullet
-
 var projectile
 
 func _ready():
@@ -24,9 +23,9 @@ func _input(event):
 			shoot() # Does a first shoot to avoid delay because the other shoots are done when the timer reaches at 0
 			hold_shoot = true
 		else:
+			hold_shoot = false
 			rotation_degrees.x = 0
 			rotation_degrees.y = 0
-			hold_shoot = false
 			first_shoot = true
 			$Timer.stop() # Stops the timer to avoid a shoot after the button is released
 
@@ -35,6 +34,7 @@ func _on_Timer_timeout():
 
 func shoot():
 	if first_shoot == true: # Remove recoil on the first shoot
+
 		first_shoot = false
 	else:
 		rotation_degrees.x = rand_range(-recoil_angle,recoil_angle) # Recoil vibration

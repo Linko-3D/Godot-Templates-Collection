@@ -3,8 +3,8 @@ extends Position3D
 var force = 25
 var hold_shoot = false
 var cadence = 0.1
-export (PackedScene) var bullet
 
+export (PackedScene) var bullet
 var projectile
 
 func _ready():
