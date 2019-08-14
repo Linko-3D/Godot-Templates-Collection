@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Templates/3D/FirstPersonCharacter/Camera/RayCastAuto/RayCastAuto.gd" type="Script" id=1]
+[ext_resource path="res://Templates/3D/FirstPersonCharacter/Camera/Impact.tscn" type="PackedScene" id=2]
+
+[node name="RayCastAuto" type="RayCast"]
+enabled = true
+cast_to = Vector3( 0, 0, -100 )
+script = ExtResource( 1 )
+impact = ExtResource( 2 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
