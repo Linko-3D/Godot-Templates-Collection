@@ -18,3 +18,7 @@ func _process(delta):
 		rotate(-rot_speed)
 	
 	move_and_slide(velocity)
+
+func _input(event):
+	if event is InputEventMouseMotion:
+		rotate(event.relative.x * 0.005)
