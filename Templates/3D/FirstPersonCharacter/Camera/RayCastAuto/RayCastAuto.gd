@@ -12,7 +12,6 @@ func _ready():
 func _process(delta):
 	if hold_shoot and $Timer.is_stopped():
 		$Timer.start()
-	print(hold_shoot)
 
 func _input(event):
 	if event is InputEventMouseButton and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
