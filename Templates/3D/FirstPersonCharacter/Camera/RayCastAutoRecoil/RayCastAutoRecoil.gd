@@ -7,7 +7,6 @@ var recoil_angle = 2
 var first_shoot = true
 
 export (PackedScene) var impact
-var explosion
 
 func _ready():
 	$Timer.wait_time = cadence
@@ -39,7 +38,7 @@ func shoot():
 			rotation_degrees.x = rand_range(-recoil_angle,recoil_angle) # Recoil vibration
 			rotation_degrees.y = rand_range(-recoil_angle,recoil_angle) # Recoil vibration
 		
-		explosion = impact.instance() # We instance the scene
+		var explosion = impact.instance() # We instance the scene
 	
 		add_child(explosion) # The instance is added as a child of the shoot node
 		explosion.set_as_toplevel(true)

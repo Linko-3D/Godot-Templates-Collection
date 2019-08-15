@@ -4,7 +4,6 @@ var hold_shoot = false
 var cadence = 0.1
 
 export (PackedScene) var impact
-var explosion
 
 func _ready():
 	$Timer.wait_time = cadence
@@ -27,7 +26,7 @@ func _on_Timer_timeout():
 
 func shoot():
 	if get_collider() != null:
-		explosion = impact.instance() # We instance the scene
+		var explosion = impact.instance() # We instance the scene
 	
 		add_child(explosion) # The instance is added as a child of the shoot node
 		explosion.set_as_toplevel(true)
