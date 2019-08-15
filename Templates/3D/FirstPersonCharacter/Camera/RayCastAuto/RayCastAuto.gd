@@ -17,7 +17,7 @@ func _input(event):
 		if event.button_index == 1 and event.pressed == true:
 			shoot()
 			hold_shoot = true
-		else:
+		if event.button_index == 1 and event.pressed == false:
 			hold_shoot = false
 			$Timer.stop()
 
