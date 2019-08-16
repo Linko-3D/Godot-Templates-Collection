@@ -12,8 +12,11 @@ func _ready():
 
 func _process(delta):
 	if target != null:
-		#translation = target.translation + offset
-		pass
+		translation = target.translation + offset # Crash happens, need fix
+	else:
+		axis_lock_linear_z = false
+		axis_lock_linear_x = false
+		axis_lock_linear_y = false
 
 func _on_Area_body_entered(body):
 	target = body
