@@ -29,9 +29,9 @@ material/0 = null
 [node name="Pitch" type="Position3D" parent="Yaw"]
 transform = Transform( 1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 0, 0 )
 
-[node name="Camera" type="Camera" parent="Yaw/Pitch"]
+[node name="Head" type="Camera" parent="Yaw/Pitch"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5 )
 
-[node name="Shoot" parent="Yaw/Pitch/Camera" instance=ExtResource( 2 )]
+[node name="Shoot" parent="Yaw/Pitch/Head" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 0.939693, -0.34202, 0, 0.34202, 0.939693, 0, 0.34202, -5.93969 )
 bullet = ExtResource( 3 )
