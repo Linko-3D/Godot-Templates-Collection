@@ -1,7 +1,7 @@
 extends RayCast
 
 var hold_shoot = false
-var cadence = 0.1
+var fire_rate = 0.1
 
 var recoil_angle = 2
 var first_shoot = true
@@ -9,7 +9,7 @@ var first_shoot = true
 export (PackedScene) var impact
 
 func _ready():
-	$Timer.wait_time = cadence
+	$Timer.wait_time = fire_rate
 
 func _process(delta):
 	if hold_shoot and $Timer.is_stopped():
