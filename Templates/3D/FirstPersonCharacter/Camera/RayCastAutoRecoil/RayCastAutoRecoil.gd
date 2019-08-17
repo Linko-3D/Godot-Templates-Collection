@@ -31,7 +31,7 @@ func _on_Timer_timeout():
 	shoot()
 
 func shoot():
-	if get_collider() != null:
+	if is_colliding():
 		if first_shoot == true: # Remove recoil on the first shoot
 			first_shoot = false
 		else:

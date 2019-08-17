@@ -25,7 +25,7 @@ func _on_Timer_timeout():
 	shoot()
 
 func shoot():
-	if get_collider() != null:
+	if is_colliding():
 		var explosion = impact.instance() # We instance the scene
 	
 		add_child(explosion) # The instance is added as a child of the shoot node
