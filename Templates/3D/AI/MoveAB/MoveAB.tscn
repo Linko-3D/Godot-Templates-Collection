@@ -2,9 +2,11 @@
 
 [ext_resource path="res://Templates/3D/AI/MoveAB/MoveAB.gd" type="Script" id=1]
 
-[sub_resource type="SphereMesh" id=1]
+[sub_resource type="CubeMesh" id=1]
+size = Vector3( 2, 0.25, 2 )
 
-[sub_resource type="SphereShape" id=2]
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 1, 0.1, 1 )
 
 [node name="MoveAB" type="KinematicBody"]
 script = ExtResource( 1 )
