@@ -206,7 +206,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 7 )
 
 [node name="MoveAB" parent="." instance=ExtResource( 11 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 4 )
-MoveTo = Vector3( 0, 7, 0 )
+offsetY = 5.0
 
 [node name="Pick" parent="." instance=ExtResource( 12 )]
 position = Vector2( 512, 450 )
