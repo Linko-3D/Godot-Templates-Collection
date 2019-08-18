@@ -18,7 +18,6 @@ func _ready():
 	moveTo.z = starting_position.z + offsetZ
 
 func _process(delta):
-	print(moveTo)
 	if $Tween.is_active() == false: # Each time the animation stops check the direction set
 		if forward:
 			$Tween.start()
