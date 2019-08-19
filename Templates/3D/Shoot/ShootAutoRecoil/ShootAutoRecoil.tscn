@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Templates/3D/FirstPersonCharacter/Camera/ShootAutoRecoil/ShootAutoRecoil.gd" type="Script" id=1]
-[ext_resource path="res://Templates/3D/FirstPersonCharacter/Camera/Shoot/Projectile.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Templates/3D/Shoot/ShootAutoRecoil/ShootAutoRecoil.gd" type="Script" id=1]
+[ext_resource path="res://Templates/3D/Shoot/Shoot/Projectile.tscn" type="PackedScene" id=2]
 
 [node name="ShootAutoRecoil" type="Position3D"]
 script = ExtResource( 1 )
