@@ -4,8 +4,7 @@
 [ext_resource path="res://Templates/3D/HUD/Crosshair.gd" type="Script" id=2]
 [ext_resource path="res://Templates/3D/HUD/FPSCounter.gd" type="Script" id=3]
 
-
-[node name="HUD" type="CanvasLayer"]
+[node name="HUD" type="Control"]
 
 [node name="Crosshair" type="Sprite" parent="."]
 modulate = Color( 1, 0, 0, 1 )
