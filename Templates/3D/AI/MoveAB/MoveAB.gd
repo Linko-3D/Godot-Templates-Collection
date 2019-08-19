@@ -4,8 +4,8 @@ export (float) var offsetX
 export (float) var offsetY
 export (float) var offsetZ
 export (float) var speed = 3
-export (float) var start_pause = 0
-export (float) var end_pause = 0
+export (float) var start_pause
+export (float) var end_pause
 
 var moveTo = Vector3()
 var starting_position = Vector3()

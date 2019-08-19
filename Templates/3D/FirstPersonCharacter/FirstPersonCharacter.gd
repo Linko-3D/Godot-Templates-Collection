@@ -2,7 +2,7 @@ extends KinematicBody
 
 const GRAVITY = 9.8
 
-export var speed = 6
+export var speed = 6.0
 export var jump_height = 6.5
 export var mouse_sensitivity = 0.15
 

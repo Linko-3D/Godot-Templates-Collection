@@ -25,4 +25,3 @@ func _on_Area_body_entered(body):
 	axis_lock_linear_z = true
 	axis_lock_linear_x = true
 	axis_lock_linear_y = true
-	$Area.monitoring = false
