@@ -3,8 +3,6 @@
 [ext_resource path="res://Templates/3D/Shoot/Emitter/ShootAuto/ShootAuto.gd" type="Script" id=1]
 [ext_resource path="res://Templates/3D/Shoot/Projectile/Projectile.tscn" type="PackedScene" id=2]
 
-
-
 [node name="ShootRafal" type="Position3D"]
 script = ExtResource( 1 )
 bullet = ExtResource( 2 )
