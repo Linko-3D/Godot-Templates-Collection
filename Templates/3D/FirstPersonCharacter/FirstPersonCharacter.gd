@@ -2,14 +2,13 @@ extends KinematicBody
 
 const GRAVITY = 9.8
 
-var velocity = Vector3()
-var speed = 6
-var jump_height = 6.5
+export var speed = 6
+export var jump_height = 6.5
+export var mouse_sensitivity = 0.15
 
+var velocity = Vector3()
 var snap_distance = -0.1
 var snap = Vector3(0, snap_distance, 0)
-
-var mouse_sensitivity = 0.15
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -49,6 +48,6 @@ func _physics_process(delta):
 
 func _input(event): 
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-		rotate_y(deg2rad(-event.relative.x * mouse_sensitivity)) #yaw
-		$Head.rotate_x(deg2rad(-event.relative.y * mouse_sensitivity)) #pitch
-		$Head.rotation.x = clamp($Head.rotation.x, deg2rad(-90), deg2rad(90))
+		rotation.y += deg2rad(-event.relative.x * mouse_sensitivity) # yaw axis
+		#$Head.rotation.x += deg2rad(-event.relative.y * mouse_sensitivity) # pitch axis
+		$Head.rotation.x = clamp($Head.rotation.x, deg2rad(-90), deg2rad(90)) # clamps the up and down rotation
