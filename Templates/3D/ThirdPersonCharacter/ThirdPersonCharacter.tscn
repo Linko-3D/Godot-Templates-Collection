@@ -1,8 +1,11 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Templates/3D/ThirdPersonCharacter/ThirdPersonCharacter.gd" type="Script" id=1]
-[ext_resource path="res://Templates/3D/Shoot/Shoot/Shoot.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Templates/3D/Shoot/Shoot/Projectile.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Templates/3D/Shoot/Emitter/Shoot/Shoot.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Templates/3D/Shoot/Projectile/Projectile.tscn" type="PackedScene" id=3]
+
+
+
 
 
 

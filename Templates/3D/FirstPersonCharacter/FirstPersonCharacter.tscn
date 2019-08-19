@@ -2,13 +2,21 @@
 
 [ext_resource path="res://Templates/3D/FirstPersonCharacter/FirstPersonCharacter.gd" type="Script" id=1]
 [ext_resource path="res://Templates/3D/HUD/HUD.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Templates/3D/Shoot/RayCast/RayCast.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Templates/3D/Shoot/RayCastAutoRecoil/RayCastAutoRecoil.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Templates/3D/Shoot/RayCastAuto/RayCastAuto.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Templates/3D/Shoot/Shoot/Shoot.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Templates/3D/Shoot/Shoot/Projectile.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Templates/3D/Shoot/ShootAuto/ShootAuto.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Templates/3D/Shoot/ShootAutoRecoil/ShootAutoRecoil.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Templates/3D/Shoot/Emitter/RayCast/RayCast.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Templates/3D/Shoot/Emitter/RayCastAutoRecoil/RayCastAutoRecoil.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Templates/3D/Shoot/Emitter/RayCastAuto/RayCastAuto.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Templates/3D/Shoot/Emitter/Shoot/Shoot.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Templates/3D/Shoot/Projectile/Projectile.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Templates/3D/Shoot/Emitter/ShootAuto/ShootAuto.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Templates/3D/Shoot/Emitter/ShootAutoRecoil/ShootAutoRecoil.tscn" type="PackedScene" id=9]
+
+
+
+
+
+
+
+
 
 
 

@@ -1,6 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Templates/3D/Shoot/Shoot/Projectile.gd" type="Script" id=1]
+[ext_resource path="res://Templates/3D/Shoot/Projectile/Projectile.gd" type="Script" id=1]
+
 
 [sub_resource type="SphereMesh" id=1]
 radius = 0.25
