@@ -44,7 +44,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, -3 )
 
 [node name="Map" type="Spatial" parent="."]
-editor/display_folded = true
 
 [node name="Ground" type="StaticBody" parent="Map"]
 

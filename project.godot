@@ -19,6 +19,10 @@ config/name="Godot-Templates-Collection"
 run/main_scene="res://Level.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Singleton="*res://Templates/Singleton.gd"
+
 [importer_defaults]
 
 texture={
