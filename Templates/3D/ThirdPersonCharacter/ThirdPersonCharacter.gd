@@ -39,9 +39,6 @@ func _physics_process(delta):
 		
 		velocity.y -= GRAVITY * delta # Gravity
 		
-	if Input.is_action_just_pressed("ui_cancel"):
-		get_tree().quit()
-		
 	velocity =  move_and_slide_with_snap(velocity, snap, Vector3.UP, true, 4, 5)
 
 # ----------------------------------
@@ -49,6 +46,8 @@ func _physics_process(delta):
 
 func _input(event): 
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-		rotate_y(deg2rad(-event.relative.x * mouse_sensitivity)) #yaw
-		$Yaw/Pitch.rotate_x(deg2rad(-event.relative.y * mouse_sensitivity))
-		$Yaw/Pitch.rotation.x = clamp($Yaw/Pitch.rotation.x, deg2rad(-80), deg2rad(0))
+		rotation.y += deg2rad(-event.relative.x * mouse_sensitivity) # Yaw axis
+		$Yaw/Pitch.rotation.x += deg2rad(-event.relative.y * mouse_sensitivity) # Pitch axis
+		$Yaw/Pitch.rotation.x = clamp($Yaw/Pitch.rotation.x, deg2rad(-80), deg2rad(0)) # Clamps the up and down rotation
+		
+		#rotation.y += deg2rad(-event.relative.x * mouse_sensitivity) # yaw axis

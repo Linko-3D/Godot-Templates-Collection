@@ -37,20 +37,14 @@ func _physics_process(delta):
 			snap = Vector3(0, snap_distance, 0)
 		
 		velocity.y -= GRAVITY * delta # Gravity
-	
-	if Input.is_action_just_pressed("restart"):
-		get_tree().reload_current_scene()
-
-	if Input.is_action_just_pressed("ui_cancel"):
-		get_tree().quit()
 		
 	velocity =  move_and_slide_with_snap(velocity, snap, Vector3.UP, true, 4, 5)
 	
 # ----------------------------------
 # Mouse controls
 
-func _input(event): 
+func _input(event):
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-		rotation.y += deg2rad(-event.relative.x * mouse_sensitivity) # yaw axis
-		$Head.rotation.x += deg2rad(-event.relative.y * mouse_sensitivity) # pitch axis
-		$Head.rotation.x = clamp($Head.rotation.x, deg2rad(-90), deg2rad(90)) # clamps the up and down rotation
+		rotation.y += deg2rad(-event.relative.x * mouse_sensitivity) # Yaw axis
+		$Head.rotation.x += deg2rad(-event.relative.y * mouse_sensitivity) # Pitch axis
+		$Head.rotation.x = clamp($Head.rotation.x, deg2rad(-90), deg2rad(90)) # Clamps the up and down rotation
