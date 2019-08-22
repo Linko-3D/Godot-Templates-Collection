@@ -1,6 +1,8 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Templates/3D/AI/MoveAB/MoveAB.gd" type="Script" id=1]
+[ext_resource path="res://Templates/3D/Interactive/MoveAB/MoveAB.gd" type="Script" id=1]
+
+
 
 [sub_resource type="CubeMesh" id=1]
 size = Vector3( 2, 0.25, 2 )
