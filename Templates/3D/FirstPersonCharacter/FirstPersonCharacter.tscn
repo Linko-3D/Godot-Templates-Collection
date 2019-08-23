@@ -28,7 +28,6 @@ shape = SubResource( 1 )
 
 [node name="AutoJump" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, -0.4 )
-cast_to = Vector3( 0, -2, 0 )
 
 [node name="Head" type="Camera" parent="."]
 
