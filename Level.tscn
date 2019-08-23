@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Templates/3D/FirstPersonCharacter/FirstPersonCharacter.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Templates/3D/ThirdPersonCharacter/ThirdPersonCharacter.tscn" type="PackedScene" id=2]
@@ -9,14 +9,15 @@
 [ext_resource path="res://Templates/3D/AI/CanSeeFOV/CanSeeFOV.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Templates/3D/Interactive/Teleporter/Teleporter.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Templates/3D/Interactive/Target/Target.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Templates/3D/Interactive/AddCube/AddCube.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Templates/3D/Interactive/Add/Add.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Templates/3D/Interactive/MoveAB/MoveAB.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Templates/3D/Interactive/Checkpoint/Checkpoint.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Templates/2D/Interactive/Collectible/Coin.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Templates/2D/CharacterTop/CharacterTop.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Templates/2D/VehicleTop/VehicleTop.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Templates/2D/AI/LookAtMouse/LookAtMouse.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Templates/2D/AI/LookAt/LookAt.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Templates/3D/Interactive/Pickable/Pickable.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Templates/2D/Interactive/Collectible/Coin.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Templates/2D/CharacterTop/CharacterTop.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Templates/2D/VehicleTop/VehicleTop.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Templates/2D/AI/LookAtMouse/LookAtMouse.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Templates/2D/AI/LookAt/LookAt.tscn" type="PackedScene" id=18]
 
 [sub_resource type="ConvexPolygonShape" id=1]
 points = PoolVector3Array( 10, 0, 10, -10, 0, 10, 10, 0, -10, -10, 0, -10 )
@@ -45,7 +46,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 0 )
 
 [node name="Map" type="Spatial" parent="."]
-editor/display_folded = true
 
 [node name="Ground" type="StaticBody" parent="Map"]
 
@@ -214,17 +214,20 @@ end_pause = 1.0
 [node name="Checkpoint" parent="." instance=ExtResource( 12 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 3, 0 )
 
-[node name="Pick" parent="." instance=ExtResource( 13 )]
+[node name="Grab" parent="." instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, -6 )
+
+[node name="Pick" parent="." instance=ExtResource( 14 )]
 position = Vector2( 512, 450 )
 
-[node name="CharacterTop" parent="." instance=ExtResource( 14 )]
+[node name="CharacterTop" parent="." instance=ExtResource( 15 )]
 position = Vector2( 512, 550 )
 
-[node name="VehicleTop" parent="." instance=ExtResource( 15 )]
+[node name="VehicleTop" parent="." instance=ExtResource( 16 )]
 position = Vector2( 353.404, 387.228 )
 
-[node name="LookAtMouse" parent="." instance=ExtResource( 16 )]
+[node name="LookAtMouse" parent="." instance=ExtResource( 17 )]
 position = Vector2( 157.341, 271.468 )
 
-[node name="LookAt" parent="." instance=ExtResource( 17 )]
+[node name="LookAt" parent="." instance=ExtResource( 18 )]
 position = Vector2( 733.518, 302.493 )
