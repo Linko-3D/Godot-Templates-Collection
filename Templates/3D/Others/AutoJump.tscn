@@ -4,4 +4,5 @@
 
 [node name="AutoJump" type="RayCast"]
 enabled = true
+cast_to = Vector3( 0, -2, 0 )
 script = ExtResource( 1 )
