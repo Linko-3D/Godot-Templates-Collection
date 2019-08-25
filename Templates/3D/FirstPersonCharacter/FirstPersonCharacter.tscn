@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Templates/3D/FirstPersonCharacter/FirstPersonCharacter.gd" type="Script" id=1]
 [ext_resource path="res://Templates/3D/HUD/HUD.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Templates/3D/Shoot/Projectile/Projectile.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Templates/3D/Shoot/Emitter/ShootAuto/ShootAuto.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Templates/3D/Shoot/Emitter/ShootAutoRecoil/ShootAutoRecoil.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Templates/3D/Shoot/Emitter/ShootTiming/ShootTiming.tscn" type="PackedScene" id=11]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.5
@@ -48,3 +49,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.699363, 0, -1 )
 
 [node name="ShootAutoRecoil" parent="Head" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -1 )
+
+[node name="ShootTiming" parent="Head" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -1 )

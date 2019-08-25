@@ -1,13 +1,12 @@
 extends Position3D
 
-var recoil_angle = 2
-
-var force = 25
-var hold_shoot = false
-var fire_rate = 0.1
-var first_shoot = true
-
 export (PackedScene) var bullet
+export var force = 25.0
+export var fire_rate = 0.1
+export var recoil_angle = 2.0
+
+var hold_shoot = false
+var first_shoot = true # Remove recoil on the first shoot
 
 func _ready():
 	$Timer.wait_time = fire_rate
@@ -19,7 +18,7 @@ func _process(delta):
 func _input(event): 
 	if event is InputEventMouseButton and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		if event.button_index == 1 and event.pressed == true:
-			shoot() # Does a first shoot to avoid delay because the other shoots are done when the timer reaches at 0
+			_on_Timer_timeout() # Does a first shoot to avoid delay because the other shoots are done when the timer reaches at 0
 			hold_shoot = true
 		if event.button_index == 1 and event.pressed == false:
 			hold_shoot = false
@@ -29,11 +28,7 @@ func _input(event):
 			$Timer.stop() # Stops the timer to avoid a shoot after the button is released
 
 func _on_Timer_timeout():
-	shoot()
-
-func shoot():
 	if first_shoot == true: # Remove recoil on the first shoot
-
 		first_shoot = false
 	else:
 		rotation_degrees.x = rand_range(-recoil_angle,recoil_angle) # Recoil vibration
