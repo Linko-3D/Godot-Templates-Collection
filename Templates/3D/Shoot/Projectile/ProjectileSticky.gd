@@ -19,9 +19,10 @@ func _process(delta):
 		axis_lock_linear_y = false
 
 func _on_Area_body_entered(body):
-	target = body
-	target_coordinates = body.translation
-	offset = translation - target_coordinates
-	axis_lock_linear_z = true
-	axis_lock_linear_x = true
-	axis_lock_linear_y = true
+	if body.is_in_group("Player") == false:
+		target = body
+		target_coordinates = body.translation
+		offset = translation - target_coordinates
+		axis_lock_linear_z = true
+		axis_lock_linear_x = true
+		axis_lock_linear_y = true
