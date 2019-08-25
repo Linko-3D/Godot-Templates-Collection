@@ -7,7 +7,6 @@ export var recoil_angle = 2.0
 
 var hold_shoot = false
 
-
 func _ready():
 	$Timer.wait_time = fire_rate
 

@@ -4,13 +4,16 @@ export (PackedScene) var bullet
 export var force = 25.0
 export var fire_rate = 1.0
 
+var enabled = false
+
 func _ready():
 	$Timer.wait_time = fire_rate
-	_on_Timer_timeout() # Initial shot
 
 func _process(delta):
-	if $Timer.is_stopped():
+	if enabled and $Timer.is_stopped():
 		$Timer.start()
+	if enabled == false:
+		$Timer.stop()
 
 
 func _on_Timer_timeout():
