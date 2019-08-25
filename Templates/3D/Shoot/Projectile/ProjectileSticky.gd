@@ -10,14 +10,6 @@ func _ready():
 	yield(get_tree().create_timer(lifespan), "timeout")
 	queue_free()
 
-func _process(delta):
-	if target != null:
-		translation = target.translation + offset # Crash happens, need fix
-	else:
-		axis_lock_linear_z = false
-		axis_lock_linear_x = false
-		axis_lock_linear_y = false
-
 func _on_Area_body_entered(body):
 	if body.is_in_group("Player") == false:
 		target = body
