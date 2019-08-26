@@ -68,6 +68,16 @@ material/0 = ExtResource( 3 )
 [node name="CollisionShape" type="CollisionShape" parent="Map/Cube/StaticBody"]
 shape = SubResource( 4 )
 
+[node name="Cube2" type="MeshInstance" parent="Map"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13, 0 )
+mesh = SubResource( 3 )
+material/0 = ExtResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="Map/Cube2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Map/Cube2/StaticBody"]
+shape = SubResource( 4 )
+
 [node name="Ramp" type="Spatial" parent="Map"]
 editor/display_folded = true
 
