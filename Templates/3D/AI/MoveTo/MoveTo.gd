@@ -9,8 +9,8 @@ func _ready():
 	keepHeight = translation.y
 	
 func _process(delta):
-	vector = (translation - target.translation).normalized() # Get the direction by subtracting the current position by the target position
+	vector = (target.translation - translation).normalized() # Get the direction by subtracting the current position by the target position
 	
 	translation.y = keepHeight # Keep the same height
 	
-	move_and_slide(-vector)
+	move_and_slide(vector)
