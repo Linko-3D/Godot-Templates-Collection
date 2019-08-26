@@ -41,7 +41,7 @@ light_indirect_energy = 3.0
 shadow_enabled = true
 
 [node name="FirstPersonCharacter" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
+transform = Transform( 0.0197662, 0, -0.999805, 0, 1, 0, 0.999805, 0, 0.0197662, 0, 4, 0 )
 
 [node name="ThirdPersonCharacter" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 0 )
