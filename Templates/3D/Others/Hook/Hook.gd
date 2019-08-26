@@ -11,4 +11,7 @@ func _input(event):
 		if event.button_index == 2 and event.pressed == true:
 			if is_colliding():
 				vector = (get_collision_point() - target.translation).normalized()
-				print(vector)
+				$Tween.start()
+				$Tween.interpolate_property(target, "translation", target.translation, get_collision_point(), 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT, 0)
+		if event.button_index == 2 and event.pressed == false:
+			$Tween.stop_all()

@@ -6,3 +6,5 @@
 enabled = true
 cast_to = Vector3( 0, 0, -100 )
 script = ExtResource( 1 )
+
+[node name="Tween" type="Tween" parent="."]
