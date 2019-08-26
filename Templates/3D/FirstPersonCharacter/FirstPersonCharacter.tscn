@@ -1,16 +1,17 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Templates/3D/FirstPersonCharacter/FirstPersonCharacter.gd" type="Script" id=1]
 [ext_resource path="res://Templates/3D/HUD/HUD.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Templates/3D/Others/AutoJump.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Templates/3D/Others/AutoJump/AutoJump.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Templates/3D/Shoot/Emitter/RayCast/RayCast.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Templates/3D/Shoot/Emitter/RayCastAutoRecoil/RayCastAutoRecoil.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Templates/3D/Shoot/Emitter/RayCastAuto/RayCastAuto.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Templates/3D/Shoot/Emitter/Shoot/Shoot.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Templates/3D/Shoot/Projectile/Projectile.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Templates/3D/Shoot/Emitter/ShootAuto/ShootAuto.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Templates/3D/Shoot/Emitter/ShootAutoRecoil/ShootAutoRecoil.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Templates/3D/Shoot/Emitter/ShootTimer/ShootTimer.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Templates/3D/Others/Hook/Hook.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Templates/3D/Shoot/Emitter/RayCastAuto/RayCastAuto.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Templates/3D/Shoot/Emitter/Shoot/Shoot.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Templates/3D/Shoot/Projectile/Projectile.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Templates/3D/Shoot/Emitter/ShootAuto/ShootAuto.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Templates/3D/Shoot/Emitter/ShootAutoRecoil/ShootAutoRecoil.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Templates/3D/Shoot/Emitter/ShootTimer/ShootTimer.tscn" type="PackedScene" id=12]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.5
@@ -36,19 +37,21 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, -0.4 )
 
 [node name="RayCastAutoRecoil" parent="Head" instance=ExtResource( 5 )]
 
-[node name="RayCastAuto" parent="Head" instance=ExtResource( 6 )]
+[node name="Hook" parent="Head" instance=ExtResource( 6 )]
 
-[node name="Shoot" parent="Head" instance=ExtResource( 7 )]
-bullet = ExtResource( 8 )
+[node name="RayCastAuto" parent="Head" instance=ExtResource( 7 )]
 
-[node name="Shoot2" parent="Head" instance=ExtResource( 7 )]
+[node name="Shoot" parent="Head" instance=ExtResource( 8 )]
+bullet = ExtResource( 9 )
+
+[node name="Shoot2" parent="Head" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.68837, 0, -1 )
 
-[node name="ShootAuto" parent="Head" instance=ExtResource( 9 )]
+[node name="ShootAuto" parent="Head" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.699363, 0, -1 )
 
-[node name="ShootAutoRecoil" parent="Head" instance=ExtResource( 10 )]
+[node name="ShootAutoRecoil" parent="Head" instance=ExtResource( 11 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -1 )
 
-[node name="ShootTiming" parent="Head" instance=ExtResource( 11 )]
+[node name="ShootTiming" parent="Head" instance=ExtResource( 12 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -1 )
