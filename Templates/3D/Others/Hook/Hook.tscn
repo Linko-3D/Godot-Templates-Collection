@@ -4,5 +4,5 @@
 
 [node name="Hook" type="RayCast"]
 enabled = true
-cast_to = Vector3( 0, 0, -15 )
+cast_to = Vector3( 0, 0, -20 )
 script = ExtResource( 1 )
