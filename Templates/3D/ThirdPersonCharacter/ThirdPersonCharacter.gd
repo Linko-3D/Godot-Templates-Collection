@@ -47,7 +47,7 @@ func _physics_process(delta):
 func _input(event):
 	if event is InputEventMouseButton and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		if event.button_index == 4:
-			$Yaw/Pitch/Head #s Zoom
+			$Yaw/Pitch/Head # Zoom
 		if event.button_index == 5:
 			$Yaw/Pitch/Head # Unzoom
 
