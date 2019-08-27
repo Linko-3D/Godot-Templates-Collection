@@ -44,10 +44,16 @@ func _physics_process(delta):
 # ----------------------------------
 # Mouse controls
 
-func _input(event): 
+func _input(event):
+	if event is InputEventMouseButton and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+		if event.button_index == 4:
+			$Yaw/Pitch/Head #s Zoom
+		if event.button_index == 5:
+			$Yaw/Pitch/Head # Unzoom
+
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		rotation.y += deg2rad(-event.relative.x * mouse_sensitivity) # Yaw axis
 		$Yaw/Pitch.rotation.x += deg2rad(-event.relative.y * mouse_sensitivity) # Pitch axis
-		$Yaw/Pitch.rotation.x = clamp($Yaw/Pitch.rotation.x, deg2rad(-80), deg2rad(0)) # Clamps the up and down rotation
+		$Yaw/Pitch.rotation.x = clamp($Yaw/Pitch.rotation.x, deg2rad(-80), deg2rad(10)) # Clamps the up and down rotation
 		
 		#rotation.y += deg2rad(-event.relative.x * mouse_sensitivity) # yaw axis
