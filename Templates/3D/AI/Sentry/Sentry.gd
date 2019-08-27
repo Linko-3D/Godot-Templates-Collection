@@ -1,8 +1,11 @@
 extends Spatial
 
 var target
+var angle
+var speed = 0.1
 
 func _process(delta):
+	rotate_y(speed)
 	target = get_tree().get_nodes_in_group("Player")[0] # Get the target with the first node in the Player group
 
 	if $RayCast.get_collider() == target:
