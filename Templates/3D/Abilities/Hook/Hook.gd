@@ -1,6 +1,6 @@
 extends RayCast
 
-export var pull_force = 20.0
+export var pull_force = 25.0
 
 var character
 var destination
