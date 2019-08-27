@@ -10,6 +10,7 @@ height = 0.8
 radius = 0.4
 
 [node name="ProjectileSticky" type="RigidBody"]
+collision_layer = 2
 contact_monitor = true
 script = ExtResource( 1 )
 
