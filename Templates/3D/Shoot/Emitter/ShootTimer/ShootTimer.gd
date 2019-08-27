@@ -2,7 +2,7 @@ extends Position3D
 
 export (PackedScene) var bullet
 export var force = 25.0
-export var fire_rate = 1.0
+export var fire_rate = 0.5
 
 var enabled = false
 
@@ -11,10 +11,10 @@ func _ready():
 
 func _process(delta):
 	if enabled and $Timer.is_stopped():
+		_on_Timer_timeout()
 		$Timer.start()
 	if enabled == false:
 		$Timer.stop()
-
 
 func _on_Timer_timeout():
 	var projectile = bullet.instance() # We instance the scene

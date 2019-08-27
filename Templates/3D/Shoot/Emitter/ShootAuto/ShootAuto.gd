@@ -24,6 +24,9 @@ func _input(event):
 			$Timer.stop() # Stops the timer to avoid a shoot after the button is released
 
 func _on_Timer_timeout():
+	shoot()
+
+func shoot():
 	var projectile = bullet.instance() # We instance the scene
 
 	add_child(projectile) # The instance is added as a child of the shoot node
