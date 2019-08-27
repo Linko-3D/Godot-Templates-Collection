@@ -1,6 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Templates/3D/Interactive/Carry/Pickable.gd" type="Script" id=1]
+[ext_resource path="res://Templates/3D/Interactive/Carry/Carry.gd" type="Script" id=1]
+
 
 
 [sub_resource type="CubeMesh" id=1]
