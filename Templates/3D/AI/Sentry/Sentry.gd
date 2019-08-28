@@ -2,7 +2,7 @@ extends Spatial
 
 var target
 var angle
-var speed = 0.1
+var speed = 0.05
 
 func _process(delta):
 	rotation.x = 0
