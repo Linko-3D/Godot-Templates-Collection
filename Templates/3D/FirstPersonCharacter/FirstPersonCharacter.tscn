@@ -40,30 +40,30 @@ shape = SubResource( 2 )
 [node name="AutoJump" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, -0.4 )
 
-[node name="Head" type="Camera" parent="."]
+[node name="Camera" type="Camera" parent="."]
 
-[node name="RayCast" parent="Head" instance=ExtResource( 4 )]
+[node name="RayCast" parent="Camera" instance=ExtResource( 4 )]
 
-[node name="RayCastAutoRecoil" parent="Head" instance=ExtResource( 5 )]
+[node name="RayCastAutoRecoil" parent="Camera" instance=ExtResource( 5 )]
 
-[node name="Hook" parent="Head" instance=ExtResource( 6 )]
+[node name="Hook" parent="Camera" instance=ExtResource( 6 )]
 
-[node name="RayCastAuto" parent="Head" instance=ExtResource( 7 )]
+[node name="RayCastAuto" parent="Camera" instance=ExtResource( 7 )]
 
-[node name="Shoot" parent="Head" instance=ExtResource( 8 )]
+[node name="Shoot" parent="Camera" instance=ExtResource( 8 )]
 bullet = ExtResource( 9 )
 
-[node name="Shoot2" parent="Head" instance=ExtResource( 8 )]
+[node name="Shoot2" parent="Camera" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 0, -1 )
 
-[node name="ShootAuto" parent="Head" instance=ExtResource( 10 )]
+[node name="ShootAuto" parent="Camera" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 0, -1 )
 
-[node name="ShootAutoRecoil" parent="Head" instance=ExtResource( 11 )]
+[node name="ShootAutoRecoil" parent="Camera" instance=ExtResource( 11 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -1 )
 
-[node name="ShootTiming" parent="Head" instance=ExtResource( 12 )]
+[node name="ShootTiming" parent="Camera" instance=ExtResource( 12 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -1 )
 
-[node name="ShootGatling" parent="Head" instance=ExtResource( 13 )]
+[node name="ShootGatling" parent="Camera" instance=ExtResource( 13 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, -0.5, -1 )
