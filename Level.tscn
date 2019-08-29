@@ -51,6 +51,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 0 )
 
 [node name="Map" type="Spatial" parent="."]
+editor/display_folded = true
 
 [node name="MeshInstance" type="MeshInstance" parent="Map"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0079422, 0.0259247, 0.088954 )
@@ -204,6 +205,7 @@ mesh = SubResource( 1 )
 material/0 = ExtResource( 3 )
 
 [node name="AI" type="Spatial" parent="."]
+editor/display_folded = true
 
 [node name="LookAt" parent="AI" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.77504, -10.773 )
@@ -218,6 +220,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 2, 10 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, 8 )
 
 [node name="Interactive" type="Spatial" parent="."]
+editor/display_folded = true
 
 [node name="TeleporterA" parent="Interactive" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.33429, 0, 6.03264 )
