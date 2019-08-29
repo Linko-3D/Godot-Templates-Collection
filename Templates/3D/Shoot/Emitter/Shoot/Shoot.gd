@@ -1,6 +1,6 @@
 extends Position3D
 
-var force = 25
+export var force = 25.0
 
 export (PackedScene) var bullet
 
