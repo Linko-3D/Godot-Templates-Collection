@@ -18,7 +18,7 @@ func _process(delta):
 	rotate_z(spin_speed)
 	if hold_shoot:
 		spin_speed += spin_acceleration * delta
-		if $Timer.is_stopped():
+		if $Timer.is_stopped() and spin_speed >= 0.2:
 			$Timer.start()
 	else:
 		spin_speed -= spin_acceleration * delta
