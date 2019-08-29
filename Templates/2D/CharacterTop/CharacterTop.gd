@@ -6,7 +6,6 @@ var velocity = Vector2()
 var coins = 0
 
 func _physics_process(delta):
-	print(get_owner())
 	velocity = Vector2()
 	
 	if Input.is_action_pressed("ui_up"):
