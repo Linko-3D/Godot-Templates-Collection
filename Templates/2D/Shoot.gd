@@ -9,6 +9,6 @@ func _input(event):
 			shoot()
 
 func shoot():
+	print("yes")
 	var projectile = bullet.instance() # We instance the scene
-	
 	add_child(projectile) # The instance is added as a child of the shoot node

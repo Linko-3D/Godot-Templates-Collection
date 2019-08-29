@@ -11,12 +11,15 @@ func _ready():
 
 func _process(delta):
 	if enabled and $Timer.is_stopped():
-		_on_Timer_timeout()
+		shoot()
 		$Timer.start()
 	if enabled == false:
 		$Timer.stop()
 
 func _on_Timer_timeout():
+	shoot()
+
+func shoot():
 	var projectile = bullet.instance() # We instance the scene
 	
 	add_child(projectile) # The instance is added as a child of the shoot node
