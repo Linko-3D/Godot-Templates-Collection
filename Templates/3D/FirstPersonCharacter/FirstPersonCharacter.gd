@@ -7,7 +7,7 @@ export var jump_height = 6.5
 export var mouse_sensitivity = 1
 
 var velocity = Vector3()
-var snap_distance = -0.1
+var snap_distance = -0.11
 var snap = Vector3(0, snap_distance, 0)
 
 func _ready():
@@ -31,8 +31,8 @@ func _physics_process(delta):
 			velocity.x = speed
 		
 		if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-			snap = Vector3()
 			velocity.y = jump_height
+			snap = Vector3()
 		else:
 			snap = Vector3(0, snap_distance, 0)
 		
@@ -40,7 +40,7 @@ func _physics_process(delta):
 
 	velocity = velocity.rotated(Vector3.UP, rotation.y)
 	velocity =  move_and_slide_with_snap(velocity, snap, Vector3.UP, true, 4, 5)
-	
+
 # ----------------------------------
 # Mouse controls
 
