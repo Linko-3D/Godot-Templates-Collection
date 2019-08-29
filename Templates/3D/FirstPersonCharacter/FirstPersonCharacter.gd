@@ -46,7 +46,6 @@ func _physics_process(delta):
 
 func _input(event):
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-		#rotation_degrees.y += deg2rad(-event.relative.x * mouse_sensitivity) # Yaw axis
 		rotation_degrees.y -= event.relative.x * mouse_sensitivity / 10 # Look left and right (yaw axis)
 		$Camera.rotation_degrees.x -= event.relative.y * mouse_sensitivity / 10 # Look up and down (pitch axis)
 		$Camera.rotation_degrees.x = clamp($Camera.rotation_degrees.x, -90, 90) # Clamps the up and down rotation
