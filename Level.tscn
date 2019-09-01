@@ -15,12 +15,12 @@
 [ext_resource path="res://Templates/3D/Interactive/Add/Add.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Templates/3D/Interactive/Checkpoint/Checkpoint.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Templates/3D/Interactive/Carry/Carry.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Templates/2D/Interactive/Collectible/Coin.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Templates/2D/CharacterTop/CharacterTop.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Templates/2D/VehicleTop/VehicleTop.tscn" type="PackedScene" id=18]
-[ext_resource path="res://Templates/2D/AI/LookAtMouse/LookAtMouse.tscn" type="PackedScene" id=19]
-[ext_resource path="res://Templates/2D/AI/LookAt/LookAt.tscn" type="PackedScene" id=20]
-[ext_resource path="res://Templates/3D/Interactive/MoveRandom/MoveRandom.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Templates/3D/Interactive/MoveRandom/MoveRandom.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Templates/2D/Interactive/Collectible/Coin.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Templates/2D/CharacterTop/CharacterTop.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Templates/2D/VehicleTop/VehicleTop.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Templates/2D/AI/LookAtMouse/LookAtMouse.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Templates/2D/AI/LookAt/LookAt.tscn" type="PackedScene" id=21]
 
 [sub_resource type="PlaneMesh" id=1]
 size = Vector2( 25, 25 )
@@ -224,7 +224,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, 8 )
 transform = Transform( 0.34202, 0, -0.939693, 0, 1, 0, 0.939693, 0, 0.34202, -9, 2, -1 )
 
 [node name="Interactive" type="Spatial" parent="."]
-editor/display_folded = true
 
 [node name="TeleporterA" parent="Interactive" instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.33429, 0, 6.03264 )
@@ -251,20 +250,20 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 2, 0 )
 [node name="Carry" parent="Interactive" instance=ExtResource( 15 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1, -10 )
 
-[node name="Pick" parent="." instance=ExtResource( 16 )]
+[node name="MoveRandom" parent="Interactive" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, -7 )
+
+[node name="Pick" parent="." instance=ExtResource( 17 )]
 position = Vector2( 512, 450 )
 
-[node name="CharacterTop" parent="." instance=ExtResource( 17 )]
+[node name="CharacterTop" parent="." instance=ExtResource( 18 )]
 position = Vector2( 512, 550 )
 
-[node name="VehicleTop" parent="." instance=ExtResource( 18 )]
+[node name="VehicleTop" parent="." instance=ExtResource( 19 )]
 position = Vector2( 353.404, 387.228 )
 
-[node name="LookAtMouse" parent="." instance=ExtResource( 19 )]
+[node name="LookAtMouse" parent="." instance=ExtResource( 20 )]
 position = Vector2( 157.341, 271.468 )
 
-[node name="LookAt" parent="." instance=ExtResource( 20 )]
+[node name="LookAt" parent="." instance=ExtResource( 21 )]
 position = Vector2( 733.518, 302.493 )
-
-[node name="MoveRandom" parent="." instance=ExtResource( 21 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -7 )
