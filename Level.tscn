@@ -32,16 +32,16 @@ points = PoolVector3Array( 12.5, 0, 12.5, -12.5, 0, 12.5, 12.5, 0, -12.5, -12.5,
 [sub_resource type="CubeMesh" id=3]
 size = Vector3( 5.5, 2, 5.5 )
 
-[sub_resource type="BoxShape" id=6]
+[sub_resource type="BoxShape" id=4]
 extents = Vector3( 2.75, 1, 2.75 )
 
-[sub_resource type="BoxShape" id=7]
+[sub_resource type="BoxShape" id=5]
 extents = Vector3( 2.75, 1, 2.75 )
 
-[sub_resource type="ConvexPolygonShape" id=4]
+[sub_resource type="ConvexPolygonShape" id=6]
 points = PoolVector3Array( -2, 1, 2, 2, 1, -2, 2, 1, 2, -2, 1, -2, -2, -1, 2, 2, -1, -2, 2, -1, 2, -2, -1, -2, 2, 1, 2, -2, 1, -2, 2, 1, -2, -2, 1, 2, 2, -1, 2, -2, -1, -2, 2, -1, -2, -2, -1, 2, 2, 1, 2, -2, -1, 2, -2, 1, 2, 2, -1, 2, 2, 1, -2, -2, -1, -2, -2, 1, -2, 2, -1, -2 )
 
-[sub_resource type="ConvexPolygonShape" id=5]
+[sub_resource type="ConvexPolygonShape" id=7]
 points = PoolVector3Array( 10, 0, 10, -10, 0, 10, 10, 0, -10, -10, 0, -10 )
 
 [node name="World" type="Spatial"]
@@ -78,7 +78,7 @@ material/0 = ExtResource( 3 )
 [node name="StaticBody" type="StaticBody" parent="Map/Cube"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Map/Cube/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Cube2" type="MeshInstance" parent="Map"]
 transform = Transform( 1, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 10, 0 )
@@ -88,7 +88,7 @@ material/0 = ExtResource( 3 )
 [node name="StaticBody" type="StaticBody" parent="Map/Cube2"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Map/Cube2/StaticBody"]
-shape = SubResource( 7 )
+shape = SubResource( 5 )
 
 [node name="Cube3" type="MeshInstance" parent="Map"]
 editor/display_folded = true
@@ -99,7 +99,7 @@ material/0 = ExtResource( 3 )
 [node name="StaticBody" type="StaticBody" parent="Map/Cube3"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Map/Cube3/StaticBody"]
-shape = SubResource( 4 )
+shape = SubResource( 6 )
 
 [node name="Ramp" type="Spatial" parent="Map"]
 
@@ -108,7 +108,7 @@ editor/display_folded = true
 transform = Transform( 0.0173648, -0.984808, 0, 0.0984808, 0.173648, 0, 0, 0, 0.2, 17.8694, 9.47252, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Map/Ramp/80"]
-shape = SubResource( 5 )
+shape = SubResource( 7 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Map/Ramp/80"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0079422, 0.0259247, 0.088954 )
@@ -120,7 +120,7 @@ editor/display_folded = true
 transform = Transform( -4.37114e-009, -1, 0, 0.1, -4.37114e-008, 0, 0, 0, 0.2, 18.0417, 11.4521, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Map/Ramp/90"]
-shape = SubResource( 5 )
+shape = SubResource( 7 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Map/Ramp/90"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0079422, 0.0259247, 0.088954 )
@@ -132,7 +132,7 @@ editor/display_folded = true
 transform = Transform( 0.0342019, -0.939693, 0, 0.0939693, 0.342019, 0, 0, 0, 0.2, 17.356, 7.55077, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Map/Ramp/70"]
-shape = SubResource( 5 )
+shape = SubResource( 7 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Map/Ramp/70"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0079422, 0.0259247, 0.088954 )
@@ -144,7 +144,7 @@ editor/display_folded = true
 transform = Transform( 0.0984808, -0.173648, 0, 0.0173648, 0.984808, 0, 0, 0, 0.2, 8.61377, 0.207268, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Map/Ramp/10"]
-shape = SubResource( 5 )
+shape = SubResource( 7 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Map/Ramp/10"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0079422, 0.0259247, 0.088954 )
@@ -155,7 +155,7 @@ material/0 = ExtResource( 3 )
 transform = Transform( 0.0939693, -0.34202, 0, 0.034202, 0.939693, 0, 0, 0, 0.2, 10.5307, 0.72514, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Map/Ramp/20"]
-shape = SubResource( 5 )
+shape = SubResource( 7 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Map/Ramp/20"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0079422, 0.0259247, 0.088954 )
@@ -167,7 +167,7 @@ editor/display_folded = true
 transform = Transform( 0.0866026, -0.5, 0, 0.05, 0.866025, 0, 0, 0, 0.2, 12.3312, 1.564, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Map/Ramp/30"]
-shape = SubResource( 5 )
+shape = SubResource( 7 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Map/Ramp/30"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0079422, 0.0259247, 0.088954 )
@@ -179,7 +179,7 @@ transform = Transform( 0.0766045, -0.642788, 0, 0.0642788, 0.766044, 0, 0, 0, 0.
 
 [node name="CollisionShape" type="CollisionShape" parent="Map/Ramp/40"]
 transform = Transform( 1, 9.53674e-007, 0, -3.72529e-009, 1, 0, 0, 0, 1, 0, 0, 0 )
-shape = SubResource( 5 )
+shape = SubResource( 7 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Map/Ramp/40"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0079422, 0.0259247, 0.088954 )
@@ -191,7 +191,7 @@ editor/display_folded = true
 transform = Transform( 0.0642788, -0.766044, 0, 0.0766045, 0.642788, 0, 0, 0, 0.2, 15.371, 4.11485, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Map/Ramp/50"]
-shape = SubResource( 5 )
+shape = SubResource( 7 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Map/Ramp/50"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0079422, 0.0259247, 0.088954 )
@@ -202,7 +202,7 @@ material/0 = ExtResource( 3 )
 transform = Transform( 0.05, -0.866025, 0, 0.0866026, 0.5, 0, 0, 0, 0.2, 16.5156, 5.74789, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Map/Ramp/60"]
-shape = SubResource( 5 )
+shape = SubResource( 7 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Map/Ramp/60"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0079422, 0.0259247, 0.088954 )
