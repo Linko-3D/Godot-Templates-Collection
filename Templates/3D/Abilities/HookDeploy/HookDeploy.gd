@@ -8,7 +8,7 @@ var vector
 var hold = false
 
 var distance = 0
-var speed = 30
+var speed = 100
 var locked = false
 var pull = false
 
@@ -17,6 +17,7 @@ func _ready():
 
 func _process(delta):
 	cast_to.z = -distance
+	$HookVisual.scale.y = distance
 
 	if hold:
 		distance += speed * delta
@@ -37,7 +38,5 @@ func _input(event):
 	if event is InputEventMouseButton and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		if event.button_index == 2 and event.pressed == true:
 			hold = true
-			#if is_colliding():
-			#	destination = get_collision_point()
 		if event.button_index == 2 and event.pressed == false:
 			hold = false

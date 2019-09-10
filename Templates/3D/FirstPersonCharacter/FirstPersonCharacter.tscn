@@ -67,3 +67,4 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, -0.5, -1 )
 
 [node name="HookDeploy" parent="Camera" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, 0 )
