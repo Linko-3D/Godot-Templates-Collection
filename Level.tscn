@@ -21,7 +21,7 @@
 [ext_resource path="res://Templates/2D/VehicleTop/VehicleTop.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Templates/2D/AI/LookAtMouse/LookAtMouse.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Templates/2D/AI/LookAt/LookAt.tscn" type="PackedScene" id=21]
-[ext_resource path="res://Templates/3D/Interactive/Ladder.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Templates/3D/Interactive/Ladder/Ladder.tscn" type="PackedScene" id=22]
 
 [sub_resource type="PlaneMesh" id=1]
 size = Vector2( 25, 25 )
