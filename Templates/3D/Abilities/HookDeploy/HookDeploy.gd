@@ -17,7 +17,7 @@ func _ready():
 	character = get_tree().get_nodes_in_group("Player")[0] # Get the first node in the group "Player"
 
 func _process(delta):
-	if current_range >= max_range:
+	if current_range >= max_range: # If no contact is detected at max range the mouse click is released automatically
 		hold = false
 		
 	cast_to.z = -current_range
@@ -32,7 +32,8 @@ func _process(delta):
 			locked = true # Allows to not update the colision point while holding the right click and moving the camera
 			pull = true
 	else:
-		current_range = 0
+		if current_range > 0:
+			current_range -= deploy_speed * delta # pulls the hook if we release the click
 		locked = false
 		pull = false
 
