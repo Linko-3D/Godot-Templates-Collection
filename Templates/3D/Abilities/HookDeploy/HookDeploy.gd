@@ -27,7 +27,7 @@ func _process(delta):
 		if locked == false:
 			current_range += deploy_speed * delta
 		
-		if is_colliding() and locked == false:
+		if is_colliding() and get_collider().is_in_group("Boundaries") == false and locked == false:
 			destination = get_collision_point()
 			locked = true # Allows to not update the colision point while holding the right click and moving the camera
 			pull = true
