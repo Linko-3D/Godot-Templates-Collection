@@ -9,11 +9,9 @@ export var mouse_sensitivity = 1
 var velocity = Vector3()
 var snap_distance = -0.11
 var snap = Vector3(0, snap_distance, 0)
-var camera
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	camera = $Camera
 
 # ----------------------------------
 # Keyboard controls and gravity
@@ -48,5 +46,5 @@ func _physics_process(delta):
 func _input(event):
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		rotation_degrees.y -= event.relative.x * mouse_sensitivity / 10 # Look left and right (yaw axis)
-		camera.rotation_degrees.x -= event.relative.y * mouse_sensitivity / 10 # Look up and down (pitch axis)
-		camera.rotation_degrees.x = clamp($Camera.rotation_degrees.x, -90, 90) # Clamps the up and down rotation
+		$Camera.rotation_degrees.x -= event.relative.y * mouse_sensitivity / 10 # Look up and down (pitch axis)
+		$Camera.rotation_degrees.x = clamp($Camera.rotation_degrees.x, -90, 90) # Clamps the up and down rotation
