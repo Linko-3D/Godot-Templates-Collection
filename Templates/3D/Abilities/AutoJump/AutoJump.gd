@@ -10,5 +10,5 @@ func _process(delta):
 	if target.is_on_floor():
 		auto_jump = true
 	if not is_colliding() and auto_jump and target.is_on_floor():
-		target.velocity.y = target.jump_height
+		target.vector.y = target.jump_height
 		auto_jump = false

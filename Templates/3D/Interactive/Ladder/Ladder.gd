@@ -16,7 +16,7 @@ func _process(delta):
 func _on_Ladder_body_entered(body):
 	if body.is_in_group("Player"):
 		body.gravity = 0
-		body.velocity.y = 0
+		body.vector.y = 0
 
 func _on_Ladder_body_exited(body):
 	if body.is_in_group("Player"):
