@@ -1,9 +1,9 @@
-extends Position3D
+extends Spatial
 
 export (PackedScene) var bullet
-export var force = 25.0
-export var fire_rate = 0.025
-export var recoil_angle = 5.0
+export var force = 100.0
+export var fire_rate = 0.01
+export var recoil_angle = 3.0
 
 var spin_speed = 0.0
 var spin_acceleration = 0.3
@@ -48,6 +48,6 @@ func shoot():
 	
 	var projectile = bullet.instance() # We instance the scene
 
-	add_child(projectile) # The instance is added as a child of the shoot node
+	$Nozzle.add_child(projectile) # The instance is added as a child of the shoot node
 	projectile.set_as_toplevel(true) # Projectile parented to the highest node in the level to detach it from the player
 	projectile.linear_velocity = global_transform.basis.z * -force # An initial force is applied when clicking, the force is applied on each new instance

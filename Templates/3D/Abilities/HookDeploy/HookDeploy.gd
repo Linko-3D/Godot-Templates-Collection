@@ -1,8 +1,8 @@
 extends RayCast
 
 export var pull_force = 25.0
-export var deploy_speed = 50.0
-export var max_range = 25.0
+export var deploy_speed = 100.0
+export var max_range = 30.0
 
 var character
 var destination
