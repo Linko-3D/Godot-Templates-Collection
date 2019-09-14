@@ -3,7 +3,8 @@ extends Position3D
 export (PackedScene) var bullet
 export var force = 25.0
 export var fire_rate = 0.025
-export var recoil_angle = 0.0
+export var recoil_angle = 5.0
+
 var spin_speed = 0.0
 var spin_acceleration = 0.3
 var spin_max = 0.3
@@ -27,7 +28,6 @@ func _process(delta):
 func _input(event): 
 	if event is InputEventMouseButton and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		if event.button_index == 1 and event.pressed == true:
-			_on_Timer_timeout() # Does a first shoot to avoid delay because the other shoots are done when the timer reaches at 0
 			hold_shoot = true
 		if event.button_index == 1 and event.pressed == false:
 			hold_shoot = false

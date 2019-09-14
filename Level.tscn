@@ -16,12 +16,12 @@
 [ext_resource path="res://Templates/3D/Interactive/Checkpoint/Checkpoint.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Templates/3D/Interactive/Carry/Carry.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Templates/3D/Interactive/MoveRandom/MoveRandom.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Templates/2D/Interactive/Collectible/Coin.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Templates/2D/CharacterTop/CharacterTop.tscn" type="PackedScene" id=18]
-[ext_resource path="res://Templates/2D/VehicleTop/VehicleTop.tscn" type="PackedScene" id=19]
-[ext_resource path="res://Templates/2D/AI/LookAtMouse/LookAtMouse.tscn" type="PackedScene" id=20]
-[ext_resource path="res://Templates/2D/AI/LookAt/LookAt.tscn" type="PackedScene" id=21]
-[ext_resource path="res://Templates/3D/Interactive/Ladder/Ladder.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Templates/3D/Interactive/Ladder/Ladder.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Templates/2D/Interactive/Collectible/Coin.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Templates/2D/CharacterTop/CharacterTop.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Templates/2D/VehicleTop/VehicleTop.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Templates/2D/AI/LookAtMouse/LookAtMouse.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Templates/2D/AI/LookAt/LookAt.tscn" type="PackedScene" id=22]
 
 [sub_resource type="PlaneMesh" id=1]
 size = Vector2( 25, 25 )
@@ -57,6 +57,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
 
 [node name="ThirdPersonCharacter" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 0 )
+visible = false
 
 [node name="Map" type="Spatial" parent="."]
 
@@ -257,20 +258,24 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1, -10 )
 [node name="MoveRandom" parent="Interactive" instance=ExtResource( 16 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, -7 )
 
-[node name="Pick" parent="." instance=ExtResource( 17 )]
+[node name="Ladder" parent="." instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 3 )
+
+[node name="2DScripts" type="Node2D" parent="."]
+editor/display_folded = true
+visible = false
+
+[node name="Pick" parent="2DScripts" instance=ExtResource( 18 )]
 position = Vector2( 512, 450 )
 
-[node name="CharacterTop" parent="." instance=ExtResource( 18 )]
+[node name="CharacterTop" parent="2DScripts" instance=ExtResource( 19 )]
 position = Vector2( 512, 550 )
 
-[node name="VehicleTop" parent="." instance=ExtResource( 19 )]
+[node name="VehicleTop" parent="2DScripts" instance=ExtResource( 20 )]
 position = Vector2( 353.404, 387.228 )
 
-[node name="LookAtMouse" parent="." instance=ExtResource( 20 )]
+[node name="LookAtMouse" parent="2DScripts" instance=ExtResource( 21 )]
 position = Vector2( 157.341, 271.468 )
 
-[node name="LookAt" parent="." instance=ExtResource( 21 )]
+[node name="LookAt" parent="2DScripts" instance=ExtResource( 22 )]
 position = Vector2( 733.518, 302.493 )
-
-[node name="Ladder" parent="." instance=ExtResource( 22 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 3 )

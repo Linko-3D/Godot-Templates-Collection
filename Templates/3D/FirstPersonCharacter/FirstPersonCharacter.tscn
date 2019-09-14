@@ -1,18 +1,10 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Templates/3D/FirstPersonCharacter/FirstPersonCharacter.gd" type="Script" id=1]
 [ext_resource path="res://Templates/3D/HUD/HUD.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Templates/3D/Abilities/AutoJump/AutoJump.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Templates/3D/Shoot/Emitter/RayCast/RayCast.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Templates/3D/Shoot/Emitter/RayCastAutoRecoil/RayCastAutoRecoil.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Templates/3D/Shoot/Emitter/RayCastAuto/RayCastAuto.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Templates/3D/Shoot/Emitter/Shoot/Shoot.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Templates/3D/Shoot/Projectile/Projectile.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Templates/3D/Shoot/Emitter/ShootAuto/ShootAuto.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Templates/3D/Shoot/Emitter/ShootAutoRecoil/ShootAutoRecoil.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Templates/3D/Shoot/Emitter/ShootTimer/ShootTimer.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Templates/3D/Shoot/Emitter/ShootGatling/ShootGatling.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Templates/3D/Abilities/HookDeploy/HookDeploy.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Templates/3D/Abilities/HookDeploy/HookDeploy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Templates/3D/Shoot/Emitter/ShootGatling/ShootGatling.tscn" type="PackedScene" id=5]
 
 [sub_resource type="CapsuleMesh" id=1]
 radius = 0.5
@@ -42,29 +34,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, -0.4 )
 
 [node name="Camera" type="Camera" parent="."]
 
-[node name="RayCast" parent="Camera" instance=ExtResource( 4 )]
+[node name="Position3D" type="Position3D" parent="Camera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -0.5, 0 )
 
-[node name="RayCastAutoRecoil" parent="Camera" instance=ExtResource( 5 )]
+[node name="HookDeploy" parent="Camera/Position3D" instance=ExtResource( 4 )]
 
-[node name="RayCastAuto" parent="Camera" instance=ExtResource( 6 )]
-
-[node name="Shoot" parent="Camera" instance=ExtResource( 7 )]
-bullet = ExtResource( 8 )
-
-[node name="Shoot2" parent="Camera" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 0, -1 )
-
-[node name="ShootAuto" parent="Camera" instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 0, -1 )
-
-[node name="ShootAutoRecoil" parent="Camera" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -1 )
-
-[node name="ShootTiming" parent="Camera" instance=ExtResource( 11 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -1 )
-
-[node name="ShootGatling" parent="Camera" instance=ExtResource( 12 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, -0.5, -1 )
-
-[node name="HookDeploy" parent="Camera" instance=ExtResource( 13 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, 0 )
+[node name="ShootGatling" parent="Camera/Position3D" instance=ExtResource( 5 )]

@@ -9,7 +9,7 @@ var destination
 var vector
 var hold = false
 
-var distance = 0
+var current_range = 0
 var locked = false
 var pull = false
 
@@ -17,29 +17,28 @@ func _ready():
 	character = get_tree().get_nodes_in_group("Player")[0] # Get the first node in the group "Player"
 
 func _process(delta):
-	if distance >= max_range:
+	if current_range >= max_range:
 		hold = false
 		
-	cast_to.z = -distance
-	$HookVisual.scale.y = distance
+	cast_to.z = -current_range
+	$HookVisual.scale.y = current_range
 
 	if hold:
 		if locked == false:
-			distance += deploy_speed * delta
+			current_range += deploy_speed * delta
 		
 		if is_colliding() and locked == false:
 			destination = get_collision_point()
-			locked = true
+			locked = true # Allows to not update the colision point while holding the right click and moving the camera
 			pull = true
-			print(destination)
 	else:
-		distance = 0
+		current_range = 0
 		locked = false
 		pull = false
 
 	if pull:
-		vector = (destination - character.translation).normalized()
-		character.move_and_slide(vector * pull_force)
+		vector = (destination - character.translation).normalized() # Gets the vector between the player and the hook point
+		character.move_and_slide(vector * pull_force) # Pulls the character to the point and apply the pull force
 
 func _input(event):
 	if event is InputEventMouseButton and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
