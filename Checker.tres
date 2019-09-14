@@ -4,4 +4,5 @@
 
 [resource]
 albedo_texture = ExtResource( 1 )
+roughness = 0.2
 uv1_scale = Vector3( 10, 10, 10 )
