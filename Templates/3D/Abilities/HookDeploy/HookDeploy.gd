@@ -1,6 +1,8 @@
 extends RayCast
 
 export var pull_force = 25.0
+export var deploy_speed = 50.0
+export var max_range = 20.0
 
 var character
 var destination
@@ -8,7 +10,6 @@ var vector
 var hold = false
 
 var distance = 0
-var speed = 100
 var locked = false
 var pull = false
 
@@ -16,11 +17,14 @@ func _ready():
 	character = get_tree().get_nodes_in_group("Player")[0] # Get the first node in the group "Player"
 
 func _process(delta):
+	if distance >= max_range:
+		hold = false
+		
 	cast_to.z = -distance
 	$HookVisual.scale.y = distance
 
 	if hold:
-		distance += speed * delta
+		distance += deploy_speed * delta
 	else:
 		distance = 0
 		locked = false

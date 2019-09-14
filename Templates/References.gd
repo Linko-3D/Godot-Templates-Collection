@@ -9,3 +9,5 @@ yield(get_tree().create_timer(3), "timeout") # Wait 3 seconds
 
 randomize()
 rand_range(float from, float to)
+
+#todo clamp
