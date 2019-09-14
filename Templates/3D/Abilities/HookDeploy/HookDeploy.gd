@@ -2,7 +2,7 @@ extends RayCast
 
 export var pull_force = 25.0
 export var deploy_speed = 50.0
-export var max_range = 20.0
+export var max_range = 25.0
 
 var character
 var destination
@@ -24,16 +24,19 @@ func _process(delta):
 	$HookVisual.scale.y = distance
 
 	if hold:
-		distance += deploy_speed * delta
+		if locked == false:
+			distance += deploy_speed * delta
+		
+		if is_colliding() and locked == false:
+			destination = get_collision_point()
+			locked = true
+			pull = true
+			print(destination)
 	else:
 		distance = 0
 		locked = false
 		pull = false
 
-	if is_colliding() and hold and locked == false:
-		destination = get_collision_point()
-		locked = true
-		pull = true
 	if pull:
 		vector = (destination - character.translation).normalized()
 		character.move_and_slide(vector * pull_force)
