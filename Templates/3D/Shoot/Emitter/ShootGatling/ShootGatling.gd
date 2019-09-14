@@ -1,7 +1,7 @@
 extends Spatial
 
 export (PackedScene) var bullet
-export var force = 100.0
+export var force = 25.0
 export var fire_rate = 0.01
 export var recoil_angle = 3.0
 
