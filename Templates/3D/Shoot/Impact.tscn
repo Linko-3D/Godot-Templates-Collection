@@ -21,7 +21,6 @@ emitting = false
 amount = 5
 lifetime = 0.5
 one_shot = true
-explosiveness = 1.0
 process_material = SubResource( 1 )
 draw_pass_1 = SubResource( 2 )
 script = ExtResource( 1 )
