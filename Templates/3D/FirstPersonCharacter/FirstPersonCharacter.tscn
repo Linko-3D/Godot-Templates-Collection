@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Templates/3D/FirstPersonCharacter/FirstPersonCharacter.gd" type="Script" id=1]
 [ext_resource path="res://Templates/3D/HUD/HUD.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Templates/3D/Abilities/HookDeploy/HookDeploy.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Templates/3D/Shoot/Emitter/RayCast/RayCast.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Templates/3D/Shoot/Emitter/ShootGatling/ShootGatling.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Templates/3D/Shoot/Projectile/ProjectileSticky.tscn" type="PackedScene" id=7]
 
 [sub_resource type="CapsuleMesh" id=1]
 radius = 0.5
@@ -44,3 +45,4 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55, -0.5, 0 )
 [node name="RayCast" parent="Camera/ArmPosition" instance=ExtResource( 5 )]
 
 [node name="ShootGatling" parent="Camera/ArmPosition" instance=ExtResource( 6 )]
+bullet = ExtResource( 7 )
