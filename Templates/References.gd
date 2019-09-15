@@ -10,4 +10,8 @@ yield(get_tree().create_timer(3), "timeout") # Wait 3 seconds
 randomize()
 rand_range(float from, float to)
 
-#todo clamp
+translation # local position
+global_transform.origin # global position
+
+number = clamp(number, 0, 10) # Clamp between 0 and 10
+export (float, 0, 10) var number = 0 #Clamp an exported variable
