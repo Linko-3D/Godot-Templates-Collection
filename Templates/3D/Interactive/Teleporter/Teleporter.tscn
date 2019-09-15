@@ -11,6 +11,9 @@ height = 0.5
 [node name="Teleporter" type="Area"]
 script = ExtResource( 1 )
 
+[node name="Destination" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
+
 [node name="MeshInstance" type="MeshInstance" parent="."]
 mesh = SubResource( 1 )
 material/0 = null

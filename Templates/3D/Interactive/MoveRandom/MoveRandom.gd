@@ -17,6 +17,7 @@ func _ready():
 	moveTo = translation
 
 func _process(delta):
+	# Adds a limit on how far it can go in every directions
 	if translation.x < limitLeft:
 		translation.x = limitLeft
 	if translation.x > limitRight:
