@@ -1,8 +1,11 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Templates/3D/Interactive/Interuptor/Interuptor.gd" type="Script" id=1]
+[ext_resource path="res://Templates/3D/Interactive/Trigger/Trigger.gd" type="Script" id=1]
+
+
 
 [sub_resource type="BoxShape" id=1]
+extents = Vector3( 3, 1, 3 )
 
 [node name="Interuptor" type="Area"]
 script = ExtResource( 1 )

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Templates/3D/Interactive/Trigger/Triggered.gd" type="Script" id=1]
+
+[node name="Triggered" type="OmniLight"]
+script = ExtResource( 1 )

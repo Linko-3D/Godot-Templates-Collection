@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Templates/3D/FirstPersonCharacter/FirstPersonCharacter.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Checker.tres" type="Material" id=2]
@@ -15,7 +15,8 @@
 [ext_resource path="res://Templates/3D/Interactive/Carry/Carry.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Templates/3D/Interactive/MoveRandom/MoveRandom.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Templates/3D/Interactive/Teleporter/Teleporter.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Templates/3D/Interactive/Ladder/Ladder.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Templates/3D/Interactive/Trigger/Trigger.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Templates/3D/Interactive/Ladder/Ladder.tscn" type="PackedScene" id=17]
 
 [sub_resource type="PlaneMesh" id=1]
 size = Vector2( 25, 25 )
@@ -50,6 +51,7 @@ shadow_enabled = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
 
 [node name="Map" type="Spatial" parent="."]
+editor/display_folded = true
 
 [node name="MeshInstance" type="MeshInstance" parent="Map"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0079422, 0.0259247, 0.088954 )
@@ -201,6 +203,7 @@ mesh = SubResource( 1 )
 material/0 = ExtResource( 2 )
 
 [node name="AI" type="Spatial" parent="."]
+editor/display_folded = true
 
 [node name="LookAt" parent="AI" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.77504, -10.773 )
@@ -250,7 +253,10 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 8 )
 [node name="Destination" parent="Interactive/Teleporter" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 4, -8 )
 
-[node name="Ladder" parent="." instance=ExtResource( 16 )]
+[node name="Trigger" parent="Interactive" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1, -7 )
+
+[node name="Ladder" parent="." instance=ExtResource( 17 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 3 )
 
 [editable path="AI/Sentry"]
