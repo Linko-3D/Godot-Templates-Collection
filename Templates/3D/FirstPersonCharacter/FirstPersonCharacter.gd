@@ -3,6 +3,7 @@ extends KinematicBody
 var gravity = 9.8
 
 export var speed = 6.0
+export var sprint_speed_multiplier = 2
 export var jump_height = 6.5
 export var mouse_sensitivity = 1
 
@@ -17,7 +18,7 @@ func _ready():
 # Keyboard controls and gravity
 
 func _physics_process(delta):
-	vector.x = 0 # Resets the direction when no key is pressed
+	vector.x = 0		# Resets the direction when no key is pressed
 	vector.z = 0
 
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
@@ -29,6 +30,9 @@ func _physics_process(delta):
 			vector.x = -speed
 		if Input.is_action_pressed("ui_right"):
 			vector.x = speed
+		if Input.is_action_pressed("sprint"):
+			if vector.z < 0:						# If moving forward
+				vector.z *= sprint_speed_multiplier
 		
 		if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 			vector.y = jump_height
