@@ -3,7 +3,7 @@ extends KinematicBody
 var gravity = 9.8
 
 export var speed = 6.0
-export var sprint_speed_multiplier = 2
+export var sprint_speed_multiplier = 1.5
 export var jump_height = 6.5
 export var mouse_sensitivity = 1
 
