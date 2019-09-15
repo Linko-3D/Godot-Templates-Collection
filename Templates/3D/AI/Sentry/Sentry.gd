@@ -12,6 +12,6 @@ func _process(delta):
 
 	if $RayCast.get_collider() == target:
 		look_at(target.translation, Vector3.UP) # Look at the target
-		$ShootTiming.enabled = true
+		$ShootTimer.enabled = true
 	else:
-		$ShootTiming.enabled = false
+		$ShootTimer.enabled = false
