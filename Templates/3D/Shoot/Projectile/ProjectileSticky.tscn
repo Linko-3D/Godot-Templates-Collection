@@ -4,14 +4,14 @@
 
 [sub_resource type="CylinderMesh" id=3]
 top_radius = 0.05
-bottom_radius = 0.03
+bottom_radius = 0.05
 height = 0.3
 radial_segments = 16
 rings = 1
 
 [sub_resource type="CylinderShape" id=4]
-radius = 0.1
-height = 0.4
+radius = 0.05
+height = 0.3
 
 [node name="ProjectileSticky" type="RigidBody"]
 collision_layer = 2
