@@ -7,6 +7,7 @@ emission_shape = 1
 emission_sphere_radius = 0.01
 angular_velocity = 1.05
 radial_accel = 15.0
+scale = 0.5
 
 [sub_resource type="SphereMesh" id=2]
 radius = 0.05
@@ -15,11 +16,14 @@ radial_segments = 4
 rings = 1
 
 [node name="Impact" type="Particles"]
+cast_shadow = 0
 emitting = false
-amount = 50
-lifetime = 2.0
+amount = 5
+lifetime = 0.5
 one_shot = true
 explosiveness = 1.0
+visibility_aabb = AABB( 0, 0, 0, 2.87, 1, 1 )
+local_coords = false
 process_material = SubResource( 1 )
 draw_pass_1 = SubResource( 2 )
 script = ExtResource( 1 )
