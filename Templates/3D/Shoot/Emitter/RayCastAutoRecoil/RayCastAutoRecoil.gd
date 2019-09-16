@@ -38,11 +38,11 @@ func shoot():
 			rotation_degrees.x = rand_range(-recoil_angle,recoil_angle) # Recoil vibration
 			rotation_degrees.y = rand_range(-recoil_angle,recoil_angle) # Recoil vibration
 		
-		var explosion = impact.instance() # We instance the scene
+		var impact_instance = impact.instance() # We instance the scene
 	
-		add_child(explosion) # The instance is added as a child of the shoot node
-		explosion.set_as_toplevel(true)
-		explosion.translation = get_collision_point()
+		add_child(impact_instance) # The instance is added as a child of the shoot node
+		impact_instance.set_as_toplevel(true)
+		impact_instance.translation = get_collision_point()
 	
 		# You can delete those lines depending on your games:
 		# Targets

@@ -26,11 +26,11 @@ func _on_Timer_timeout():
 
 func shoot():
 	if is_colliding():
-		var explosion = impact.instance() # We instance the scene
+		var impact_instance = impact.instance() # We instance the scene
 	
-		add_child(explosion) # The instance is added as a child of the shoot node
-		explosion.set_as_toplevel(true)
-		explosion.translation = get_collision_point()
+		add_child(impact_instance) # The instance is added as a child of the shoot node
+		impact_instance.set_as_toplevel(true)
+		impact_instance.translation = get_collision_point()
 	
 		# You can delete those lines depending on your games:
 		# Targets
