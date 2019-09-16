@@ -9,8 +9,9 @@ var current_coordinates = Vector3()
 var offset = Vector3()
 
 func _ready():
-	yield(get_tree().create_timer(lifespan), "timeout")
-	queue_free()
+	if lifespan > 0:
+		yield(get_tree().create_timer(lifespan), "timeout")
+		queue_free()
 
 func _on_ProjectileSticky_body_entered(body):
 	if body.is_in_group("Player") == false:
