@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Templates/3D/Interactive/AddObject/AddObjectRayCast.gd" type="Script" id=1]
-[ext_resource path="res://Templates/3D/Interactive/AddObject/AddObject.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Templates/3D/Interactive/AddObject/AddedObject.tscn" type="PackedScene" id=2]
 
 [node name="AddObjectRayCast" type="RayCast"]
 enabled = true
