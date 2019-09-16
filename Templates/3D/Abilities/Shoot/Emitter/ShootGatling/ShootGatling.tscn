@@ -1,14 +1,14 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Templates/3D/Abilities/Shoot/Emitter/ShootGatling/ShootGatling.gd" type="Script" id=1]
-[ext_resource path="res://Templates/3D/Abilities/Shoot/Projectile/Projectile.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Templates/3D/Abilities/Shoot/Projectile/ProjectileSticky.tscn" type="PackedScene" id=2]
 
 [sub_resource type="CubeMesh" id=1]
 size = Vector3( 0.3, 0.3, 2 )
 
 [node name="ShootGatling" type="Spatial"]
 script = ExtResource( 1 )
-bullet = ExtResource( 2 )
+projectile = ExtResource( 2 )
 
 [node name="Nozzle" type="Position3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.4 )

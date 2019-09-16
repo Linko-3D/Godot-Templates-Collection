@@ -1,6 +1,6 @@
 extends Position3D
 
-export (PackedScene) var bullet
+export (PackedScene) var projectile
 export var force = 25.0
 export var fire_rate = 0.1
 
@@ -26,8 +26,8 @@ func _on_Timer_timeout():
 	shoot()
 
 func shoot():
-	var projectile = bullet.instance() # We instance the scene
+	var projectile_instance = projectile.instance() # We instance the scene
 
-	add_child(projectile) # The instance is added as a child of the shoot node
-	projectile.set_as_toplevel(true) # Projectile parented to the highest node in the level to detach it from the player
-	projectile.linear_velocity = global_transform.basis.z * -force # An initial force is applied when clicking, the force is applied on each new instance
+	add_child(projectile_instance) # The instance is added as a child of the shoot node
+	projectile_instance.set_as_toplevel(true) # Projectile parented to the highest node in the level to detach it from the player
+	projectile_instance.linear_velocity = global_transform.basis.z * -force # An initial force is applied when clicking, the force is applied on each new instance

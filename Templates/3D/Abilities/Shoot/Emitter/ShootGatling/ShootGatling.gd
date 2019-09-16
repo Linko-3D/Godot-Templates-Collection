@@ -1,6 +1,6 @@
 extends Spatial
 
-export (PackedScene) var bullet
+export (PackedScene) var projectile
 export var force = 25.0
 export var fire_rate = 0.01
 export var recoil_angle = 3.0
@@ -46,8 +46,8 @@ func shoot():
 		rotation_degrees.x = rand_range(-recoil_angle,recoil_angle) # Recoil vibration
 		rotation_degrees.y = rand_range(-recoil_angle,recoil_angle) # Recoil vibration
 	
-	var projectile = bullet.instance() # We instance the scene
+	var projectile_instance = projectile.instance() # We instance the scene
 
-	$Nozzle.add_child(projectile) # The instance is added as a child of the shoot node
-	projectile.set_as_toplevel(true) # Projectile parented to the highest node in the level to detach it from the player
-	projectile.linear_velocity = global_transform.basis.z * -force # An initial force is applied when clicking, the force is applied on each new instance
+	$Nozzle.add_child(projectile_instance) # The instance is added as a child of the shoot node
+	projectile_instance.set_as_toplevel(true) # Projectile parented to the highest node in the level to detach it from the player
+	projectile_instance.linear_velocity = global_transform.basis.z * -force # An initial force is applied when clicking, the force is applied on each new instance
