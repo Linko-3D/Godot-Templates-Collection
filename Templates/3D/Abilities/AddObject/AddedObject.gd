@@ -1,7 +1,8 @@
 extends StaticBody
 
 func _process(delta):
-	rotation = Vector3()
+	rotation.x = 0
+	rotation.z = 0
 	
 	translation.x = round(translation.x)
 	translation.y = round(translation.y)
