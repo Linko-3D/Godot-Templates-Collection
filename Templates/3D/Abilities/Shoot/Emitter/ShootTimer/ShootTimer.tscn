@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Templates/3D/Shoot/Emitter/ShootTimer/ShootTimer.gd" type="Script" id=1]
-[ext_resource path="res://Templates/3D/Shoot/Projectile/Projectile.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Templates/3D/Abilities/Shoot/Emitter/ShootTimer/ShootTimer.gd" type="Script" id=1]
+[ext_resource path="res://Templates/3D/Abilities/Shoot/Projectile/Projectile.tscn" type="PackedScene" id=2]
 
 [node name="ShootTer" type="Position3D"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1 )

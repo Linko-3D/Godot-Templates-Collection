@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Templates/3D/Shoot/Impact.gd" type="Script" id=1]
+[ext_resource path="res://Templates/3D/Abilities/Shoot/Impact.gd" type="Script" id=1]
 
 [sub_resource type="ParticlesMaterial" id=1]
 emission_shape = 1

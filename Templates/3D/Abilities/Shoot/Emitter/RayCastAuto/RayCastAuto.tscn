@@ -1,7 +1,8 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Templates/3D/Shoot/Emitter/RayCastAuto/RayCastAuto.gd" type="Script" id=1]
-[ext_resource path="res://Templates/3D/Shoot/Impact.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Templates/3D/Abilities/Shoot/Emitter/RayCastAuto/RayCastAuto.gd" type="Script" id=1]
+[ext_resource path="res://Templates/3D/Abilities/Shoot/Impact.tscn" type="PackedScene" id=2]
+
 
 [node name="RayCastAuto" type="RayCast"]
 enabled = true
