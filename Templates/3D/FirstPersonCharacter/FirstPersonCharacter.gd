@@ -45,7 +45,6 @@ func _physics_process(delta):
 	vector = vector.rotated(Vector3.UP, rotation.y)
 	vector =  move_and_slide_with_snap(vector, snap, Vector3.UP, true, 4, 5)
 
-
 # ----------------------------------
 # Mouse controls
 

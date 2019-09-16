@@ -2,7 +2,8 @@
 # https://gdscript.com/tutorials
 
 #Use both in a ready process:
-get_tree().get_nodes_in_group("Player")[0] # Get the first node in the group "Player" (recommended)
+target = get_tree().get_nodes_in_group("Player")[0] # Get the first node in the group "Player" (recommended)
+
 target = get_tree().get_root().find_node("Player", true, false) # Find the node with the name "Player"
 
 # Ideal with area nodes:
