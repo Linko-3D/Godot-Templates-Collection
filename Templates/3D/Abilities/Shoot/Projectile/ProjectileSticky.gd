@@ -1,7 +1,7 @@
 extends RigidBody
 
 export (PackedScene) var impact
-export var lifespan = 10.0
+export var lifespan = 3.0
 
 var target
 var target_coordinates = Vector3()
