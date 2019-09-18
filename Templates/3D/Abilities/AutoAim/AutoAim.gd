@@ -6,7 +6,6 @@ func _process(delta):
 	if target != null:
 		$ArmPosition.look_at(target.translation, Vector3.UP)
 	else:
-		print('null')
 		$ArmPosition.rotation = Vector3()
 	
 func _input(event):
@@ -14,5 +13,5 @@ func _input(event):
 		if event.button_index == 2 and event.pressed == true:
 			if is_colliding():
 				target = get_collider()
-			else:
+		if event.button_index == 2 and event.pressed == false:
 				target = null
