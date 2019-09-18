@@ -16,12 +16,18 @@ _global_script_class_icons={
 [application]
 
 config/name="Godot-Templates-Collection"
-run/main_scene="res://Level.tscn"
+run/main_scene="res://World.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 GLOBAL="*res://Templates/GLOBAL.gd"
+
+[display]
+
+window/size/width=1920
+window/size/height=1080
+window/size/fullscreen=true
 
 [importer_defaults]
 
