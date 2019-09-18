@@ -1,12 +1,13 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Templates/3D/FirstPersonCharacter/FirstPersonCharacter.gd" type="Script" id=1]
 [ext_resource path="res://Templates/3D/HUD/HUD.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Templates/3D/Abilities/AutoJumpNoFloor.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Templates/3D/Abilities/AutoAim/AutoAim.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Templates/3D/Abilities/AimOnRayCast/AimOnRayCast.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Templates/3D/Abilities/Shoot/Emitter/ShootGatling/ShootGatling.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Templates/3D/Abilities/Shoot/Emitter/RayCast/RayCast.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Templates/3D/Abilities/AddObject/AddObjectRayCast.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Templates/3D/Abilities/HookDeploy/HookDeploy.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Templates/3D/Abilities/Shoot/Emitter/RayCast/RayCast.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Templates/3D/Abilities/AddObject/AddObjectRayCast.tscn" type="PackedScene" id=8]
 
 [sub_resource type="CapsuleMesh" id=1]
 radius = 0.5
@@ -36,14 +37,16 @@ shape = SubResource( 2 )
 [node name="Camera" type="Camera" parent="."]
 far = 300.0
 
-[node name="LockTarget" parent="Camera" instance=ExtResource( 4 )]
+[node name="AimOnRayCast" parent="Camera" instance=ExtResource( 4 )]
 
-[node name="ArmPosition" type="Position3D" parent="Camera/LockTarget"]
+[node name="ArmPosition" type="Position3D" parent="Camera/AimOnRayCast"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, -0.6, -0.6 )
 
-[node name="ShootGatling" parent="Camera/LockTarget/ArmPosition" instance=ExtResource( 5 )]
+[node name="ShootGatling" parent="Camera/AimOnRayCast/ArmPosition" instance=ExtResource( 5 )]
 
-[node name="RayCast" parent="Camera" instance=ExtResource( 6 )]
+[node name="HookDeploy" parent="Camera/AimOnRayCast/ArmPosition" instance=ExtResource( 6 )]
 
-[node name="AddObjectRayCast" parent="Camera" instance=ExtResource( 7 )]
+[node name="RayCast" parent="Camera" instance=ExtResource( 7 )]
+
+[node name="AddObjectRayCast" parent="Camera" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55, -0.5, 0 )
