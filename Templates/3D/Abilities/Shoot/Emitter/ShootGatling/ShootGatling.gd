@@ -4,10 +4,11 @@ export (PackedScene) var projectile
 export var force = 25.0
 export var fire_rate = 0.01
 export var recoil_angle = 3.0
+export var spin_max = 0.3
+export var spin_acceleration = 0.3
+export var spin_start_firing = 0.2
 
 var spin_speed = 0.0
-var spin_acceleration = 0.3
-var spin_max = 0.3
 
 var hold_shoot = false
 var first_shoot = true # Remove recoil on the first shoot
@@ -19,7 +20,7 @@ func _process(delta):
 	rotate_z(spin_speed)
 	if hold_shoot:
 		spin_speed += spin_acceleration * delta
-		if $Timer.is_stopped() and spin_speed >= 0.2:
+		if $Timer.is_stopped() and spin_speed >= spin_start_firing:
 			$Timer.start()
 	else:
 		spin_speed -= spin_acceleration * delta
