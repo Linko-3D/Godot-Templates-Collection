@@ -9,6 +9,6 @@ func _input(event):
 			shoot()
 
 func shoot():
-	var projectile = bullet.instance() # We instance the scene
-	get_tree().get_root().add_child(projectile)
-	projectile.position = get_owner().position
+	var bullet_instance = bullet.instance() # We instance the scene
+	get_tree().get_root().add_child(bullet_instance)
+	bullet_instance.position = get_owner().position
