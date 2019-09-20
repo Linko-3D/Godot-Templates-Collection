@@ -13,6 +13,9 @@ if method() in body: # check if the node has this method
 # Ideal for projectiles
 yield(get_tree().create_timer(3), "timeout") # Wait 3 seconds
 
+# Run the function of objects in a group
+get_tree().call_group("GroupName", "Method", Argument1, Argument2)
+
 randomize()
 rand_range(float from, float to)
 

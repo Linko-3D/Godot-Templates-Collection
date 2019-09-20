@@ -40,9 +40,10 @@ far = 300.0
 [node name="AimOnRayCast" parent="Camera" instance=ExtResource( 4 )]
 
 [node name="ArmPosition" type="Position3D" parent="Camera/AimOnRayCast"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, -0.6, -0.6 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, -0.6, -1.1555 )
 
 [node name="ShootGatling" parent="Camera/AimOnRayCast/ArmPosition" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.458214 )
 
 [node name="HookDeploy" parent="Camera/AimOnRayCast/ArmPosition" instance=ExtResource( 6 )]
 
