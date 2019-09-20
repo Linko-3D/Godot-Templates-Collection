@@ -2,7 +2,7 @@
 
 [ext_resource path="res://crosshair.png" type="Texture" id=1]
 [ext_resource path="res://Templates/3D/HUD/Crosshair.gd" type="Script" id=2]
-[ext_resource path="res://Templates/3D/HUD/FPSCounter.gd" type="Script" id=3]
+[ext_resource path="res://Templates/3D/HUD/Debug.gd" type="Script" id=3]
 
 [node name="HUD" type="Control"]
 
@@ -10,8 +10,9 @@
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
 
-[node name="TextEdit" type="TextEdit" parent="."]
-margin_right = 60.0
-margin_bottom = 20.0
-text = "FPS: 60"
+[node name="Debug" type="TextEdit" parent="."]
+margin_right = 85.0
+margin_bottom = 40.0
+text = "FPS: 60
+1920x1080"
 script = ExtResource( 3 )
