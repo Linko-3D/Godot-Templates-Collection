@@ -13,10 +13,11 @@ func _process(delta):
 				
 	if holding:
 		set_mode(1)
+		$CollisionShape.disabled = true
 		global_transform = get_tree().get_root().find_node("Hold", true, false).get_global_transform()
 	else:
 		set_mode(0)
-		pass
+		$CollisionShape.disabled = false
 
 func _on_Area_body_entered(body):
 	if body.is_in_group("Player"):
