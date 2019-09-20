@@ -4,10 +4,19 @@ var can_pick = false
 var holding = false
 
 func _process(delta):
-	if can_pick and Input.is_action_just_pressed("interact"):
-		holding = true
+	if can_pick:
+		if Input.is_action_just_pressed("interact"):
+			if holding == false:
+				holding = true
+			else:
+				holding = false
+				
 	if holding:
+		set_mode(1)
 		global_transform = get_tree().get_root().find_node("Hold", true, false).get_global_transform()
+	else:
+		set_mode(0)
+		pass
 
 func _on_Area_body_entered(body):
 	if body.is_in_group("Player"):
