@@ -1,11 +1,14 @@
 extends RayCast
 
-var hold = false
+var grabbed = null
+
 func _process(delta):
+	print(grabbed)
 	if is_colliding():
-		if "can_grab" in get_collider():
+		if get_collider().get_class() == "RigidBody":
 			if Input.is_action_just_pressed("interact"):
-				hold = true
-		if hold:
-			get_collider().global_transform = $Hold.global_transform
-			
+				grabbed = get_collider()
+				enabled = false
+				
+	if grabbed != null:
+		get_collider().global_transform = $Hold.global_transform
