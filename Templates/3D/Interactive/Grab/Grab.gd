@@ -1,6 +1,6 @@
 extends RayCast
 
-export var mass_limit = 30
+export var mass_limit = 50
 
 var object_grabbed = null
 
