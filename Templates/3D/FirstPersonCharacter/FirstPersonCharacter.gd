@@ -23,16 +23,16 @@ func _physics_process(delta):
 
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		if Input.is_action_pressed("ui_up"):
-			vector.z = -speed
+			vector += Vector3.FORWARD * speed
 		if Input.is_action_pressed("ui_down"):
-			vector.z = speed
+			vector += Vector3.BACK * speed
 		if Input.is_action_pressed("ui_left"):
-			vector.x = -speed
+			vector += Vector3.LEFT * speed
 		if Input.is_action_pressed("ui_right"):
-			vector.x = speed
+			vector += Vector3.RIGHT * speed
 		if Input.is_action_pressed("sprint"):
 			if vector.z < 0:						# If moving forward
-				vector.z *= sprint_speed_multiplier
+				vector.z *= sprint_speed_multiplier	# Run
 		
 		if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 			vector.y = jump_height
@@ -40,7 +40,7 @@ func _physics_process(delta):
 		else:
 			snap = Vector3(0, snap_distance, 0)
 		
-		vector.y -= gravity * delta # Gravity
+		vector.y -= gravity * delta					# Gravity
 
 	vector = vector.rotated(Vector3.UP, rotation.y)
 	vector =  move_and_slide_with_snap(vector, snap, Vector3.UP, true, 4, 5)
@@ -50,6 +50,6 @@ func _physics_process(delta):
 
 func _input(event):
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-		rotation_degrees.y -= event.relative.x * mouse_sensitivity / 10 # Look left and right (yaw axis)
-		$Camera.rotation_degrees.x -= event.relative.y * mouse_sensitivity / 10 # Look up and down (pitch axis)
-		$Camera.rotation_degrees.x = clamp($Camera.rotation_degrees.x, -90, 90) # Clamps the up and down rotation
+		rotation_degrees.y -= event.relative.x * mouse_sensitivity / 10			# Look left and right (yaw axis)
+		$Camera.rotation_degrees.x -= event.relative.y * mouse_sensitivity / 10	# Look up and down (pitch axis)
+		$Camera.rotation_degrees.x = clamp($Camera.rotation_degrees.x, -90, 90)	# Clamps the up and down rotation
