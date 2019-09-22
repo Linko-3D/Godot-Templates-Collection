@@ -23,6 +23,10 @@ config/icon="res://icon.png"
 
 GLOBAL="*res://Templates/GLOBAL.gd"
 
+[display]
+
+window/size/fullscreen=true
+
 [importer_defaults]
 
 texture={
