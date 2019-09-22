@@ -7,6 +7,7 @@ var object_grabbed = null
 func _process(delta):
 	if Input.is_action_just_pressed("interact") and object_grabbed != null:
 		get_collider().set_mode(0)
+		get_collider().can_sleep = false
 		object_grabbed = null
 		enabled = true
 
