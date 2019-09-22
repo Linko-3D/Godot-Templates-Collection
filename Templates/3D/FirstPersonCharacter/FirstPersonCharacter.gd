@@ -11,9 +11,6 @@ var vector = Vector3()
 var snap_distance = -0.11
 var snap = Vector3(0, snap_distance, 0)
 
-func _ready():
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-
 # ----------------------------------
 # Movement inputs and gravity
 
@@ -40,7 +37,7 @@ func _physics_process(delta):
 		else:
 			snap = Vector3(0, snap_distance, 0)
 		
-		vector.y -= gravity * delta					# Gravity
+	vector.y -= gravity * delta					# Gravity
 
 	vector = vector.rotated(Vector3.UP, rotation.y)
 	vector =  move_and_slide_with_snap(vector, snap, Vector3.UP, true, 4, 5)
