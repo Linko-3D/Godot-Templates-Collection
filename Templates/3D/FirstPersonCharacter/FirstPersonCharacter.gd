@@ -15,7 +15,7 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 # ----------------------------------
-# Keyboard controls and gravity
+# Movement inputs and gravity
 
 func _physics_process(delta):
 	vector.x = 0		# Resets the direction when no key is pressed
