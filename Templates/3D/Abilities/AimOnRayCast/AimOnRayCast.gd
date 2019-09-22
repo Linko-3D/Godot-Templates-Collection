@@ -9,4 +9,4 @@ func _process(delta):
 		$ArmPosition.rotation = Vector3()
 	
 	if ($ArmPosition.rotation_degrees.x - rotation_degrees.x) > angle_limit:
-		print("too high")
+		pass

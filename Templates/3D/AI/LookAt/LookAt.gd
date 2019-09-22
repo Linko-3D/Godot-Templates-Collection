@@ -7,6 +7,3 @@ func _ready():
 
 func _process(delta):
 	look_at(target.translation, Vector3.UP) # Look at the target
-	
-	rotation.y = 0
-	#rotation.y = clamp(rotation.y, 0, 0)
