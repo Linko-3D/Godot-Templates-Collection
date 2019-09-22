@@ -19,3 +19,11 @@ func _process(delta):
 	if object_grabbed != null:
 		get_collider().set_mode(1)
 		get_collider().global_transform = $Hold.global_transform
+
+func _input(event): 
+	if event is InputEventMouseButton and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+		if event.button_index == 1 and event.pressed == true:
+			if object_grabbed != null:
+				get_collider().set_mode(0)
+				object_grabbed = null
+				enabled = true
