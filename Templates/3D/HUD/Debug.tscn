@@ -4,7 +4,8 @@
 
 [node name="Debug" type="TextEdit"]
 margin_right = 85.0
-margin_bottom = 40.0
+margin_bottom = 55.0
 text = "FPS: 60
+Min: 60
 1920x1080"
 script = ExtResource( 1 )

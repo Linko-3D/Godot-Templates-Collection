@@ -12,10 +12,10 @@ points = PoolVector3Array( 0, 1, 0.25, 0, 1, -0.25, 0, 1, 0.25, 0, 1, -0.25, -1,
 script = ExtResource( 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, 0, 0, 0 )
+transform = Transform( -1, -8.74228e-008, 3.82137e-015, 0, -4.37114e-008, -1, 8.74228e-008, -1, 4.37114e-008, 0, 0, 0 )
 mesh = SubResource( 1 )
 material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, 0, 0, 0 )
+transform = Transform( -1, -8.74228e-008, 3.82137e-015, 0, -4.37114e-008, -1, 8.74228e-008, -1, 4.37114e-008, 0, 0, 0 )
 shape = SubResource( 2 )
