@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Templates/3D/FirstPersonCharacter/FirstPersonCharacter.gd" type="Script" id=1]
 [ext_resource path="res://Templates/3D/HUD/HUD.tscn" type="PackedScene" id=2]
@@ -8,8 +8,7 @@
 [ext_resource path="res://Templates/3D/Abilities/HookDeploy/HookDeploy.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Templates/3D/Abilities/AddObject/AddObjectRayCast.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Templates/3D/Interactive/Grab/Grab.tscn" type="PackedScene" id=8]
-
-
+[ext_resource path="res://Templates/3D/Interactive/Pull/Pull.tscn" type="PackedScene" id=9]
 
 [sub_resource type="CapsuleMesh" id=1]
 radius = 0.5
@@ -53,3 +52,5 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.458214 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55, -0.5, 0 )
 
 [node name="Grab" parent="Camera" instance=ExtResource( 8 )]
+
+[node name="Pull" parent="Camera" instance=ExtResource( 9 )]
