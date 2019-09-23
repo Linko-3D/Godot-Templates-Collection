@@ -3,6 +3,7 @@ extends KinematicBody
 export var speed = 1
 export var lock_linear_y = true
 export var lock_angular_x = true
+export var lock_angular_y = false
 
 var target
 var vector = Vector3()
@@ -24,3 +25,5 @@ func _process(delta):
 
 	if lock_angular_x:
 		rotation.x = 0
+	if lock_angular_y:
+		rotation.y = 0
