@@ -1,6 +1,8 @@
 extends RayCast
 
+var vector
+
 func _process(delta):
 	if is_colliding():
 		if get_collider().get_class() == "RigidBody":
-			pass
+			vector = (get_collider().translation - translation).normalized()
