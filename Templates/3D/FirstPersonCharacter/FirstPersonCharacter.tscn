@@ -2,12 +2,14 @@
 
 [ext_resource path="res://Templates/3D/FirstPersonCharacter/FirstPersonCharacter.gd" type="Script" id=1]
 [ext_resource path="res://Templates/3D/HUD/HUD.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Templates/3D/Abilities/AutoJumpNoFloor.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Templates/3D/Abilities/AutoJump/AutoJump.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Templates/3D/Abilities/AimOnRayCast/AimOnRayCast.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Templates/3D/Abilities/Shoot/Emitter/ShootGatling/ShootGatling.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Templates/3D/Abilities/HookDeploy/HookDeploy.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Templates/3D/Abilities/AddObject/AddObjectRayCast.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Templates/3D/Interactive/Grab/Grab.tscn" type="PackedScene" id=8]
+
+
 
 [sub_resource type="CapsuleMesh" id=1]
 radius = 0.5
