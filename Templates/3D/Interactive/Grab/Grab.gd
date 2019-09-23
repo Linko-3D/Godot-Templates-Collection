@@ -18,8 +18,7 @@ func _process(delta):
 				enabled = false
 
 	if object_grabbed != null:
-		get_collider().global_transform = global_transform
-		get_collider().global_transform.basis.z = global_transform.basis.z * -2
+		get_collider().global_transform = $Hold.global_transform
 
 func _input(event): 
 	if event is InputEventMouseButton and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
