@@ -50,7 +50,4 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.458214 )
 [node name="AddObjectRayCast" parent="Camera" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55, -0.5, 0 )
 
-[node name="Hold" type="Position3D" parent="Camera"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2 )
-
 [node name="Grab" parent="Camera" instance=ExtResource( 8 )]
