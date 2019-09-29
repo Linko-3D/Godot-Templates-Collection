@@ -6,6 +6,7 @@ export var trigger_ID = 0
 var total_mass = 0
 
 var enable = false
+var starting_position = Vector3()
 
 func _on_GroundButton_body_entered(body):
 	if body.get_class() == "RigidBody":
@@ -16,6 +17,7 @@ func _on_GroundButton_body_entered(body):
 		if total_mass >= trigger_mass:
 			enable = true
 			get_tree().call_group("Triggered", "trigger", trigger_ID, enable)
+			$Base/Button.translation.y = -0.1
 
 func _on_GroundButton_body_exited(body):
 	if body.get_class() == "RigidBody":
@@ -26,3 +28,4 @@ func _on_GroundButton_body_exited(body):
 	if total_mass < trigger_mass:
 		enable = false
 		get_tree().call_group("Triggered", "trigger", trigger_ID, enable)
+		$Base/Button.translation.y = 0
