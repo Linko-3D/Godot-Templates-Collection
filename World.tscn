@@ -13,7 +13,7 @@
 [ext_resource path="res://Templates/3D/Interactive/Checkpoint/Checkpoint.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Templates/3D/Interactive/MoveRandom/MoveRandom.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Templates/3D/Interactive/Trigger/Trigger.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Templates/3D/Interactive/Trigger/Triggered.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Templates/3D/Interactive/Trigger/TriggeredLight.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Templates/3D/Interactive/Ladder/Ladder.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Templates/3D/Interactive/Grab/GrabItem.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Templates/3D/Interactive/Teleporter/Teleporter.tscn" type="PackedScene" id=17]
@@ -245,10 +245,10 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 2, 0 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, -12 )
 
 [node name="Trigger" parent="Interactive" instance=ExtResource( 13 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1, -7 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.34823, 1, -8.21886 )
 
-[node name="Triggered" parent="Interactive" instance=ExtResource( 14 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.174638, -9 )
+[node name="TriggeredLight" parent="Interactive" instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1, -9 )
 light_energy = 0.0
 light_indirect_energy = 0.0
 
@@ -264,7 +264,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -8 )
 mass = 50.0
 
 [node name="Teleporter" parent="Interactive" instance=ExtResource( 17 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -11 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25771, 0, -11 )
 
 [node name="Destination" parent="Interactive/Teleporter" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 5, 11 )
