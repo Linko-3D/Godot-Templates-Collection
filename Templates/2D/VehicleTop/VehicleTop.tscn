@@ -2,7 +2,9 @@
 
 [ext_resource path="res://Templates/2D/VehicleTop/VehicleTop.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
-[ext_resource path="res://Templates/2D/Shoot.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Templates/2D/Abilities/Shoot/Shoot.tscn" type="PackedScene" id=3]
+
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 32 )
