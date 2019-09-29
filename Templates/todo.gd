@@ -1,3 +1,5 @@
+weight interruptor
+portal
 checkpoint
 bullet trail from raycast
 nozzle flash
