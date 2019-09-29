@@ -257,7 +257,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 3 )
 
 [node name="GrabbedItem" parent="Interactive" instance=ExtResource( 16 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, -8 )
-mass = 50.0
 
 [node name="GrabbedItem2" parent="Interactive" instance=ExtResource( 16 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -8 )
