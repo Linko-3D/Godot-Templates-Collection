@@ -19,4 +19,4 @@ func _on_GroundButton_body_exited(body):
 		print("Total mass: ", total_mass, "kg\n")
 
 	if total_mass < trigger_mass:
-		print("** Untriggered** \n")
+		print("** Untriggered**\n")
