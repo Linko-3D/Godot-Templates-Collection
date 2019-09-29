@@ -1,7 +1,11 @@
 extends Area
 
 export var trigger_mass = 100
+export var trigger_ID = 0
+
 var total_mass = 0
+
+var enable = false
 
 func _on_GroundButton_body_entered(body):
 	if body.get_class() == "RigidBody":
@@ -10,7 +14,8 @@ func _on_GroundButton_body_entered(body):
 		print("Total mass: ", total_mass, "kg\n")
 
 		if total_mass >= trigger_mass:
-			print("** Triggered **\n")
+			enable = true
+			get_tree().call_group("Triggered", "trigger", trigger_ID, enable)
 
 func _on_GroundButton_body_exited(body):
 	if body.get_class() == "RigidBody":
@@ -19,4 +24,5 @@ func _on_GroundButton_body_exited(body):
 		print("Total mass: ", total_mass, "kg\n")
 
 	if total_mass < trigger_mass:
-		print("** Untriggered**\n")
+		enable = false
+		get_tree().call_group("Triggered", "trigger", trigger_ID, enable)

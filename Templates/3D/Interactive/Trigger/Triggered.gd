@@ -2,8 +2,8 @@ extends OmniLight
 
 export var ID = 0
 
-func trigger(triggerID, enable):
-	if triggerID == ID:
+func trigger(trigger_ID, enable):
+	if trigger_ID == ID:
 		if enable:
 			light_energy = 16
 			light_indirect_energy = 16
