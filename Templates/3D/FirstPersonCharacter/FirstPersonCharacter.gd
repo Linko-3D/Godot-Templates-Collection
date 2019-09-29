@@ -11,6 +11,8 @@ var vector = Vector3()
 var snap_distance = -0.11
 var snap = Vector3(0, snap_distance, 0)
 
+var jumped = true
+
 # ----------------------------------
 # Movement inputs and gravity
 
@@ -54,6 +56,15 @@ func _input(event):
 # Extra abilities
 
 func extra_abilities():
+	# Sprint:
 	if Input.is_action_pressed("sprint") and is_on_floor():
 		if vector.z < 0:						# If moving forward
 			vector.z *= sprint_speed_multiplier	# Run
+	
+	# Auto Jump:
+	if is_on_floor() != true and jumped == false:
+		vector.y = jump_height
+		jumped = true
+	if is_on_floor():
+		jumped = false
+	
