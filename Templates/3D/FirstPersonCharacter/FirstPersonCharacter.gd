@@ -27,16 +27,15 @@ func _physics_process(delta):
 			vector += Vector3.LEFT * speed
 		if Input.is_action_pressed("ui_right"):
 			vector += Vector3.RIGHT * speed
-		if Input.is_action_pressed("sprint"):
-			if vector.z < 0:						# If moving forward
-				vector.z *= sprint_speed_multiplier	# Run
-		
+
 		if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 			vector.y = jump_height
 			snap = Vector3()
 		else:
 			snap = Vector3(0, snap_distance, 0)
 		
+	extra_abilities()
+	
 	vector = vector.rotated(Vector3.UP, rotation.y)
 	vector.y -= gravity * delta					# Gravity
 
@@ -50,3 +49,11 @@ func _input(event):
 		rotation_degrees.y -= event.relative.x * mouse_sensitivity / 10			# Look left and right (yaw axis)
 		$Camera.rotation_degrees.x -= event.relative.y * mouse_sensitivity / 10	# Look up and down (pitch axis)
 		$Camera.rotation_degrees.x = clamp($Camera.rotation_degrees.x, -90, 90)	# Clamps the up and down rotation
+
+# ----------------------------------
+# Extra abilities
+
+func extra_abilities():
+	if Input.is_action_pressed("sprint") and is_on_floor():
+		if vector.z < 0:						# If moving forward
+			vector.z *= sprint_speed_multiplier	# Run
