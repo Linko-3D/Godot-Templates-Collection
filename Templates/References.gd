@@ -16,6 +16,9 @@ yield(get_tree().create_timer(3), "timeout") # Wait 3 seconds
 # Run the function of objects in a group
 get_tree().call_group("GroupName", "Method", Argument1, Argument2)
 
+# If it's of type RigidBody:
+get_collider().get_class() == "RigidBody"
+
 randomize()
 rand_range(float from, float to)
 
