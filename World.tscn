@@ -52,7 +52,6 @@ shadow_enabled = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
 
 [node name="Map" type="Spatial" parent="."]
-editor/display_folded = true
 
 [node name="MeshInstance" type="MeshInstance" parent="Map"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0079422, 0.0259247, 0.088954 )
