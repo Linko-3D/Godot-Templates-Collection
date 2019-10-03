@@ -1,3 +1,4 @@
+swim
 portal
 checkpoint
 bullet trail from raycast
