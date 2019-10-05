@@ -22,13 +22,13 @@ func _physics_process(delta):
 
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		if Input.is_action_pressed("ui_up"):
-			vector += Vector3.FORWARD * speed
+			vector += -global_transform.basis.z * speed
 		if Input.is_action_pressed("ui_down"):
-			vector += Vector3.BACK * speed
+			vector += global_transform.basis.z * speed
 		if Input.is_action_pressed("ui_left"):
-			vector += Vector3.LEFT * speed
+			vector += -global_transform.basis.x * speed
 		if Input.is_action_pressed("ui_right"):
-			vector += Vector3.RIGHT * speed
+			vector += global_transform.basis.x * speed
 
 		if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 			vector.y = jump_height
@@ -38,7 +38,7 @@ func _physics_process(delta):
 		
 	extra_abilities()
 	
-	vector = vector.rotated(Vector3.UP, rotation.y)
+	#vector = vector.rotated(Vector3.UP, rotation.y)
 	vector.y -= gravity * delta					# Gravity
 
 	vector =  move_and_slide_with_snap(vector, snap, Vector3.UP, true, 4, 5)

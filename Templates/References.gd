@@ -1,6 +1,8 @@
 # Good tutorial:
 # https://gdscript.com/tutorials
 
+vector = vector.rotated(Vector3.UP, rotation.y)
+
 #Use both in a ready process:
 target = get_tree().get_nodes_in_group("Player")[0] # Get the first node in the group "Player" (recommended)
 
@@ -29,5 +31,5 @@ number = clamp(number, 0, 10) # Clamp between 0 and 10
 export (float, 0, 10) var number = 0 #Clamp an exported variable
 
 # Access Mesh and Material settings:
-self.mesh 
+self.mesh
 self.mesh.surface_get_material(0)
