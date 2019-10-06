@@ -1,11 +1,15 @@
 extends KinematicBody
 
+
 var gravity = 9.8
 
 export var speed = 6.0
 export var sprint_speed_multiplier = 1.5
 export var jump_height = 6.5
 export var mouse_sensitivity = 1
+
+export var weapon_limit = 5
+var weapon_index = 1
 
 var vector = Vector3()
 var snap_distance = -0.11
@@ -17,6 +21,7 @@ var jumped = true
 # Movement inputs and gravity
 
 func _physics_process(delta):
+	print(weapon_index)
 	vector.x = 0		# Resets the direction when no key is pressed
 	vector.z = 0
 
@@ -51,6 +56,14 @@ func _input(event):
 		rotation_degrees.y -= event.relative.x * mouse_sensitivity / 10			# Look left and right (yaw axis)
 		$Camera.rotation_degrees.x -= event.relative.y * mouse_sensitivity / 10	# Look up and down (pitch axis)
 		$Camera.rotation_degrees.x = clamp($Camera.rotation_degrees.x, -90, 90)	# Clamps the up and down rotation
+
+	if event is InputEventMouseButton: #Weapon switch with the mouse wheel
+		if weapon_index < weapon_limit:
+			if event.button_index == 5:
+				weapon_index += 0.5
+		if weapon_index > 1:
+			if event.button_index == 4:
+				weapon_index -= 0.5
 
 # ----------------------------------
 # Extra abilities
