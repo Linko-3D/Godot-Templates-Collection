@@ -44,8 +44,8 @@ func shoot():
 	if first_shoot == true: # Remove recoil on the first shoot
 		first_shoot = false
 	else:
-		rotation_degrees.x = rand_range(-recoil_angle,recoil_angle) # Recoil vibration
-		rotation_degrees.y = rand_range(-recoil_angle,recoil_angle) # Recoil vibration
+		rotation_degrees.x = rand_range(-recoil_angle, recoil_angle) # Recoil vibration
+		rotation_degrees.y = rand_range(-recoil_angle, recoil_angle) # Recoil vibration
 	
 	var projectile_instance = projectile.instance() # We instance the scene
 

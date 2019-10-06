@@ -8,6 +8,8 @@ var target_coordinates = Vector3()
 var current_coordinates = Vector3()
 var offset = Vector3()
 
+var particles_spawned = false
+
 func _ready():
 	if lifespan > 0:
 		yield(get_tree().create_timer(lifespan), "timeout")
@@ -23,7 +25,9 @@ func _on_ProjectileSticky_body_entered(body):
 		axis_lock_angular_z = true
 		sleeping = true
 
-		var impact_instance = impact.instance() # We instance the scene
-		
-		add_child(impact_instance) # The instance is added as a child of the shoot node
-		impact_instance.set_as_toplevel(true)
+		if particles_spawned == false:
+			var impact_instance = impact.instance() # We instance the scene
+			
+			add_child(impact_instance) # The instance is added as a child of the shoot node
+			impact_instance.set_as_toplevel(true)
+			particles_spawned = true

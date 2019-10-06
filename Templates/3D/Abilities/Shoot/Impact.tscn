@@ -18,7 +18,6 @@ rings = 1
 [node name="Impact" type="Particles"]
 cast_shadow = 0
 emitting = false
-amount = 5
 lifetime = 0.5
 one_shot = true
 process_material = SubResource( 1 )
