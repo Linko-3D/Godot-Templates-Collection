@@ -21,7 +21,6 @@ var jumped = true
 # Movement inputs and gravity
 
 func _physics_process(delta):
-	print(weapon_index)
 	vector.x = 0		# Resets the direction when no key is pressed
 	vector.z = 0
 
@@ -61,9 +60,11 @@ func _input(event):
 		if weapon_index < weapon_limit:
 			if event.button_index == 5:
 				weapon_index += 0.5
+				print(weapon_index)
 		if weapon_index > 1:
 			if event.button_index == 4:
 				weapon_index -= 0.5
+				print(weapon_index)
 
 # ----------------------------------
 # Extra abilities
