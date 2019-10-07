@@ -10,7 +10,6 @@
 [ext_resource path="res://Templates/3D/Interactive/Pull/Pull.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Templates/3D/Abilities/Shoot/Emitter/RayCastAutoRecoil/RayCastAutoRecoil.tscn" type="PackedScene" id=9]
 
-
 [sub_resource type="CapsuleMesh" id=1]
 radius = 0.5
 
