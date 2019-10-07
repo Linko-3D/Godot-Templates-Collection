@@ -59,11 +59,11 @@ func _input(event):
 
 	if event is InputEventMouseButton: #Weapon switch with the mouse wheel
 		if weapon_index < weapon_slots:
-			if event.button_index == 5:
+			if event.button_index == BUTTON_WHEEL_UP:
 				weapon_index += 0.5
 				print(weapon_index)
 		if weapon_index > 1:
-			if event.button_index == 4:
+			if event.button_index == BUTTON_WHEEL_DOWN:
 				weapon_index -= 0.5
 				print(weapon_index)
 
