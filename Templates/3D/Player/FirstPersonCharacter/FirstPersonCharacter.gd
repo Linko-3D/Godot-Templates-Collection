@@ -58,13 +58,12 @@ func _input(event):
 		$Camera.rotation_degrees.x = clamp($Camera.rotation_degrees.x, -90, 90)	# Clamps the up and down rotation
 
 	if event is InputEventMouseButton: #Weapon switch with the mouse wheel
-		if weapon_index < weapon_slots:
-			if event.button_index == BUTTON_WHEEL_UP:
-				weapon_index += 0.5
+		if event.is_pressed():
+			if event.button_index == BUTTON_WHEEL_UP and weapon_index < weapon_slots:
+				weapon_index += 1
 				print(weapon_index)
-		if weapon_index > 1:
-			if event.button_index == BUTTON_WHEEL_DOWN:
-				weapon_index -= 0.5
+			if event.button_index == BUTTON_WHEEL_DOWN and weapon_index > 1:
+				weapon_index -= 1
 				print(weapon_index)
 
 # ----------------------------------
