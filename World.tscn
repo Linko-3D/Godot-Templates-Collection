@@ -234,14 +234,13 @@ transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -11, 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -10 )
 
 [node name="MoveAB" parent="Interactive" instance=ExtResource( 10 )]
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -9 )
 offsetY = 6.0
 start_pause = 2.0
 end_pause = 1.0
 
 [node name="Destination" parent="Interactive/MoveAB" index="0"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 10, 5 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 10.5, 5 )
 
 [node name="Checkpoint" parent="Interactive" instance=ExtResource( 11 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 2, 0 )
