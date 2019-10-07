@@ -203,13 +203,12 @@ mesh = SubResource( 1 )
 material/0 = ExtResource( 2 )
 
 [node name="AI" type="Spatial" parent="."]
-editor/display_folded = true
 
 [node name="LookAt" parent="AI" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1.77504, 10.227 )
 
 [node name="MoveTo" parent="AI" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.017, 6, 6.674 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.017, 15, 6.674 )
 
 [node name="CanSee" parent="AI" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2, 10 )
@@ -238,6 +237,9 @@ offsetY = 6.0
 start_pause = 2.0
 end_pause = 1.0
 
+[node name="Destination" parent="Interactive/MoveAB" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 10, 5 )
+
 [node name="Checkpoint" parent="Interactive" instance=ExtResource( 11 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 2, 0 )
 
@@ -262,7 +264,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, -8 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -8 )
 
 [node name="Teleporter" parent="Interactive" instance=ExtResource( 17 )]
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25771, 0, -11 )
 
 [node name="Destination" parent="Interactive/Teleporter" index="0"]
@@ -272,5 +273,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 5, 11 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -11 )
 
 [editable path="AI/Sentry"]
+
+[editable path="Interactive/MoveAB"]
 
 [editable path="Interactive/Teleporter"]

@@ -11,6 +11,8 @@ extents = Vector3( 1.5, 0.1, 1.5 )
 [node name="MoveAB" type="KinematicBody"]
 script = ExtResource( 1 )
 
+[node name="Destination" type="Position3D" parent="."]
+
 [node name="MeshInstance" type="MeshInstance" parent="."]
 mesh = SubResource( 1 )
 material/0 = null
