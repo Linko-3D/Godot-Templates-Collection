@@ -6,6 +6,7 @@ var gravity = 9.8
 export var speed = 6.0
 export var sprint_speed_multiplier = 1.5
 export var jump_height = 6.5
+export var auto_jump = true
 export var mouse_sensitivity = 1
 
 export var weapon_slots = 5
@@ -76,9 +77,10 @@ func extra_abilities():
 			vector.z *= sprint_speed_multiplier	# Run
 	
 	# Auto Jump:
-	if is_on_floor() != true and jumped == false:
-		vector.y = jump_height
-		jumped = true
-	if is_on_floor():
-		jumped = false
+	if auto_jump:
+		if is_on_floor() != true and jumped == false:
+			vector.y = jump_height
+			jumped = true
+		if is_on_floor():
+			jumped = false
 	
