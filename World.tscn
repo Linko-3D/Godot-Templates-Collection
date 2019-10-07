@@ -1,6 +1,6 @@
 [gd_scene load_steps=26 format=2]
 
-[ext_resource path="res://Templates/3D/FirstPersonCharacter/FirstPersonCharacter.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Templates/3D/Player/FirstPersonCharacter/FirstPersonCharacter.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Checker.tres" type="Material" id=2]
 [ext_resource path="res://Templates/3D/AI/LookAt/LookAt.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Templates/3D/AI/MoveTo/MoveTo.tscn" type="PackedScene" id=4]
@@ -42,14 +42,14 @@ points = PoolVector3Array( 10, 0, 10, -10, 0, 10, 10, 0, -10, -10, 0, -10 )
 
 [node name="World" type="Spatial"]
 
+[node name="FirstPersonCharacter" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
+
 [node name="Sun" type="DirectionalLight" parent="."]
 transform = Transform( 0.739947, 0.458629, -0.492075, -0.00280257, 0.733626, 0.679548, 0.672659, -0.50145, 0.54413, 0, 14, 7 )
 light_energy = 3.0
 light_indirect_energy = 3.0
 shadow_enabled = true
-
-[node name="FirstPersonCharacter" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
 
 [node name="Map" type="Spatial" parent="."]
 
@@ -262,6 +262,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, -8 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -8 )
 
 [node name="Teleporter" parent="Interactive" instance=ExtResource( 17 )]
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25771, 0, -11 )
 
 [node name="Destination" parent="Interactive/Teleporter" index="0"]

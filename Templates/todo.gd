@@ -15,3 +15,6 @@ run on walls
 grappling hook swing
 throw object
 pull like HL2
+character inertia
+car
+flying ship

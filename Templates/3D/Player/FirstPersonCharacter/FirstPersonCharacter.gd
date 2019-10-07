@@ -8,7 +8,7 @@ export var sprint_speed_multiplier = 1.5
 export var jump_height = 6.5
 export var mouse_sensitivity = 1
 
-export var weapon_limit = 5
+export var weapon_slots = 5
 var weapon_index = 1
 
 var vector = Vector3()
@@ -57,7 +57,7 @@ func _input(event):
 		$Camera.rotation_degrees.x = clamp($Camera.rotation_degrees.x, -90, 90)	# Clamps the up and down rotation
 
 	if event is InputEventMouseButton: #Weapon switch with the mouse wheel
-		if weapon_index < weapon_limit:
+		if weapon_index < weapon_slots:
 			if event.button_index == 5:
 				weapon_index += 0.5
 				print(weapon_index)

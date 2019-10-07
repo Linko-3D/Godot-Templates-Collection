@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://Templates/3D/FirstPersonCharacter/FirstPersonCharacter.gd" type="Script" id=1]
+[ext_resource path="res://Templates/3D/Player/FirstPersonCharacter/FirstPersonCharacter.gd" type="Script" id=1]
 [ext_resource path="res://Templates/3D/HUD/HUD.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Templates/3D/Abilities/AimOnRayCast/AimOnRayCast.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Templates/3D/Abilities/Shoot/Emitter/ShootGatling/ShootGatling.tscn" type="PackedScene" id=4]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Templates/3D/Interactive/Grab/Grab.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Templates/3D/Interactive/Pull/Pull.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Templates/3D/Abilities/Shoot/Emitter/RayCastAutoRecoil/RayCastAutoRecoil.tscn" type="PackedScene" id=9]
+
 
 [sub_resource type="CapsuleMesh" id=1]
 radius = 0.5
