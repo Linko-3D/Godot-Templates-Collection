@@ -6,7 +6,7 @@ var gravity = 9.8
 export var speed = 6.0
 export var sprint_speed_multiplier = 1.5
 export var jump_height = 6.5
-export var auto_jump = true
+export var auto_jump = false
 export var mouse_sensitivity = 1
 
 export var weapon_slots = 5
@@ -27,13 +27,13 @@ func _physics_process(delta):
 
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		if Input.is_action_pressed("ui_up"):
-			vector += -global_transform.basis.z * speed
+			vector += Vector3.FORWARD * speed
 		if Input.is_action_pressed("ui_down"):
-			vector += global_transform.basis.z * speed
+			vector += Vector3.BACK * speed
 		if Input.is_action_pressed("ui_left"):
-			vector += -global_transform.basis.x * speed
+			vector += Vector3.LEFT * speed
 		if Input.is_action_pressed("ui_right"):
-			vector += global_transform.basis.x * speed
+			vector += Vector3.RIGHT * speed
 
 		if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 			vector.y = jump_height
@@ -43,7 +43,7 @@ func _physics_process(delta):
 		
 	extra_abilities()
 	
-	#vector = vector.rotated(Vector3.UP, rotation.y)
+	vector = vector.rotated(Vector3.UP, rotation.y)
 	vector.y -= gravity * delta					# Gravity
 
 	vector =  move_and_slide_with_snap(vector, snap, Vector3.UP, true, 4, 5)
