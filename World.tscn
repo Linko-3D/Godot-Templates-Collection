@@ -52,6 +52,7 @@ light_indirect_energy = 3.0
 shadow_enabled = true
 
 [node name="Map" type="Spatial" parent="."]
+editor/display_folded = true
 
 [node name="MeshInstance" type="MeshInstance" parent="Map"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0079422, 0.0259247, 0.088954 )
@@ -203,6 +204,7 @@ mesh = SubResource( 1 )
 material/0 = ExtResource( 2 )
 
 [node name="AI" type="Spatial" parent="."]
+editor/display_folded = true
 
 [node name="LookAt" parent="AI" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1.77504, 10.227 )
@@ -232,6 +234,7 @@ transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -11, 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -10 )
 
 [node name="MoveAB" parent="Interactive" instance=ExtResource( 10 )]
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -9 )
 offsetY = 6.0
 start_pause = 2.0
