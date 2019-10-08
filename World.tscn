@@ -22,7 +22,7 @@
 [sub_resource type="PlaneMesh" id=1]
 size = Vector2( 30, 30 )
 
-[sub_resource type="ConvexPolygonShape" id=8]
+[sub_resource type="ConvexPolygonShape" id=2]
 points = PoolVector3Array( 15, 0, 15, -15, 0, 15, 15, 0, -15, -15, 0, -15 )
 
 [sub_resource type="CubeMesh" id=3]
@@ -60,7 +60,7 @@ material/0 = ExtResource( 2 )
 [node name="StaticBody" type="StaticBody" parent="Map/MeshInstance"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Map/MeshInstance/StaticBody"]
-shape = SubResource( 8 )
+shape = SubResource( 2 )
 
 [node name="Cube" type="MeshInstance" parent="Map"]
 editor/display_folded = true
