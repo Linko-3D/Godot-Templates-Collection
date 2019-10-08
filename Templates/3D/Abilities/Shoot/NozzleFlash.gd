@@ -2,10 +2,9 @@ extends Position3D
 
 var hold_shoot = false
 var turned_On = false
-var fire_rate = 0.1
+var fire_rate = 0.01
 
 func _process(delta):
-	print(turned_On)
 	if hold_shoot:
 		flash()
 	else:
