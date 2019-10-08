@@ -1,6 +1,6 @@
 swim
 portal
-checkpoint
+checkpoint needs improvements
 bullet trail from raycast
 nozzle flash
 display damage numbers
