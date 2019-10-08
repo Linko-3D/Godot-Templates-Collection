@@ -47,8 +47,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
 
 [node name="Sun" type="DirectionalLight" parent="."]
 transform = Transform( 0.739947, 0.458629, -0.492075, -0.00280257, 0.733626, 0.679548, 0.672659, -0.50145, 0.54413, 0, 14, 7 )
-light_energy = 2.0
-light_indirect_energy = 2.0
 shadow_enabled = true
 
 [node name="Map" type="Spatial" parent="."]
