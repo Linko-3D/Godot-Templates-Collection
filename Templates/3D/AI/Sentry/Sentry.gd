@@ -2,7 +2,7 @@ extends Spatial
 
 var target
 var angle
-var speed = 0.1
+var speed = 0.05
 
 func _ready():
 	target = get_tree().get_nodes_in_group("Player")[0] # Get the target with the first node in the Player group
