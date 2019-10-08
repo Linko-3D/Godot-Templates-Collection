@@ -29,3 +29,5 @@ func _input(event):
 				get_collider().set_mode(0)	# We set the object to RigidBody again to reset the gravity
 				object_grabbed = null
 				enabled = true
+
+#projectile_instance.linear_velocity = global_transform.basis.z * -force
