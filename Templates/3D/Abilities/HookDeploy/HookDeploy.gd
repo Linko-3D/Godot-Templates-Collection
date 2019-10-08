@@ -4,7 +4,7 @@ export var pull_force = 25.0
 export var deploy_speed = 100.0
 export var max_range = 30.0
 
-var character
+var player
 var destination
 var vector
 var hold = false
@@ -14,7 +14,7 @@ var locked = false
 var pull = false
 
 func _ready():
-	character = get_tree().get_nodes_in_group("Player")[0] # Get the first node in the group "Player"
+	player = get_tree().get_nodes_in_group("Player")[0] # Get the first node in the group "Player"
 
 func _process(delta):
 	if current_range >= max_range: # If no contact is detected at max range the mouse click is released automatically
@@ -38,8 +38,8 @@ func _process(delta):
 		pull = false
 
 	if pull:
-		vector = (destination - character.translation).normalized() # Gets the vector between the player and the hook point
-		character.move_and_slide(vector * pull_force) # Pulls the character to the point and apply the pull force
+		vector = (destination - player.translation).normalized() # Gets the vector between the player and the hook point
+		player.move_and_slide(vector * pull_force) # Pulls the character to the point and apply the pull force
 
 func _input(event):
 	if event is InputEventMouseButton and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:

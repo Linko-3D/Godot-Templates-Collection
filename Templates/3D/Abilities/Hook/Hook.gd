@@ -2,18 +2,18 @@ extends RayCast
 
 export var pull_force = 25.0
 
-var character
+var player
 var destination
 var vector
 var hold = false
 
 func _ready():
-	character = get_tree().get_nodes_in_group("Player")[0] # Get the first node in the group "Player"
+	player = get_tree().get_nodes_in_group("Player")[0] # Get the first node in the group "Player"
 
 func _process(delta):
 	if hold:
-		vector = (destination - character.translation).normalized()
-		character.move_and_slide(vector * pull_force)
+		vector = (destination - player.translation).normalized()
+		player.move_and_slide(vector * pull_force)
 
 func _input(event):
 	if event is InputEventMouseButton and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
