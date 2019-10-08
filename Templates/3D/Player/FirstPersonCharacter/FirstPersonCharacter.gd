@@ -1,6 +1,5 @@
 extends KinematicBody
 
-
 var gravity = 9.8
 
 export var speed = 6.0
@@ -9,7 +8,7 @@ export var jump_height = 6.5
 export var auto_jump = false
 export var mouse_sensitivity = 1
 
-export var weapon_slots = 5
+export var weapon_slots = 2
 var weapon_index = 1
 
 var vector = Vector3()
