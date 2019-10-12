@@ -56,5 +56,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55, -0.5, 0 )
 [node name="Grab" parent="Camera" instance=ExtResource( 8 )]
 
 [node name="Pull" parent="Camera" instance=ExtResource( 9 )]
+enabled = false
 
 [node name="RayCastAutoRecoil" parent="Camera" instance=ExtResource( 10 )]
