@@ -232,6 +232,7 @@ transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -13, 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -10 )
 
 [node name="MoveAB" parent="Interactive" instance=ExtResource( 10 )]
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -12 )
 offsetY = 6.0
 start_pause = 2.0
@@ -267,7 +268,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, -10 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -10 )
 
 [node name="Teleporter" parent="Interactive" instance=ExtResource( 17 )]
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25771, 0, -11 )
 
 [node name="Destination" parent="Interactive/Teleporter" index="0"]

@@ -4,5 +4,5 @@
 
 [node name="Pull" type="RayCast"]
 enabled = true
-cast_to = Vector3( 0, 0, -10 )
+cast_to = Vector3( 0, 0, -50 )
 script = ExtResource( 1 )

@@ -1,6 +1,9 @@
 # Good tutorial:
 # https://gdscript.com/tutorials
 
+# Position in 3D space
+global_transform.origin
+
 vector = vector.rotated(Vector3.UP, rotation.y)
 
 #Use both in a ready process:
