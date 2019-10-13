@@ -25,7 +25,7 @@ func _physics_process(delta):
 	vector.x = 0		# Resets the direction when no key is pressed
 	vector.z = 0
 
-	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED and swimming == false:
+	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		if Input.is_action_pressed("ui_up"):
 			vector += Vector3.FORWARD * speed
 		if Input.is_action_pressed("ui_down"):
@@ -82,4 +82,10 @@ func extra_abilities():
 			jumped = true
 		if is_on_floor():
 			jumped = false
+	
+	# Swiming:
+	if swimming:
+		gravity = -0.5
+	else:
+		gravity = 9.8
 	
