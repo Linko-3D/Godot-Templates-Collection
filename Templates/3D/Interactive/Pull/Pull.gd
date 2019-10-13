@@ -1,11 +1,19 @@
 extends RayCast
 
-export var pull_speed = 1.0
+export var pull_force = 1.0
 
 var vector
+var hold = false
 
 func _process(delta):
-	if is_colliding():
+	if is_colliding() and hold:
 		if get_collider().get_class() == "RigidBody":
 			vector = (get_collider().translation - global_transform.origin).normalized()
-			get_collider().translation -= vector * pull_speed * 0.1
+			get_collider().translation -= vector * pull_force * 0.1
+
+func _input(event):
+	if event is InputEventMouseButton and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+		if event.button_index == 2 and event.pressed == true:
+			hold = true
+		if event.button_index == 2 and event.pressed == false:
+			hold = false

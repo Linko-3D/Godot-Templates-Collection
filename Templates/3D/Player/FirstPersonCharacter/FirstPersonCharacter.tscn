@@ -57,6 +57,5 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55, -0.5, 0 )
 
 [node name="Pull" parent="Camera" instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2 )
-pull_speed = 1.74
 
 [node name="RayCastAutoRecoil" parent="Camera" instance=ExtResource( 10 )]
