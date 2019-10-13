@@ -47,9 +47,9 @@ func _physics_process(delta):
 func _input(event):
 	if event is InputEventMouseButton and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		if event.button_index == 4:
-			$Yaw/Pitch/Head.translation += -global_transform.basis.z / 10 # Zoom
+			$Yaw/Pitch/Camera.translation += -global_transform.basis.z / 10 # Zoom
 		if event.button_index == 5:
-			$Yaw/Pitch/Head.translation += global_transform.basis.z / 10 # Zoom
+			$Yaw/Pitch/Camera.translation += global_transform.basis.z / 10 # Zoom
 
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		rotation.y += deg2rad(-event.relative.x * mouse_sensitivity) # Yaw axis

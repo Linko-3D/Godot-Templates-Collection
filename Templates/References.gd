@@ -11,6 +11,9 @@ target = get_tree().get_nodes_in_group("Player")[0] # Get the first node in the 
 
 target = get_tree().get_root().find_node("Player", true, false) # Find the node with the name "Player"
 
+# If the player enters an area node
+if body.is_in_group("Player"):
+
 # Ideal with area nodes:
 if "variable" in body: # check if the node has this variable
 if method() in body: # check if the node has this method

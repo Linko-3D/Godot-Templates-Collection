@@ -1,23 +1,24 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
-[ext_resource path="res://Templates/3D/Player/FirstPersonCharacter/FirstPersonCharacter.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Checker.tres" type="Material" id=2]
-[ext_resource path="res://Templates/3D/AI/LookAt/LookAt.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Templates/3D/AI/MoveTo/MoveTo.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Templates/3D/AI/CanSee/CanSee.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Templates/3D/AI/CanSeeFOV/CanSeeFOV.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Templates/3D/AI/Sentry/Sentry.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Templates/3D/Interactive/Target/Target.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Templates/3D/Interactive/Collect/Collect.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Templates/3D/Interactive/MoveAB/MoveAB.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Templates/3D/Interactive/Checkpoint/Checkpoint.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Templates/3D/Interactive/MoveRandom/MoveRandom.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Templates/3D/Interactive/Trigger/Trigger.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Templates/3D/Interactive/Trigger/TriggeredLight.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Templates/3D/Interactive/Grab/GrabItem.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Templates/3D/Interactive/Teleporter/Teleporter.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Templates/3D/Interactive/GroundButton/GroundButton.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Templates/3D/Interactive/Water/Water.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Templates/3D/Player/ThirdPersonCharacter/ThirdPersonCharacter.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Templates/3D/Player/FirstPersonCharacter/FirstPersonCharacter.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Checker.tres" type="Material" id=3]
+[ext_resource path="res://Templates/3D/AI/LookAt/LookAt.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Templates/3D/AI/MoveTo/MoveTo.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Templates/3D/AI/CanSee/CanSee.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Templates/3D/AI/CanSeeFOV/CanSeeFOV.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Templates/3D/AI/Sentry/Sentry.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Templates/3D/Interactive/Target/Target.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Templates/3D/Interactive/Collect/Collect.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Templates/3D/Interactive/MoveAB/MoveAB.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Templates/3D/Interactive/Checkpoint/Checkpoint.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Templates/3D/Interactive/MoveRandom/MoveRandom.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Templates/3D/Interactive/Trigger/Trigger.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Templates/3D/Interactive/Trigger/TriggeredLight.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Templates/3D/Interactive/Grab/GrabItem.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Templates/3D/Interactive/Teleporter/Teleporter.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Templates/3D/Interactive/GroundButton/GroundButton.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Templates/3D/Interactive/Water/Water.tscn" type="PackedScene" id=19]
 
 [sub_resource type="PlaneMesh" id=1]
 size = Vector2( 30, 30 )
@@ -42,7 +43,10 @@ points = PoolVector3Array( 10, 0, 10, -10, 0, 10, 10, 0, -10, -10, 0, -10 )
 
 [node name="World" type="Spatial"]
 
-[node name="FirstPersonCharacter" parent="." instance=ExtResource( 1 )]
+[node name="ThirdPersonCharacter" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.97761, 2.5507, 0 )
+
+[node name="FirstPersonCharacter" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
 
 [node name="Sun" type="DirectionalLight" parent="."]
@@ -55,7 +59,7 @@ editor/display_folded = true
 [node name="MeshInstance" type="MeshInstance" parent="Map"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0079422, 0.0259247, 0.088954 )
 mesh = SubResource( 1 )
-material/0 = ExtResource( 2 )
+material/0 = ExtResource( 3 )
 
 [node name="StaticBody" type="StaticBody" parent="Map/MeshInstance"]
 
@@ -66,7 +70,7 @@ shape = SubResource( 2 )
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 mesh = SubResource( 3 )
-material/0 = ExtResource( 2 )
+material/0 = ExtResource( 3 )
 
 [node name="StaticBody" type="StaticBody" parent="Map/Cube"]
 
@@ -77,7 +81,7 @@ shape = SubResource( 4 )
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 10, 0 )
 mesh = SubResource( 3 )
-material/0 = ExtResource( 2 )
+material/0 = ExtResource( 3 )
 
 [node name="StaticBody" type="StaticBody" parent="Map/Cube2"]
 
@@ -88,7 +92,7 @@ shape = SubResource( 5 )
 editor/display_folded = true
 transform = Transform( 0.2, 0, 0, 0, 3, 0, 0, 0, 0.2, 0, 13, 0 )
 mesh = SubResource( 3 )
-material/0 = ExtResource( 2 )
+material/0 = ExtResource( 3 )
 
 [node name="StaticBody" type="StaticBody" parent="Map/Cube3"]
 
@@ -108,7 +112,7 @@ shape = SubResource( 7 )
 [node name="MeshInstance" type="MeshInstance" parent="Map/Ramp/80"]
 transform = Transform( 1, 0, 0, 1.86265e-009, 1, 0, 0, 0, 1, 0.00794983, 0.0259256, 0.088954 )
 mesh = SubResource( 1 )
-material/0 = ExtResource( 2 )
+material/0 = ExtResource( 3 )
 
 [node name="90" type="StaticBody" parent="Map/Ramp"]
 editor/display_folded = true
@@ -120,7 +124,7 @@ shape = SubResource( 7 )
 [node name="MeshInstance" type="MeshInstance" parent="Map/Ramp/90"]
 transform = Transform( 1, 0, 0, 4.44089e-016, 1, 0, 0, 0, 1, 0.0079422, 0.0259247, 0.088954 )
 mesh = SubResource( 1 )
-material/0 = ExtResource( 2 )
+material/0 = ExtResource( 3 )
 
 [node name="70" type="StaticBody" parent="Map/Ramp"]
 editor/display_folded = true
@@ -132,7 +136,7 @@ shape = SubResource( 7 )
 [node name="MeshInstance" type="MeshInstance" parent="Map/Ramp/70"]
 transform = Transform( 1, -2.38419e-007, 0, -3.72529e-009, 1, 0, 0, 0, 1, 0.00793457, 0.0259237, 0.088954 )
 mesh = SubResource( 1 )
-material/0 = ExtResource( 2 )
+material/0 = ExtResource( 3 )
 
 [node name="10" type="StaticBody" parent="Map/Ramp"]
 editor/display_folded = true
@@ -144,7 +148,7 @@ shape = SubResource( 7 )
 [node name="MeshInstance" type="MeshInstance" parent="Map/Ramp/10"]
 transform = Transform( 1, 0, 0, -3.72529e-009, 1, 0, 0, 0, 1, 0.0079422, 0.0259247, 0.088954 )
 mesh = SubResource( 1 )
-material/0 = ExtResource( 2 )
+material/0 = ExtResource( 3 )
 
 [node name="20" type="StaticBody" parent="Map/Ramp"]
 editor/display_folded = true
@@ -156,7 +160,7 @@ shape = SubResource( 7 )
 [node name="MeshInstance" type="MeshInstance" parent="Map/Ramp/20"]
 transform = Transform( 1, 2.38419e-007, 0, 0, 1, 0, 0, 0, 1, 0.00793457, 0.0259247, 0.088954 )
 mesh = SubResource( 1 )
-material/0 = ExtResource( 2 )
+material/0 = ExtResource( 3 )
 
 [node name="30" type="StaticBody" parent="Map/Ramp"]
 editor/display_folded = true
@@ -168,7 +172,7 @@ shape = SubResource( 7 )
 [node name="MeshInstance" type="MeshInstance" parent="Map/Ramp/30"]
 transform = Transform( 1, 0, 0, -3.72529e-009, 1, 0, 0, 0, 1, 0.00793457, 0.0259247, 0.088954 )
 mesh = SubResource( 1 )
-material/0 = ExtResource( 2 )
+material/0 = ExtResource( 3 )
 
 [node name="40" type="StaticBody" parent="Map/Ramp"]
 editor/display_folded = true
@@ -181,7 +185,7 @@ shape = SubResource( 7 )
 [node name="MeshInstance" type="MeshInstance" parent="Map/Ramp/40"]
 transform = Transform( 1, 4.76837e-007, 0, -3.72529e-009, 1, 0, 0, 0, 1, 0.00794983, 0.0259252, 0.088954 )
 mesh = SubResource( 1 )
-material/0 = ExtResource( 2 )
+material/0 = ExtResource( 3 )
 
 [node name="50" type="StaticBody" parent="Map/Ramp"]
 editor/display_folded = true
@@ -193,7 +197,7 @@ shape = SubResource( 7 )
 [node name="MeshInstance" type="MeshInstance" parent="Map/Ramp/50"]
 transform = Transform( 1, 0, 0, 3.72529e-009, 1, 0, 0, 0, 1, 0.00793457, 0.0259247, 0.088954 )
 mesh = SubResource( 1 )
-material/0 = ExtResource( 2 )
+material/0 = ExtResource( 3 )
 
 [node name="60" type="StaticBody" parent="Map/Ramp"]
 editor/display_folded = true
@@ -205,35 +209,36 @@ shape = SubResource( 7 )
 [node name="MeshInstance" type="MeshInstance" parent="Map/Ramp/60"]
 transform = Transform( 1, 0, 0, 3.72529e-009, 1, 0, 0, 0, 1, 0.00793457, 0.0259247, 0.088954 )
 mesh = SubResource( 1 )
-material/0 = ExtResource( 2 )
+material/0 = ExtResource( 3 )
 
 [node name="AI" type="Spatial" parent="."]
 editor/display_folded = true
 
-[node name="LookAt" parent="AI" instance=ExtResource( 3 )]
+[node name="LookAt" parent="AI" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2, 12 )
 
-[node name="MoveTo" parent="AI" instance=ExtResource( 4 )]
+[node name="MoveTo" parent="AI" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.017, 15, 6.674 )
 
-[node name="CanSee" parent="AI" instance=ExtResource( 5 )]
+[node name="CanSee" parent="AI" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 12 )
 
-[node name="CanSeeFOV" parent="AI" instance=ExtResource( 6 )]
+[node name="CanSeeFOV" parent="AI" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2, 12 )
 
-[node name="Sentry" parent="AI" instance=ExtResource( 7 )]
+[node name="Sentry" parent="AI" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 2, 12 )
 
 [node name="Interactive" type="Spatial" parent="."]
+editor/display_folded = true
 
-[node name="Target" parent="Interactive" instance=ExtResource( 8 )]
+[node name="Target" parent="Interactive" instance=ExtResource( 9 )]
 transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -13, 2, -4 )
 
-[node name="Pick" parent="Interactive" instance=ExtResource( 9 )]
+[node name="Pick" parent="Interactive" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -10 )
 
-[node name="MoveAB" parent="Interactive" instance=ExtResource( 10 )]
+[node name="MoveAB" parent="Interactive" instance=ExtResource( 11 )]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -12 )
 offsetY = 6.0
@@ -243,30 +248,30 @@ end_pause = 1.0
 [node name="Destination" parent="Interactive/MoveAB" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 10.5, 8 )
 
-[node name="Checkpoint" parent="Interactive" instance=ExtResource( 11 )]
+[node name="Checkpoint" parent="Interactive" instance=ExtResource( 12 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 2, 0 )
 
-[node name="Checkpoint2" parent="Interactive" instance=ExtResource( 11 )]
+[node name="Checkpoint2" parent="Interactive" instance=ExtResource( 12 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12, 0 )
 
-[node name="MoveRandom" parent="Interactive" instance=ExtResource( 12 )]
+[node name="MoveRandom" parent="Interactive" instance=ExtResource( 13 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, -12 )
 
-[node name="Trigger" parent="Interactive" instance=ExtResource( 13 )]
+[node name="Trigger" parent="Interactive" instance=ExtResource( 14 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.34823, 1, -8.21886 )
 
-[node name="TriggeredLight" parent="Interactive" instance=ExtResource( 14 )]
+[node name="TriggeredLight" parent="Interactive" instance=ExtResource( 15 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1, -9 )
 light_energy = 0.0
 light_indirect_energy = 0.0
 
-[node name="GrabbedItem" parent="Interactive" instance=ExtResource( 15 )]
+[node name="GrabbedItem" parent="Interactive" instance=ExtResource( 16 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, -10 )
 
-[node name="GrabbedItem2" parent="Interactive" instance=ExtResource( 15 )]
+[node name="GrabbedItem2" parent="Interactive" instance=ExtResource( 16 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -10 )
 
-[node name="Teleporter" parent="Interactive" instance=ExtResource( 16 )]
+[node name="Teleporter" parent="Interactive" instance=ExtResource( 17 )]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25771, 0, -11 )
 
@@ -276,10 +281,10 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 5, 11 )
 [node name="MeshInstance" parent="Interactive/Teleporter" index="1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1 )
 
-[node name="GroundButton" parent="Interactive" instance=ExtResource( 17 )]
+[node name="GroundButton" parent="Interactive" instance=ExtResource( 18 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -12 )
 
-[node name="Water" parent="Interactive" instance=ExtResource( 18 )]
+[node name="Water" parent="Interactive" instance=ExtResource( 19 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19, -4, 0 )
 
 [editable path="Interactive/MoveAB"]

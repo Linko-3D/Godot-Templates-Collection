@@ -1,10 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Templates/3D/Player/ThirdPersonCharacter/ThirdPersonCharacter.gd" type="Script" id=1]
 [ext_resource path="res://Templates/3D/Abilities/Shoot/Emitter/Shoot/Shoot.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Templates/3D/Abilities/Shoot/Projectile/Projectile.tscn" type="PackedScene" id=3]
-
-
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.5
@@ -33,7 +30,6 @@ transform = Transform( 1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 
 
 [node name="Shoot" parent="Yaw/Pitch" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 0.939693, -0.34202, 0, 0.34202, 0.939693, 0, 0.34202, -0.939689 )
-bullet = ExtResource( 3 )
 
-[node name="Head" type="Camera" parent="Yaw/Pitch"]
+[node name="Camera" type="Camera" parent="Yaw/Pitch"]
 transform = Transform( 1, 0, 0, 0, 1, -2.98023e-008, 0, 0, 1, 0, 0, 5 )

@@ -15,6 +15,7 @@ var vector = Vector3()
 var snap_distance = -0.11
 var snap = Vector3(0, snap_distance, 0)
 
+var swimming = false
 var jumped = true
 
 # ----------------------------------
@@ -24,7 +25,7 @@ func _physics_process(delta):
 	vector.x = 0		# Resets the direction when no key is pressed
 	vector.z = 0
 
-	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED and swimming == false:
 		if Input.is_action_pressed("ui_up"):
 			vector += Vector3.FORWARD * speed
 		if Input.is_action_pressed("ui_down"):
