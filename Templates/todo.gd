@@ -1,6 +1,9 @@
+swim
+ladder
+
 raycast force
 throw object
-swim
+
 portal
 checkpoint needs improvements
 bullet trail from raycast
