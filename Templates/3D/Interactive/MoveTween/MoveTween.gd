@@ -1,8 +1,5 @@
 extends KinematicBody
 
-export var offsetX = 0.0
-export var offsetY = 0.0
-export var offsetZ = 0.0
 export var travel_seconds = 3.0
 export var start_pause = 0.0
 export var end_pause = 0.0
