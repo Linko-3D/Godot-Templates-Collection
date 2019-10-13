@@ -51,7 +51,6 @@ transform = Transform( 0.739947, 0.458629, -0.492075, -0.00280257, 0.733626, 0.6
 shadow_enabled = true
 
 [node name="Map" type="Spatial" parent="."]
-editor/display_folded = true
 
 [node name="MeshInstance" type="MeshInstance" parent="Map"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0079422, 0.0259247, 0.088954 )
@@ -274,7 +273,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -12 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25, -4, 0 )
 
 [node name="MoveTween" parent="Interactive" instance=ExtResource( 18 )]
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -12 )
 start_pause = 2.0
 end_pause = 2.0
@@ -285,6 +283,11 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 10.5, 8 )
 [node name="Move" parent="Interactive" instance=ExtResource( 19 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -12 )
 
+[node name="Destination" parent="Interactive/Move" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 10.5, 8 )
+
 [editable path="Interactive/Teleporter"]
 
 [editable path="Interactive/MoveTween"]
+
+[editable path="Interactive/Move"]
