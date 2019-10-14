@@ -1,12 +1,13 @@
 extends KinematicBody
 
-export var start_pause = 0.0
-export var end_pause = 0.0
+export var speed = 1.0
 
+var destination
 var vector
 
 func _ready():
-	vector = global_transform.origin - $Destination.global_transform.origin
+	destination = $Destination.global_transform.origin
 
 func _process(delta):
-	global_transform.origin -= vector * 0.003
+	vector = (destination - global_transform.origin).normalized()
+	global_transform.origin += vector * speed * 0.1

@@ -1,6 +1,6 @@
 extends KinematicBody
 
-export var speed = 1
+export var speed = 1.0
 export var lock_linear_y = true
 export var lock_angular_x = true
 export var lock_angular_y = false
