@@ -1,8 +1,9 @@
+FPS acceleration
 swim
+walk on ice
 ladder
 
-raycast force
-throw object
+raycast explosion
 
 portal
 checkpoint needs improvements
