@@ -1,3 +1,4 @@
+pull faster with distance
 FPS acceleration
 swim
 walk on ice
