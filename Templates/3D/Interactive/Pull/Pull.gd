@@ -5,11 +5,14 @@ export var pull_force = 1.0
 var vector
 var hold = false
 
+var object_grabbed = null
+
 func _process(delta):
 	if is_colliding() and hold:
 		if get_collider().get_class() == "RigidBody":
-			vector = (get_collider().global_transform.origin - global_transform.origin).normalized()
-			get_collider().global_transform.origin -= vector * pull_force * 0.1
+			object_grabbed = get_collider()
+			vector = (object_grabbed.global_transform.origin - global_transform.origin).normalized()
+			object_grabbed.global_transform.origin -= vector * pull_force * 0.1
 
 func _input(event):
 	if event is InputEventMouseButton and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
@@ -17,6 +20,7 @@ func _input(event):
 			hold = true
 		if event.button_index == 2 and event.pressed == false:
 			hold = false
-			if get_collider().get_class() == "RigidBody":
-				get_collider().can_sleep = false
-				get_collider().set_mode(0)
+			if object_grabbed != null and object_grabbed.get_class() == "RigidBody":
+				object_grabbed.can_sleep = false
+				object_grabbed.set_mode(0)
+				object_grabbed = null

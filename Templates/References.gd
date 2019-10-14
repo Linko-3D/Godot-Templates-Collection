@@ -7,8 +7,10 @@ global_transform.origin
 vector = vector.rotated(Vector3.UP, rotation.y)
 
 #Use both in a ready process:
+# Search first object in the group
 target = get_tree().get_nodes_in_group("Player")[0] # Get the first node in the group "Player" (recommended)
 
+# Search node with the name
 target = get_tree().get_root().find_node("Player", true, false) # Find the node with the name "Player"
 
 # If the player enters an area node
