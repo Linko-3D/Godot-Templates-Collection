@@ -17,7 +17,7 @@ func _process(delta):
 		if get_collider().get_class() == "RigidBody" and get_collider().mass <= mass_limit: # If the raycast is colliding with a RigidBody under the mass limit
 			if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 				if Input.is_action_just_pressed("interact"):
-					object_grabbed = get_collider() 	# We store the object pointed with the interact key
+					object_grabbed = get_collider() 	# We store the rigid body under the mass limit pointed with the interact key
 					enabled = false 					# We disable the raycast now that we have stored the first object pointed
 
 	if object_grabbed != null:
