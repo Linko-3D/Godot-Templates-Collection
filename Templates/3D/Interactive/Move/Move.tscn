@@ -8,7 +8,7 @@ size = Vector3( 3, 0.25, 3 )
 [sub_resource type="BoxShape" id=2]
 extents = Vector3( 1.5, 0.1, 1.5 )
 
-[node name="Move" type="KinematicBody"]
+[node name="Move" type="StaticBody"]
 script = ExtResource( 1 )
 
 [node name="Destination" type="Position3D" parent="."]
