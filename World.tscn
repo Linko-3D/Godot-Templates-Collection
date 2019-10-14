@@ -208,7 +208,6 @@ mesh = SubResource( 1 )
 material/0 = ExtResource( 2 )
 
 [node name="AI" type="Spatial" parent="."]
-editor/display_folded = true
 
 [node name="LookAt" parent="AI" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2, 12 )
