@@ -17,3 +17,6 @@ func _input(event):
 			hold = true
 		if event.button_index == 2 and event.pressed == false:
 			hold = false
+			if get_collider().get_class() == "RigidBody":
+				get_collider().can_sleep = false
+				get_collider().set_mode(0)
