@@ -11,6 +11,8 @@ var offset = Vector3()
 var particles_spawned = false
 
 func _ready():
+	add_collision_exception_with(self)
+
 	if lifespan > 0:
 		yield(get_tree().create_timer(lifespan), "timeout")
 		queue_free()
