@@ -1,7 +1,7 @@
 extends RayCast
 
 export var mass_limit = 30
-export var push_force = 10
+export var push_force = 5
 
 var object_grabbed = null
 
