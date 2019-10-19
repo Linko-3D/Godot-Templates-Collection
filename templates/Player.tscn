@@ -1,6 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Templates/Player.gd" type="Script" id=1]
+[ext_resource path="res://Templates/RayCast.tscn" type="PackedScene" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://Templates/Crosshair.gd" type="Script" id=4]
 
 [sub_resource type="CapsuleMesh" id=1]
 radius = 0.5
@@ -26,6 +29,9 @@ shape = SubResource( 2 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0 )
 current = true
 
-[node name="RayCast" type="RayCast" parent="Camera"]
-enabled = true
-cast_to = Vector3( 0, 0, -100 )
+[node name="RayCast" parent="Camera" instance=ExtResource( 2 )]
+
+[node name="Crosshair" type="Sprite" parent="."]
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 3 )
+script = ExtResource( 4 )
