@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="ParticlesMaterial" id=1]
+spread = 10.0
+initial_velocity = 40.0
+initial_velocity_random = 1.0
+
+[sub_resource type="SphereMesh" id=2]
+radius = 0.1
+height = 0.2
+radial_segments = 4
+rings = 1
+
+[node name="Impact" type="Particles"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 0, 0 )
+emitting = false
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource( 1 )
+draw_pass_1 = SubResource( 2 )
