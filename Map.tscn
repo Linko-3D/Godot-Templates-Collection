@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://templates/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Templates/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Templates/AI/MoveTo/MoveTo.tscn" type="PackedScene" id=2]
 
 [sub_resource type="PlaneMesh" id=1]
 
@@ -9,15 +10,19 @@ data = PoolVector3Array( 1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0,
 
 [node name="Map" type="Spatial"]
 
-[node name="MeshInstance" type="MeshInstance" parent="."]
+[node name="Ground" type="MeshInstance" parent="."]
+editor/display_folded = true
 transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0 )
 mesh = SubResource( 1 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="MeshInstance"]
+[node name="StaticBody" type="StaticBody" parent="Ground"]
 
-[node name="CollisionShape" type="CollisionShape" parent="MeshInstance/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Ground/StaticBody"]
 shape = SubResource( 2 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="MoveTo" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 4, 5 )
