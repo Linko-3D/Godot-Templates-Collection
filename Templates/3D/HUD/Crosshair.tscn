@@ -1,8 +1,0 @@
-[gd_scene load_steps=3 format=2]
-
-[ext_resource path="res://crosshair.png" type="Texture" id=1]
-[ext_resource path="res://Templates/3D/HUD/Crosshair.gd" type="Script" id=2]
-
-[node name="Crosshair" type="Sprite"]
-texture = ExtResource( 1 )
-script = ExtResource( 2 )

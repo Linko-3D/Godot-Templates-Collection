@@ -1,0 +1,41 @@
+extends KinematicBody
+
+export var speed = 10.0
+export var jump_height = 8.0
+export var mouse_sensitivity = 1.0
+export var gravity = 20.0
+
+var vector = Vector3()
+
+func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+func _physics_process(delta):
+	vector.x = 0
+	vector.z = 0
+	
+	if Input.get_mouse_mode() != Input.MOUSE_MODE_CAPTURED:
+		return
+	
+	var UP = Input.is_action_pressed("ui_up")
+	var DOWN = Input.is_action_pressed("ui_down")
+	var LEFT = Input.is_action_pressed("ui_left")
+	var RIGHT = Input.is_action_pressed("ui_right")
+	
+	vector += global_transform.basis.z * (-int(UP) + int(DOWN)) * speed 
+	vector += global_transform.basis.x * (-int(LEFT) + int(RIGHT)) * speed
+	
+	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+			vector.y = jump_height
+	
+	if Input.is_action_just_pressed("ui_cancel"):
+		get_tree().quit()
+	
+	vector.y -= gravity * delta
+	
+	vector = move_and_slide(vector, Vector3.UP)
+
+func _input(event):
+	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+		rotation_degrees.y -= event.relative.x * mouse_sensitivity / 10			# Look left and right (yaw axis)
+		$Camera.rotation_degrees.x = clamp($Camera.rotation_degrees.x - event.relative.y * mouse_sensitivity / 10, -90, 90)
