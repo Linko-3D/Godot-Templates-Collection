@@ -1,6 +1,6 @@
 extends RayCast
 
-export var bullet_speed = 100.0
+export var bullet_speed = 50.0
 export (PackedScene) var bullet
 export (PackedScene) var impact
 export (PackedScene) var blood
@@ -16,8 +16,8 @@ func _input(event):
 		if event.button_index == 1 and event.pressed == true:
 			bullet()
 			if is_colliding():
-				print("yeah")
-				impact()
+				if get_collider().get_class() == "StaticBody":
+					impact()
 				if get_collider().has_method("damage"):
 					get_collider().damage()
 
