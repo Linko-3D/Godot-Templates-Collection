@@ -5,11 +5,13 @@
 [sub_resource type="CylinderMesh" id=1]
 top_radius = 0.001
 bottom_radius = 0.05
+height = 5.0
 radial_segments = 16
 rings = 1
 
 [sub_resource type="CylinderShape" id=2]
 radius = 0.05
+height = 5.0
 
 [node name="Projectile" type="RigidBody"]
 gravity_scale = 0.0

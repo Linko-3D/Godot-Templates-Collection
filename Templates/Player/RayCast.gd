@@ -1,6 +1,6 @@
 extends RayCast
 
-export var bullet_speed = 50.0
+export var bullet_speed = 500.0
 export (PackedScene) var bullet
 export (PackedScene) var impact
 export (PackedScene) var blood
