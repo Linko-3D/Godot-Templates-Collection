@@ -16,6 +16,8 @@ func _ready():
 func _input(event):
 	if event is InputEventMouseButton and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		if event.button_index == 1 and event.pressed == true:
+			spawn_bullet()
+			
 			if is_colliding():
 				if get_collider().get_class() == "StaticBody":
 					impact()
@@ -24,7 +26,6 @@ func _input(event):
 				$BulletPosition.look_at(get_collision_point(), Vector3.UP)
 			else:
 				$BulletPosition.rotation = Vector3()
-			spawn_bullet()
 
 func impact():
 	var impact_instance = impact.instance() # We instance the scene
