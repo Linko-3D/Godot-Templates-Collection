@@ -11,5 +11,5 @@ func _input(event):
 				add_child(impact_instance) # The instance is added as a child of the shoot node
 				impact_instance.set_as_toplevel(true)
 				impact_instance.translation = get_collision_point()
-				if "health" in get_collider():
-					get_collider().health -= 1
+				if get_collider().has_method("damage"):
+					get_collider().damage()
