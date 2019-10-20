@@ -27,8 +27,6 @@ func impact():
 	add_child(impact_instance) # The instance is added as a child of the shoot node
 	impact_instance.set_as_toplevel(true)
 	impact_instance.global_transform.origin = get_collision_point()
-	impact_instance.emitting
-	impact_instance.one_shot
 	
 func bullet():
 	var bullet_instance = bullet.instance() # We instance the scene
