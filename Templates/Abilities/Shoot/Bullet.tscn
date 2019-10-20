@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Templates/Player/Bullet.gd" type="Script" id=1]
+[ext_resource path="res://Templates/Abilities/Shoot/Bullet.gd" type="Script" id=1]
 
 [sub_resource type="CylinderMesh" id=1]
 top_radius = 0.001
