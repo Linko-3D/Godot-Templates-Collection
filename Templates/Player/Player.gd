@@ -1,6 +1,6 @@
 extends KinematicBody
 
-export var speed = 10.0
+export var speed = 6.5
 export var jump_height = 8.0
 export var mouse_sensitivity = 1.0
 export var gravity = 20.0
@@ -21,9 +21,10 @@ func _physics_process(delta):
 	var DOWN = Input.is_action_pressed("ui_down")
 	var LEFT = Input.is_action_pressed("ui_left")
 	var RIGHT = Input.is_action_pressed("ui_right")
+	var SPRINT = Input.is_action_pressed("sprint")
 	
-	vector += global_transform.basis.z * (-int(UP) + int(DOWN)) * speed 
-	vector += global_transform.basis.x * (-int(LEFT) + int(RIGHT)) * speed
+	vector += global_transform.basis.z * (-int(UP) + int(DOWN)) * (1 + int(SPRINT)) * speed 
+	vector += global_transform.basis.x * (-int(LEFT) + int(RIGHT)) * (1 + int(SPRINT)) * speed 
 	
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 			vector.y = jump_height
