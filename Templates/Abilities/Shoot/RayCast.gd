@@ -23,9 +23,9 @@ func _input(event):
 					impact()
 				if get_collider().has_method("damage"):
 					get_collider().damage()
-				$BulletPosition.look_at(get_collision_point(), Vector3.UP)
+				$NozzlePosition.look_at(get_collision_point(), Vector3.UP)
 			else:
-				$BulletPosition.rotation = Vector3()
+				$NozzlePosition.rotation = Vector3()
 
 func impact():
 	var impact_instance = impact.instance() # We instance the scene
@@ -39,5 +39,5 @@ func spawn_bullet():
 	
 	add_child(bullet_instance) # The instance is added as a child of the shoot node
 	bullet_instance.set_as_toplevel(true) # Projectile parented to the highest node in the level to detach it from the player
-	bullet_instance.global_transform.origin = $BulletPosition.global_transform.origin
+	bullet_instance.global_transform.origin = $NozzlePosition.global_transform.origin
 	bullet_instance.linear_velocity = global_transform.basis.z * -bullet_speed # An initial force is applied when clicking, the force is applied on each new instance

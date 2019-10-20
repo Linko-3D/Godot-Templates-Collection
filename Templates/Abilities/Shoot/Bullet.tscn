@@ -6,7 +6,7 @@
 top_radius = 0.001
 bottom_radius = 0.05
 height = 5.0
-radial_segments = 16
+radial_segments = 32
 rings = 1
 
 [sub_resource type="CylinderShape" id=2]
