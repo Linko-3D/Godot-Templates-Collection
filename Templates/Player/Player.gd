@@ -7,9 +7,6 @@ export var mouse_sensitivity = 1.0
 var vector = Vector3()
 var gravity = 20.0
 
-func _ready():
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-
 func _physics_process(delta):
 	vector.x = 0
 	vector.z = 0
@@ -27,10 +24,7 @@ func _physics_process(delta):
 	vector += global_transform.basis.x * (-int(LEFT) + int(RIGHT)) * (1 + int(SPRINT)) * speed 
 	
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-			vector.y = jump_height
-	
-	if Input.is_action_just_pressed("ui_cancel"):
-		get_tree().quit()
+		vector.y = jump_height
 	
 	vector.y -= gravity * delta
 	

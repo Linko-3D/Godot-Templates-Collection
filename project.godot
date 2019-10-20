@@ -19,6 +19,10 @@ config/name="Godot-Templates-Collection"
 run/main_scene="res://Map.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Gamestate="*res://Gamestate.gd"
+
 [input]
 
 ui_left={
