@@ -4,6 +4,7 @@
 spread = 10.0
 initial_velocity = 40.0
 initial_velocity_random = 1.0
+angular_velocity = 1.05
 
 [sub_resource type="SphereMesh" id=2]
 radial_segments = 4
@@ -12,6 +13,8 @@ rings = 1
 [sub_resource type="SphereMesh" id=3]
 radius = 0.05
 height = 0.1
+radial_segments = 16
+rings = 8
 
 [node name="Impact" type="Particles"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 0, 0 )
@@ -21,5 +24,6 @@ process_material = SubResource( 1 )
 draw_pass_1 = SubResource( 2 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, 0, 0, 0 )
 mesh = SubResource( 3 )
 material/0 = null

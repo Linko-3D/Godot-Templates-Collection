@@ -5,12 +5,18 @@ export (PackedScene) var bullet
 export (PackedScene) var impact
 export (PackedScene) var blood
 
+var player
+
+func _ready():
+	player = get_tree().get_nodes_in_group("Player")[0] # Get the target with the first node in the Player group
+	add_exception(player)
 
 func _input(event):
 	if event is InputEventMouseButton and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		if event.button_index == 1 and event.pressed == true:
 			bullet()
 			if is_colliding():
+				print("yeah")
 				impact()
 				if get_collider().has_method("damage"):
 					get_collider().damage()
@@ -25,8 +31,9 @@ func impact():
 	impact_instance.one_shot
 	
 func bullet():
-	var projectile_instance = bullet.instance() # We instance the scene
+	var bullet_instance = bullet.instance() # We instance the scene
 	
-	add_child(projectile_instance) # The instance is added as a child of the shoot node
-	projectile_instance.set_as_toplevel(true) # Projectile parented to the highest node in the level to detach it from the player
-	projectile_instance.linear_velocity = global_transform.basis.z * -bullet_speed # An initial force is applied when clicking, the force is applied on each new instance
+	add_child(bullet_instance) # The instance is added as a child of the shoot node
+	bullet_instance.set_as_toplevel(true) # Projectile parented to the highest node in the level to detach it from the player
+	bullet_instance.global_transform.origin = $BulletPosition.global_transform.origin
+	bullet_instance.linear_velocity = global_transform.basis.z * -bullet_speed # An initial force is applied when clicking, the force is applied on each new instance

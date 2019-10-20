@@ -10,3 +10,6 @@ cast_to = Vector3( 0, 0, -100 )
 script = ExtResource( 1 )
 bullet = ExtResource( 2 )
 impact = ExtResource( 3 )
+
+[node name="BulletPosition" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -0.5, 0 )
