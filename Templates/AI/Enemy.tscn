@@ -1,6 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Templates/Player/Enemy.gd" type="Script" id=1]
+[ext_resource path="res://Templates/AI/Enemy.gd" type="Script" id=1]
+
 
 [sub_resource type="CapsuleMesh" id=1]
 radius = 0.5

@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="CylinderMesh" id=1]
+top_radius = 0.05
+bottom_radius = 0.05
+
+[node name="BulletTracer" type="Position3D"]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 0.999989, 0.00462004, -8.95388e-008, 6.50607e-008, 5.29268e-006, 1, 0.00462004, -0.999989, 5.29232e-006, 0, 0, 1 )
+mesh = SubResource( 1 )
+material/0 = null

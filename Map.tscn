@@ -4,7 +4,7 @@
 [ext_resource path="res://Templates/AI/FollowPlayer/FollowPlayer.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Templates/Interactive/MoveToTimer/MoveToTimer.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Templates/Interactive/MoveToSpeed/MoveToSpeed.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Templates/Player/Enemy.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Templates/AI/Enemy.tscn" type="PackedScene" id=5]
 
 [sub_resource type="PlaneMesh" id=1]
 

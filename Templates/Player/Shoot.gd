@@ -1,7 +1,7 @@
 extends Position3D
 
 export (PackedScene) var projectile
-export var force = 25.0
+export var force = 50.0
 
 func _input(event): 
 	if event is InputEventMouseButton and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
