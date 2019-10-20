@@ -13,10 +13,10 @@ func _ready():
 func _process(delta):
 	if $Tween.is_active() == false: # Each time the animation stops check the direction set
 		if forward:
-			$Tween.start()
 			$Tween.interpolate_property(self, "translation", translation, $Destination.global_transform.origin, time, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT, start_pause)
+			$Tween.start()
 			forward = false
 		else:
-			$Tween.start()
 			$Tween.interpolate_property(self, "translation", translation, starting_position, time, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT, end_pause)
+			$Tween.start()
 			forward = true
