@@ -9,7 +9,7 @@ var forward = true
 var length = Vector3()
 
 func _ready():
-	starting_position = translation
+	starting_position = global_transform.origin
 	var vector = $Destination.global_transform.origin - global_transform.origin
 	length = vector.length()
 

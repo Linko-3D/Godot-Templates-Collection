@@ -8,7 +8,7 @@ var starting_position = Vector3()
 var forward = true
 
 func _ready():
-	starting_position = translation
+	starting_position = global_transform.origin
 
 func _process(delta):
 	if $Tween.is_active() == false: # Each time the animation stops check the direction set
