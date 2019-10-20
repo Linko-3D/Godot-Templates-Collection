@@ -12,6 +12,7 @@ var player
 func _ready():
 	player = get_tree().get_nodes_in_group("Player")[0] # Get the target with the first node in the Player group
 	add_exception(player)
+	$Crosshair.position = Vector2(OS.window_size.x / 2, OS.window_size.y / 2)
 
 func _input(event):
 	if event is InputEventMouseButton and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
