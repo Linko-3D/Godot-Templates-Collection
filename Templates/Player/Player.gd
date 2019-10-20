@@ -3,9 +3,9 @@ extends KinematicBody
 export var speed = 6.5
 export var jump_height = 8.0
 export var mouse_sensitivity = 1.0
-export var gravity = 20.0
 
 var vector = Vector3()
+var gravity = 20.0
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -38,5 +38,5 @@ func _physics_process(delta):
 
 func _input(event):
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-		rotation_degrees.y -= event.relative.x * mouse_sensitivity / 10			# Look left and right (yaw axis)
-		$Camera.rotation_degrees.x = clamp($Camera.rotation_degrees.x - event.relative.y * mouse_sensitivity / 10, -90, 90)
+		rotation_degrees.y -= event.relative.x * mouse_sensitivity / 10			# Look left and right
+		$Camera.rotation_degrees.x = clamp($Camera.rotation_degrees.x - event.relative.y * mouse_sensitivity / 10, -90, 90) # Look up and down
