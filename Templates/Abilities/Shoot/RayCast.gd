@@ -2,6 +2,8 @@ extends RayCast
 
 export var bullet_speed = 500.0
 export (PackedScene) var bullet
+export (PackedScene) var shell
+export (PackedScene) var nozzle_flash
 export (PackedScene) var impact
 export (PackedScene) var blood
 
@@ -14,12 +16,15 @@ func _ready():
 func _input(event):
 	if event is InputEventMouseButton and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		if event.button_index == 1 and event.pressed == true:
-			bullet()
 			if is_colliding():
 				if get_collider().get_class() == "StaticBody":
 					impact()
 				if get_collider().has_method("damage"):
 					get_collider().damage()
+				$BulletPosition.look_at(get_collision_point(), Vector3.UP)
+			else:
+				$BulletPosition.rotation = Vector3()
+			spawn_bullet()
 
 func impact():
 	var impact_instance = impact.instance() # We instance the scene
@@ -28,7 +33,7 @@ func impact():
 	impact_instance.set_as_toplevel(true)
 	impact_instance.global_transform.origin = get_collision_point()
 	
-func bullet():
+func spawn_bullet():
 	var bullet_instance = bullet.instance() # We instance the scene
 	
 	add_child(bullet_instance) # The instance is added as a child of the shoot node

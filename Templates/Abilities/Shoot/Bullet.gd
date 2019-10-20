@@ -1,6 +1,7 @@
 extends RigidBody
 
-export var lifetime = 3.0
+export var lifetime = 1.0
+
 var player
 
 func _ready():
