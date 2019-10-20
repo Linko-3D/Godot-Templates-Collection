@@ -13,6 +13,7 @@ func _ready():
 	player = get_tree().get_nodes_in_group("Player")[0] # Get the target with the first node in the Player group
 	add_exception(player)
 	$Crosshair.position = Vector2(OS.window_size.x / 2, OS.window_size.y / 2)
+	$CrosshairHit.position = Vector2(OS.window_size.x / 2, OS.window_size.y / 2)
 
 func _input(event):
 	if event is InputEventMouseButton and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
@@ -23,10 +24,16 @@ func _input(event):
 				if get_collider().get_class() == "StaticBody":
 					impact()
 				if get_collider().has_method("damage"):
+					show_hit()
 					get_collider().damage()
 				$NozzlePosition.look_at(get_collision_point(), Vector3.UP)
 			else:
 				$NozzlePosition.rotation = Vector3()
+
+func show_hit():
+	$CrosshairHit.visible = true
+	yield(get_tree().create_timer(0.1), "timeout")
+	$CrosshairHit.visible = false
 
 func impact():
 	var impact_instance = impact.instance() # We instance the scene

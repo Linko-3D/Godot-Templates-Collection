@@ -20,3 +20,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -0.5, 0 )
 [node name="Crosshair" type="Sprite" parent="."]
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 5 )
+
+[node name="CrosshairHit" type="Sprite" parent="."]
+visible = false
+rotation = 0.785398
+scale = Vector2( 0.075, 0.075 )
+texture = ExtResource( 5 )
