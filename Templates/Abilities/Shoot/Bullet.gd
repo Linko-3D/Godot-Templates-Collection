@@ -19,5 +19,4 @@ func _ready():
 		queue_free()
 
 func _on_Projectile_body_entered(body):
-	yield(get_tree().create_timer(0.01), "timeout") # A delay is added to allow to push rigid bodies
 	queue_free()
