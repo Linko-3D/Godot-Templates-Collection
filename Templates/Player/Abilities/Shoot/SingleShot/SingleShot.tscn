@@ -1,13 +1,12 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Templates/Player/Abilities/Shoot/RayCast.gd" type="Script" id=1]
+[ext_resource path="res://Templates/Player/Abilities/Shoot/SingleShot/SingleShot.gd" type="Script" id=1]
 [ext_resource path="res://Templates/Player/Abilities/Shoot/Bullet.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Templates/Player/Abilities/Shoot/Shell.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Templates/Player/Abilities/Shoot/Impact.tscn" type="PackedScene" id=4]
 [ext_resource path="res://crosshair.png" type="Texture" id=5]
 
-
-[node name="RayCast" type="RayCast"]
+[node name="SingleShot" type="RayCast"]
 enabled = true
 cast_to = Vector3( 0, 0, -100 )
 script = ExtResource( 1 )
