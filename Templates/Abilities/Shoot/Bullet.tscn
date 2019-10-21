@@ -15,6 +15,7 @@ height = 5.0
 
 [node name="Projectile" type="RigidBody"]
 gravity_scale = 0.0
+continuous_cd = true
 contacts_reported = 1
 contact_monitor = true
 axis_lock_angular_x = true
