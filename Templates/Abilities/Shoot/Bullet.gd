@@ -5,6 +5,12 @@ export var lifetime = 1.0
 var player
 
 func _ready():
+	gravity_scale = 0
+	continuous_cd = true
+	contact_monitor = true
+	contacts_reported = 1
+	can_sleep = false	
+	
 	player = get_tree().get_nodes_in_group("Player")[0]
 	add_collision_exception_with(player)
 	
