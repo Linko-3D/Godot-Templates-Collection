@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Templates/Player/Player.gd" type="Script" id=1]
-[ext_resource path="res://Templates/Abilities/Shoot/RayCast.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Templates/Abilities/Grab/Grab.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Templates/Abilities/Hook/Hook.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Templates/Player/Abilities/Shoot/RayCast.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Templates/Player/Abilities/Grab/Grab.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Templates/Player/Abilities/Hook/Hook.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Templates/Player/Abilities/AddObjectRayCast/AddObjectRayCast.tscn" type="PackedScene" id=5]
 
 [sub_resource type="CapsuleMesh" id=1]
 radius = 0.5
@@ -34,3 +35,5 @@ current = true
 [node name="Grab" parent="Camera" instance=ExtResource( 3 )]
 
 [node name="Hook" parent="Camera" instance=ExtResource( 4 )]
+
+[node name="AddObjectRayCast" parent="Camera" instance=ExtResource( 5 )]
