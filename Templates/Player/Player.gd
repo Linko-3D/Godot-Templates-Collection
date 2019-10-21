@@ -11,9 +11,6 @@ func _physics_process(delta):
 	vector.x = 0
 	vector.z = 0
 	
-	if Input.get_mouse_mode() != Input.MOUSE_MODE_CAPTURED:
-		return
-	
 	var UP = Input.is_action_pressed("ui_up")
 	var DOWN = Input.is_action_pressed("ui_down")
 	var LEFT = Input.is_action_pressed("ui_left")
@@ -31,6 +28,6 @@ func _physics_process(delta):
 	vector = move_and_slide(vector, Vector3.UP)
 
 func _input(event):
-	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+	if event is InputEventMouseMotion:
 		rotation_degrees.y -= event.relative.x * mouse_sensitivity / 10			# Look left and right
 		$Camera.rotation_degrees.x = clamp($Camera.rotation_degrees.x - event.relative.y * mouse_sensitivity / 10, -90, 90) # Look up and down

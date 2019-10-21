@@ -15,10 +15,7 @@ func _process(delta):
 		vector = (destination - player.translation).normalized()
 		player.move_and_slide(vector * pull_force)
 
-func _input(event):
-	if Input.get_mouse_mode() != Input.MOUSE_MODE_CAPTURED:
-		return
-	
+func _input(event):	
 	if event is InputEventMouseButton:
 		if event.button_index == 2 and event.pressed == true:
 			if is_colliding() and get_collider().get_class() != "RigidBody":

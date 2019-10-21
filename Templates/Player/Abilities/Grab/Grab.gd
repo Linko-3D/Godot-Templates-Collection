@@ -25,9 +25,6 @@ func _process(delta):
 		get_collider().global_transform = $Hold.global_transform # If we have grabbed a rigid body, set it to the hold node position
 
 func _input(event): 
-	if Input.get_mouse_mode() != Input.MOUSE_MODE_CAPTURED:
-		return
-
 	if event is InputEventMouseButton:
 		if event.button_index == 1 and event.pressed == true:	# If we left click
 			if object_grabbed != null:							# If we hold something

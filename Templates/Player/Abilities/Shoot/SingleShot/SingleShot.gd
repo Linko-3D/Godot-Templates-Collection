@@ -16,7 +16,7 @@ func _ready():
 	$CrosshairHit.position = Vector2(OS.window_size.x / 2, OS.window_size.y / 2)
 
 func _input(event):
-	if event is InputEventMouseButton and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+	if event is InputEventMouseButton:
 		if event.button_index == 1 and event.pressed == true:
 			if bullet != null:
 				spawn_bullet()

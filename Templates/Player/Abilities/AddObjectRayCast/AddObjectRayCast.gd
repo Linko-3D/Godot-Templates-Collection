@@ -11,7 +11,7 @@ func _ready():
 	player = get_tree().get_nodes_in_group("Player")[0] # Get the target with the first node in the Player group
 
 func _input(event):
-	if event is InputEventMouseButton and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+	if event is InputEventMouseButton:
 		if event.button_index == 3 and event.pressed == true:
 			if is_colliding():
 				var object_instance = object.instance() # We instance the scene
