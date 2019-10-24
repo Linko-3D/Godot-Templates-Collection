@@ -6,9 +6,6 @@ export var push_force = 5
 var object_grabbed = null
 
 func _process(delta):
-	if Input.get_mouse_mode() != Input.MOUSE_MODE_CAPTURED:
-		return
-
 	if Input.is_action_just_pressed("interact") and object_grabbed != null: # If we grab something and press interact
 		get_collider().can_sleep = false 	# We disable can sleep on the Rigid Body to make sure it falls down
 		get_collider().set_mode(0)			# We set the object to RigidBody again to reset the gravity
