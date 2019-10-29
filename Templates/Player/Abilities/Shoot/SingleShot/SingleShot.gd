@@ -1,6 +1,7 @@
 extends RayCast
 
 export var bullet_speed = 500.0
+export var bullet_lifetime = 0.1
 export (PackedScene) var bullet
 export (PackedScene) var nozzle_flash
 export (PackedScene) var shell
@@ -34,7 +35,7 @@ func _input(event):
 
 func show_hit():
 	$CrosshairHit.visible = true
-	yield(get_tree().create_timer(0.1), "timeout")
+	yield(get_tree().create_timer(bullet_lifetime), "timeout")
 	$CrosshairHit.visible = false
 
 func impact():
