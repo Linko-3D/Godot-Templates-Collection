@@ -31,6 +31,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0 )
 current = true
 
 [node name="SingleShot" parent="Camera" instance=ExtResource( 2 )]
+bullet_speed = 5.0
 
 [node name="Grab" parent="Camera" instance=ExtResource( 3 )]
 
