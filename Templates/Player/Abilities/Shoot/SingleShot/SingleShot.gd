@@ -20,6 +20,8 @@ func _input(event):
 		if event.button_index == 1 and event.pressed == true:
 			if bullet != null:
 				spawn_bullet()
+			if shell != null:
+				spawn_shell()
 			
 			if is_colliding():
 				if get_collider().get_class() == "StaticBody":
@@ -51,3 +53,6 @@ func spawn_bullet():
 	bullet_instance.set_as_toplevel(true) # Projectile parented to the highest node in the level to detach it from the player
 	bullet_instance.global_transform.origin = $NozzlePosition.global_transform.origin
 	bullet_instance.linear_velocity = global_transform.basis.z * -bullet_speed # An initial force is applied when clicking, the force is applied on each new instance
+
+func spawn_shell():
+	pass
