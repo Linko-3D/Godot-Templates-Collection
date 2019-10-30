@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Templates/Player/Abilities/Hook/Hook.gd" type="Script" id=1]
+
+
+[node name="Hook" type="RayCast"]
+enabled = true
+cast_to = Vector3( 0, 0, -20 )
+script = ExtResource( 1 )
