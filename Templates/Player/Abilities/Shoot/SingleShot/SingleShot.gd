@@ -1,6 +1,7 @@
 extends RayCast
 
 export var bullet_speed = 500.0
+export var shell_speed = 10.0
 export (PackedScene) var bullet
 export (PackedScene) var nozzle_flash
 export (PackedScene) var shell
@@ -52,7 +53,12 @@ func spawn_bullet():
 	add_child(bullet_instance) # The instance is added as a child of the shoot node
 	bullet_instance.set_as_toplevel(true) # Projectile parented to the highest node in the level to detach it from the player
 	bullet_instance.global_transform.origin = $NozzlePosition.global_transform.origin
-	bullet_instance.linear_velocity = global_transform.basis.z * -bullet_speed # An initial force is applied when clicking, the force is applied on each new instance
+	bullet_instance.linear_velocity = $NozzlePosition.global_transform.basis.z * -bullet_speed # An initial force is applied when clicking, the force is applied on each new instance
 
 func spawn_shell():
-	pass
+	var shell_instance = shell.instance()
+	
+	add_child(shell_instance)
+	shell_instance.set_as_toplevel(true)
+	shell_instance.global_transform.origin = $NozzlePosition/ShellPosition.global_transform.origin
+	shell_instance.linear_velocity = $NozzlePosition/ShellPosition.global_transform.basis.y * shell_speed

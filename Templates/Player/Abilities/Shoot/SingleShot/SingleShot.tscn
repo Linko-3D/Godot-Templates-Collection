@@ -17,10 +17,10 @@ shell = ExtResource( 4 )
 impact = ExtResource( 5 )
 
 [node name="NozzlePosition" type="Position3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -0.5, -1.25294 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -0.5, -1.2 )
 
 [node name="ShellPosition" type="Position3D" parent="NozzlePosition"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.409145 )
+transform = Transform( 0.173648, 0.984808, 0, -0.984808, 0.173648, 0, 0, 0, 1, 0.1, 0, 0.1 )
 
 [node name="Crosshair" type="Sprite" parent="."]
 scale = Vector2( 0.1, 0.1 )
