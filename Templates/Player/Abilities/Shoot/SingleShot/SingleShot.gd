@@ -20,12 +20,7 @@ func _ready():
 
 func _input(event):
 	if event is InputEventMouseButton:
-		if event.button_index == 1 and event.pressed == true:
-			if bullet != null:
-				spawn_bullet()
-			if shell != null:
-				spawn_shell()
-			
+		if event.button_index == 1 and event.pressed == true:			
 			if is_colliding():
 				if get_collider().get_class() == "StaticBody":
 					if impact != null:
@@ -33,9 +28,15 @@ func _input(event):
 				if get_collider().has_method("damage"):
 					show_hit()
 					get_collider().damage()
+					
 				$NozzlePosition.look_at(get_collision_point(), Vector3.UP)
 			else:
 				$NozzlePosition.rotation = Vector3()
+				
+			if bullet != null:
+				spawn_bullet()
+			if shell != null:
+				spawn_shell()
 
 func show_hit():
 	$CrosshairHit.visible = true
