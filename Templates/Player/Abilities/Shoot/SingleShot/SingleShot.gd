@@ -20,7 +20,7 @@ func _ready():
 
 func _input(event):
 	if event is InputEventMouseButton:
-		if event.button_index == 1 and event.pressed == true:			
+		if event.button_index == 1 and event.pressed == true:
 			if is_colliding():
 				if get_collider().get_class() == "StaticBody":
 					if impact != null:
