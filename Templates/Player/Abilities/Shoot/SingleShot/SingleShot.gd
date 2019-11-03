@@ -11,6 +11,8 @@ export (PackedScene) var blood
 var player
 
 func _ready():
+	visible = true
+
 	player = get_tree().get_nodes_in_group("Player")[0] # Get the target with the first node in the Player group
 	add_exception(player)
 	$Crosshair.position = Vector2(OS.window_size.x / 2, OS.window_size.y / 2)

@@ -9,11 +9,12 @@ var object_rotation = Vector3()
 
 func _ready():
 	player = get_tree().get_nodes_in_group("Player")[0] # Get the target with the first node in the Player group
+	visible = true
 
 func _input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == 3 and event.pressed == true:
-			if is_colliding():
+			if is_colliding() and object != null:
 				var object_instance = object.instance() # We instance the scene
 
 				snap = get_collision_point()

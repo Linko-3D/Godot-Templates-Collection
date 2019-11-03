@@ -34,10 +34,7 @@ current = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0023486, -5.96046e-008, -0.0013572 )
 
 [node name="Grab" parent="Camera" instance=ExtResource( 3 )]
-visible = false
 
 [node name="Hook" parent="Camera" instance=ExtResource( 4 )]
-visible = false
 
 [node name="AddObjectRayCast" parent="Camera" instance=ExtResource( 5 )]
-visible = false
