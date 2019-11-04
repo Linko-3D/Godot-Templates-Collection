@@ -3,12 +3,15 @@
 [ext_resource path="res://Templates/Player/Abilities/Shoot/Impact.gd" type="Script" id=1]
 
 [sub_resource type="ParticlesMaterial" id=1]
+direction = Vector3( 0, 1, 0 )
 spread = 10.0
 initial_velocity = 40.0
 initial_velocity_random = 1.0
-angular_velocity = 1.05
+angle = 720.0
 
 [sub_resource type="SphereMesh" id=2]
+radius = 0.05
+height = 0.1
 radial_segments = 4
 rings = 1
 
@@ -19,8 +22,8 @@ radial_segments = 16
 rings = 8
 
 [node name="Impact" type="Particles"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 0, 0 )
-emitting = false
+amount = 16
+lifetime = 0.5
 explosiveness = 1.0
 process_material = SubResource( 1 )
 draw_pass_1 = SubResource( 2 )
@@ -31,5 +34,5 @@ mesh = SubResource( 3 )
 material/0 = null
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 0.5
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
