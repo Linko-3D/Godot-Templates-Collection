@@ -7,3 +7,9 @@ script = ExtResource( 1 )
 
 [node name="Flash" type="OmniLight" parent="."]
 light_color = Color( 1, 0.890196, 0, 1 )
+shadow_enabled = true
+
+[node name="Lifetime" type="Timer" parent="."]
+wait_time = 0.02
+autostart = true
+[connection signal="timeout" from="Lifetime" to="." method="_on_Lifetime_timeout"]

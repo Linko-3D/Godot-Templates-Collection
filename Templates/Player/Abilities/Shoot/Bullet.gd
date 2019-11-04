@@ -12,8 +12,6 @@ func _ready():
 	player = get_tree().get_nodes_in_group("Player")[0]
 	add_collision_exception_with(player)
 	
-	$Lifetime.start()
-
 func _on_Projectile_body_entered(body):
 	queue_free()
 

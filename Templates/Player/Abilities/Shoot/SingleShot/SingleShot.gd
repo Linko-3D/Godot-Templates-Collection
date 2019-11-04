@@ -37,6 +37,7 @@ func _input(event):
 				spawn_bullet()
 			if shell != null:
 				spawn_shell()
+			nozzle_flash()
 
 func show_hit():
 	$CrosshairHit.visible = true
@@ -48,7 +49,13 @@ func impact():
 
 	get_tree().get_root().add_child(impact_instance)
 	impact_instance.global_transform.origin = get_collision_point()
+
+func nozzle_flash():
+	var nozzle_flash_instance = nozzle_flash.instance()
 	
+	add_child(nozzle_flash_instance)
+	nozzle_flash_instance.global_transform = $NozzlePosition.global_transform
+		
 func spawn_bullet():
 	var bullet_instance = bullet.instance()
 	
