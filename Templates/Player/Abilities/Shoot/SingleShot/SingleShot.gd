@@ -46,22 +46,19 @@ func show_hit():
 func impact():
 	var impact_instance = impact.instance() # We instance the scene
 
-	add_child(impact_instance) # The instance is added as a child of the shoot node
-	impact_instance.set_as_toplevel(true)
+	get_tree().get_root().add_child(impact_instance) # The instance is added as a child of the shoot node
 	impact_instance.global_transform.origin = get_collision_point()
 	
 func spawn_bullet():
 	var bullet_instance = bullet.instance() # We instance the scene
 	
-	add_child(bullet_instance) # The instance is added as a child of the shoot node
-	bullet_instance.set_as_toplevel(true) # Projectile parented to the highest node in the level to detach it from the player
-	bullet_instance.global_transform.origin = $NozzlePosition.global_transform.origin
+	get_tree().get_root().add_child(bullet_instance) # The instance is added as a child of the shoot node
+	bullet_instance.global_transform = $NozzlePosition.global_transform
 	bullet_instance.linear_velocity = $NozzlePosition.global_transform.basis.z * -bullet_speed # An initial force is applied when clicking, the force is applied on each new instance
 
 func spawn_shell():
 	var shell_instance = shell.instance()
 	
-	add_child(shell_instance)
-	shell_instance.set_as_toplevel(true)
-	shell_instance.global_transform.origin = $NozzlePosition/ShellPosition.global_transform.origin
+	get_tree().get_root().add_child(shell_instance)
+	shell_instance.global_transform = $NozzlePosition/ShellPosition.global_transform
 	shell_instance.linear_velocity = $NozzlePosition/ShellPosition.global_transform.basis.y * shell_speed

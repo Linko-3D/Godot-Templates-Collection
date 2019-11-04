@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Templates/Player/Player.gd" type="Script" id=1]
-[ext_resource path="res://Templates/Player/Abilities/Shoot/SingleShot/SingleShot.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Templates/Player/Abilities/Grab/Grab.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Templates/Player/Abilities/Hook/Hook.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Templates/Player/Abilities/AddObjectRayCast/AddObjectRayCast.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Templates/Player/Abilities/Hook/Hook.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Templates/Player/Abilities/Shoot/SingleShot/SingleShot.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Templates/Player/Abilities/AddObjectRayCast/AddObjectRayCast.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Templates/Player/Abilities/Grab/Grab.tscn" type="PackedScene" id=5]
 
 [sub_resource type="CapsuleMesh" id=1]
 radius = 0.5
@@ -30,11 +30,11 @@ shape = SubResource( 2 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0 )
 current = true
 
-[node name="SingleShot" parent="Camera" instance=ExtResource( 2 )]
+[node name="SingleShot" parent="Camera" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0023486, -5.96046e-008, -0.0013572 )
 
-[node name="Grab" parent="Camera" instance=ExtResource( 3 )]
+[node name="Grab" parent="Camera" instance=ExtResource( 5 )]
 
-[node name="Hook" parent="Camera" instance=ExtResource( 4 )]
+[node name="Hook" parent="Camera" instance=ExtResource( 2 )]
 
-[node name="AddObjectRayCast" parent="Camera" instance=ExtResource( 5 )]
+[node name="AddObjectRayCast" parent="Camera" instance=ExtResource( 4 )]
