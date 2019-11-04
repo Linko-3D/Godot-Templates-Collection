@@ -44,17 +44,17 @@ func show_hit():
 	$CrosshairHit.visible = false
 
 func impact():
-	var impact_instance = impact.instance() # We instance the scene
+	var impact_instance = impact.instance()
 
-	get_tree().get_root().add_child(impact_instance) # The instance is added as a child of the shoot node
+	get_tree().get_root().add_child(impact_instance)
 	impact_instance.global_transform.origin = get_collision_point()
 	
 func spawn_bullet():
-	var bullet_instance = bullet.instance() # We instance the scene
+	var bullet_instance = bullet.instance()
 	
-	get_tree().get_root().add_child(bullet_instance) # The instance is added as a child of the shoot node
+	get_tree().get_root().add_child(bullet_instance)
 	bullet_instance.global_transform = $NozzlePosition.global_transform
-	bullet_instance.linear_velocity = $NozzlePosition.global_transform.basis.z * -bullet_speed # An initial force is applied when clicking, the force is applied on each new instance
+	bullet_instance.linear_velocity = $NozzlePosition.global_transform.basis.z * - bullet_speed # For applied
 
 func spawn_shell():
 	var shell_instance = shell.instance()
