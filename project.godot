@@ -23,10 +23,6 @@ config/icon="res://icon.png"
 
 Gamestate="*res://GameState.gd"
 
-[display]
-
-window/size/fullscreen=true
-
 [input]
 
 ui_left={
