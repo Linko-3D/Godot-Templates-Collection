@@ -51,7 +51,6 @@ func impact():
 
 	get_tree().get_root().add_child(impact_instance)
 	impact_instance.global_transform.origin = get_collision_point()
-	impact_instance.rotation = get_collision_normal()
 
 func nozzle_flash():
 	var nozzle_flash_instance = nozzle_flash.instance()
