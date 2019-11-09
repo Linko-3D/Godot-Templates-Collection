@@ -8,17 +8,23 @@ var data = {}
 
 func _ready():
 	if not file.file_exists(path):
-		save(default_data)
-	data = parse_json(loader())
-	print("Level: " + str(data["Level"]))
+		save_data(default_data)
+	load_data()
+	data["Level"] += 1 # Demo of changing a value
+	update_data()
 
-func save(data):
+func save_data(data):
 	file.open(path, File.WRITE)
 	file.store_line(to_json(data))
 	file.close()
+	print("Data saved!")
 
-func loader():
+func load_data():
 	file.open(path, File.READ)
-	var data = file.get_as_text()
+	data = parse_json(file.get_as_text())
 	file.close()
-	return data
+	print("Data Loaded! " + str(data))
+
+func update_data():
+	save_data(data)
+	load_data()
