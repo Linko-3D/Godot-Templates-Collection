@@ -24,6 +24,7 @@ func _input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == 1 and event.pressed == true:
 			if is_colliding():
+				print(get_collision_normal())
 				if get_collider().get_class() == "StaticBody":
 					if impact != null:
 						impact()
@@ -51,6 +52,7 @@ func impact():
 
 	get_tree().get_root().add_child(impact_instance)
 	impact_instance.global_transform.origin = get_collision_point()
+	impact_instance.rotation = get_collision_normal()
 
 func nozzle_flash():
 	var nozzle_flash_instance = nozzle_flash.instance()

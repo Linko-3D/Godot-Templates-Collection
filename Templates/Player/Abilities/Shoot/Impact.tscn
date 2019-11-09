@@ -22,7 +22,6 @@ rings = 8
 
 [node name="Impact" type="Particles"]
 amount = 64
-lifetime = 2.0
 explosiveness = 1.0
 process_material = SubResource( 1 )
 draw_pass_1 = SubResource( 2 )
@@ -33,5 +32,4 @@ mesh = SubResource( 3 )
 material/0 = null
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
