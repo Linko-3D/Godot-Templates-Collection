@@ -10,7 +10,7 @@ func _ready():
 	if not file.file_exists(path):
 		save(default_data)
 	data = parse_json(loader())
-	print(data["Level"])
+	print("Level: " + str(data["Level"]))
 
 func save(data):
 	file.open(path, File.WRITE)
