@@ -4,14 +4,13 @@
 
 [sub_resource type="ParticlesMaterial" id=1]
 direction = Vector3( 0, 1, 0 )
-spread = 10.0
-initial_velocity = 40.0
-initial_velocity_random = 1.0
-angle = 720.0
+spread = 180.0
+initial_velocity = 5.0
+initial_velocity_random = 0.5
 
 [sub_resource type="SphereMesh" id=2]
-radius = 0.05
-height = 0.1
+radius = 0.02
+height = 0.04
 radial_segments = 4
 rings = 1
 
@@ -22,8 +21,8 @@ radial_segments = 16
 rings = 8
 
 [node name="Impact" type="Particles"]
-amount = 16
-lifetime = 0.5
+amount = 64
+lifetime = 2.0
 explosiveness = 1.0
 process_material = SubResource( 1 )
 draw_pass_1 = SubResource( 2 )
@@ -34,5 +33,5 @@ mesh = SubResource( 3 )
 material/0 = null
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 2.0
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -21,7 +21,8 @@ config/icon="res://icon.png"
 
 [autoload]
 
-Gamestate="*res://GameState.gd"
+Gamestate="*res://Templates/Singletons/Pause.gd"
+Save="*res://Templates/Singletons/Save.gd"
 
 [input]
 
