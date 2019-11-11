@@ -42,7 +42,13 @@ export (float, 0, 10) var number = 0 #Clamp an exported variable
 self.mesh
 self.mesh.surface_get_material(0)
 
-
 var variable1 = 12
 var number = 1
 print(get(str("variable", number)) + 5)
+
+# Wheel:
+func _input(event):
+	if event is InputEventMouseButton:
+		if event.is_pressed():
+			if event.button_index == BUTTON_WHEEL_UP:
+				pass
