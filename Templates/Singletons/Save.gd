@@ -7,6 +7,7 @@ var default_data = {"Name" : "Godette", "Level" : 1}
 var data = {}
 
 func _ready():
+	#save_data(default_data) # Enable if it crashes to rewrite the save
 	if not file.file_exists(path):
 		save_data(default_data)
 	load_data()

@@ -29,7 +29,8 @@ func _physics_process(delta):
 	
 	vector.y -= gravity * delta
 	
-	vector = move_and_slide_with_snap(vector, snap_vector, Vector3.UP, false, 4, PI, false)
+	#vector = move_and_slide_with_snap(vector, snap_vector, Vector3.UP, false, 4, PI, false)
+	vector = move_and_slide(vector, Vector3.UP)
 
 func _input(event):
 	if event is InputEventMouseMotion:
