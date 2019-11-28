@@ -25,7 +25,7 @@ func _input(event):
 		if event.button_index == 1 and event.pressed == true:
 			if is_colliding():
 				if get_collider().get_class() == "StaticBody":
-					if impact != null:
+					if impact != null:				# If we have imported a scene for the impact
 						impact()
 				if get_collider().has_method("damage"):
 					show_hit()
@@ -35,9 +35,9 @@ func _input(event):
 			else:
 				$NozzlePosition.rotation = Vector3()
 				
-			if bullet != null:
+			if bullet != null:						# If we have imported a scene for the bullet
 				spawn_bullet()
-			if shell != null:
+			if shell != null:						# If we have imported a scene for the shell
 				spawn_shell()
 			nozzle_flash()
 
@@ -45,6 +45,8 @@ func show_hit():
 	$CrosshairHit.visible = true
 	yield(get_tree().create_timer(0.1), "timeout")
 	$CrosshairHit.visible = false
+
+# Different scenes to spawn:
 
 func impact():
 	var impact_instance = impact.instance()

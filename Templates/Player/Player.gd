@@ -5,7 +5,6 @@ export var jump_height = 8.0
 export var mouse_sensitivity = 1.0
 
 var vector = Vector3()
-var snap_vector = Vector3.DOWN
 var gravity = 20.0
 
 func _physics_process(delta):
@@ -22,14 +21,10 @@ func _physics_process(delta):
 	vector += global_transform.basis.x * (-int(LEFT) + int(RIGHT)) * (1 + int(SPRINT)) * speed 
 	
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		snap_vector = Vector3.ZERO
 		vector.y = jump_height
-	else:
-		snap_vector = Vector3.DOWN
 	
 	vector.y -= gravity * delta
 	
-	#vector = move_and_slide_with_snap(vector, snap_vector, Vector3.UP, false, 4, PI, false)
 	vector = move_and_slide(vector, Vector3.UP)
 
 func _input(event):
