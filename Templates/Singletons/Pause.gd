@@ -11,7 +11,7 @@ func _process(delta):
 		get_tree().paused = true
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
-		#Save.update_data() # Enable if you want to save each time you pause, import the save.gd as singleton to make it work
+		# Save.update_data() # Enable if you want to save each time you pause, import the save.gd as singleton to make it work
 
 func _input(event):
 	if event is InputEventMouseButton:

@@ -23,6 +23,7 @@ config/icon="res://icon.png"
 
 Gamestate="*res://Templates/Singletons/Pause.gd"
 Save="*res://Templates/Singletons/Save.gd"
+JsonOnline="*res://Templates/Singletons/JsonOnline.gd"
 
 [input]
 
