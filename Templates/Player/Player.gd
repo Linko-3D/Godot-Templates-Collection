@@ -23,6 +23,9 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		vector.y = jump_height
 	
+	if Input.is_action_just_pressed("reset"):
+		get_tree().reload_current_scene()
+	
 	vector.y -= gravity * delta
 	
 	vector = move_and_slide(vector, Vector3.UP)
