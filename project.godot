@@ -26,6 +26,10 @@ Save="*res://Templates/Singletons/Save.gd"
 JsonOnline="*res://Templates/Singletons/JsonOnline.gd"
 Reset="*res://Templates/Singletons/Reset.gd"
 
+[debug]
+
+settings/stdout/print_fps=true
+
 [input]
 
 ui_left={
