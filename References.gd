@@ -42,9 +42,13 @@ export (float, 0, 10) var number = 0 #Clamp an exported variable
 self.mesh
 self.mesh.surface_get_material(0)
 
+# Access different variables by their number
 var variable1 = 12
 var number = 1
 print(get(str("variable", number)) + 5)
+
+# Invert boolean:
+value = !value
 
 # Wheel:
 func _input(event):
