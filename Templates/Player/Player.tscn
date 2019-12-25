@@ -31,7 +31,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0 )
 current = true
 
 [node name="Shoot" parent="Camera" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0023486, -5.96046e-008, -0.0013572 )
 
 [node name="Grab" parent="Camera" instance=ExtResource( 3 )]
 
