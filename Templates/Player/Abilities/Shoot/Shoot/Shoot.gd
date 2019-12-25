@@ -1,5 +1,6 @@
 extends RayCast
 
+export var autoFire = true
 export var bullet_speed = 500.0
 export var shell_speed = 10.0
 export (PackedScene) var bullet
@@ -10,7 +11,7 @@ export (PackedScene) var blood
 
 var player
 
-var autoFire = false
+var hold = false
 
 func _ready():
 	visible = true
@@ -21,11 +22,19 @@ func _process(delta):
 	$Crosshair.position = Vector2(OS.window_size.x / 2, OS.window_size.y / 2)
 	$CrosshairHit.position = Vector2(OS.window_size.x / 2, OS.window_size.y / 2)
 
+	if autoFire and hold:
+		if $FireRate.is_stopped():
+			shoot()
+			$FireRate.start()
+
 func _input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == 1 and event.pressed == true:
+			hold = true
 			if autoFire == false:
 				shoot()
+		else:
+			hold = false
 
 func shoot():
 	if is_colliding():
@@ -33,7 +42,7 @@ func shoot():
 			if impact != null:				# If we have imported a scene for the impact
 				impact()
 		if get_collider().has_method("damage"):
-			show_hit()
+			damage()
 			get_collider().damage()
 			
 		$NozzlePosition.look_at(get_collision_point(), Vector3.UP)
@@ -44,11 +53,12 @@ func shoot():
 		spawn_bullet()
 	if shell != null:						# If we have imported a scene for the shell
 		spawn_shell()
-	nozzle_flash()
+	if nozzle_flash != null:
+		nozzle_flash()
 
-func show_hit():
+func damage():
 	$CrosshairHit.visible = true
-	yield(get_tree().create_timer(0.1), "timeout")
+	yield(get_tree().create_timer(0.05), "timeout")
 	$CrosshairHit.visible = false
 
 # Different scenes to spawn:

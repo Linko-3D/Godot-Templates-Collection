@@ -1,111 +1,20 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Templates/Player/Abilities/Shoot/Bullet.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Templates/Player/Abilities/Shoot/NozzleFlash.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Templates/Player/Abilities/Shoot/Shell.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Templates/Player/Abilities/Shoot/Impact.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Templates/crosshair.png" type="Texture" id=5]
-
-[sub_resource type="GDScript" id=1]
-script/source = "extends RayCast
-
-export var autoFire = true
-export var bullet_speed = 500.0
-export var shell_speed = 10.0
-export (PackedScene) var bullet
-export (PackedScene) var nozzle_flash
-export (PackedScene) var shell
-export (PackedScene) var impact
-export (PackedScene) var blood
-
-var player
-
-var hold = false
-
-func _ready():
-	visible = true
-	player = get_tree().get_nodes_in_group(\"Player\")[0] # Get the target with the first node in the Player group
-	add_exception(player)
-
-func _process(delta):
-	$Crosshair.position = Vector2(OS.window_size.x / 2, OS.window_size.y / 2)
-	$CrosshairHit.position = Vector2(OS.window_size.x / 2, OS.window_size.y / 2)
-
-	if autoFire and hold:
-		if $FireRate.is_stopped():
-			shoot()
-			$FireRate.start()
-
-func _input(event):
-	if event is InputEventMouseButton:
-		if event.button_index == 1 and event.pressed == true:
-			hold = true
-			if autoFire == false:
-				shoot()
-		else:
-			hold = false
-
-func shoot():
-	if is_colliding():
-		if get_collider().get_class() == \"StaticBody\":
-			if impact != null:				# If we have imported a scene for the impact
-				impact()
-		if get_collider().has_method(\"damage\"):
-			show_hit()
-			get_collider().damage()
-			
-		$NozzlePosition.look_at(get_collision_point(), Vector3.UP)
-	else:
-		$NozzlePosition.rotation = Vector3()
-		
-	if bullet != null:						# If we have imported a scene for the bullet
-		spawn_bullet()
-	if shell != null:						# If we have imported a scene for the shell
-		spawn_shell()
-	nozzle_flash()
-
-func show_hit():
-	$CrosshairHit.visible = true
-	yield(get_tree().create_timer(0.1), \"timeout\")
-	$CrosshairHit.visible = false
-
-# Different scenes to spawn:
-
-func impact():
-	var impact_instance = impact.instance()
-
-	get_tree().get_root().add_child(impact_instance)
-	impact_instance.global_transform.origin = get_collision_point()
-
-func nozzle_flash():
-	var nozzle_flash_instance = nozzle_flash.instance()
-	
-	add_child(nozzle_flash_instance)
-	nozzle_flash_instance.global_transform = $NozzlePosition.global_transform
-		
-func spawn_bullet():
-	var bullet_instance = bullet.instance()
-	
-	get_tree().get_root().add_child(bullet_instance)
-	bullet_instance.global_transform = $NozzlePosition.global_transform
-	bullet_instance.linear_velocity = $NozzlePosition.global_transform.basis.z * - bullet_speed # Force applied
-
-func spawn_shell():
-	var shell_instance = shell.instance()
-	
-	get_tree().get_root().add_child(shell_instance)
-	shell_instance.global_transform = $NozzlePosition/ShellPosition.global_transform
-	shell_instance.linear_velocity = $NozzlePosition/ShellPosition.global_transform.basis.y * shell_speed
-"
+[ext_resource path="res://Templates/Player/Abilities/Shoot/Shoot/Shoot.gd" type="Script" id=1]
+[ext_resource path="res://Templates/Player/Abilities/Shoot/Bullet.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Templates/Player/Abilities/Shoot/NozzleFlash.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Templates/Player/Abilities/Shoot/Shell.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Templates/Player/Abilities/Shoot/Impact.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Templates/crosshair.png" type="Texture" id=6]
 
 [node name="Shoot" type="RayCast"]
 enabled = true
 cast_to = Vector3( 0, 0, -100 )
-script = SubResource( 1 )
-bullet = ExtResource( 1 )
-nozzle_flash = ExtResource( 2 )
-shell = ExtResource( 3 )
-impact = ExtResource( 4 )
+script = ExtResource( 1 )
+bullet = ExtResource( 2 )
+nozzle_flash = ExtResource( 3 )
+shell = ExtResource( 4 )
+impact = ExtResource( 5 )
 
 [node name="NozzlePosition" type="Position3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -0.5, -1.2 )
@@ -115,13 +24,13 @@ transform = Transform( 0.173648, 0.984808, 0, -0.984808, 0.173648, 0, 0, 0, 1, 0
 
 [node name="Crosshair" type="Sprite" parent="."]
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 
 [node name="CrosshairHit" type="Sprite" parent="."]
 visible = false
 rotation = 0.785398
 scale = Vector2( 0.075, 0.075 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 
 [node name="FireRate" type="Timer" parent="."]
 wait_time = 0.1
