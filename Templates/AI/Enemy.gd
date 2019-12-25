@@ -1,10 +1,10 @@
 extends KinematicBody
 
-export var health = 10
+export var health = 1000
 
 func damage():
-	print("hit")
-	#health -= 1
-	#if health <= 0:
-	#	queue_free()
+	health -= 1
+	print(health)
+	if health <= 0:
+		queue_free()
 	pass

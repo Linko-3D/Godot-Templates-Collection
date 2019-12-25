@@ -16,7 +16,6 @@ height = 10.874
 enabled = true
 cast_to = Vector3( 0, 0, -100 )
 script = ExtResource( 1 )
-fireRate = 0.01
 bullet = ExtResource( 2 )
 nozzle_flash = ExtResource( 3 )
 shell = ExtResource( 4 )

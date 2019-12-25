@@ -2,7 +2,7 @@ extends RayCast
 
 export var autoFire = true
 export var fireRate = 0.1
-export var spread = false
+export var spread = true
 export var spreadAngle = 1.0
 export var bullet_speed = 500.0
 export var shell_speed = 10.0
@@ -50,7 +50,8 @@ func shoot():
 		$NozzlePosition.look_at(get_collision_point(), Vector3.UP)
 	else:
 		$NozzlePosition.rotation = Vector3()
-	rotation_degrees = Vector3(rand_range(-spreadAngle,spreadAngle), rand_range(-spreadAngle,spreadAngle), rand_range(-spreadAngle,spreadAngle))
+	if spread:
+		rotation_degrees = Vector3(rand_range(-spreadAngle,spreadAngle), rand_range(-spreadAngle,spreadAngle), rand_range(-spreadAngle,spreadAngle))
 		
 	if bullet != null:						# If we have imported a scene for the bullet
 		spawn_bullet()
