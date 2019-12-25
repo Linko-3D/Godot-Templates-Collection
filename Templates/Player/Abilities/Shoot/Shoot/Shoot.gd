@@ -45,7 +45,6 @@ func shoot():
 				impact()
 		if get_collider().has_method("damage"):
 			damage()
-			get_collider().damage()
 			
 		$NozzlePosition.look_at(get_collision_point(), Vector3.UP)
 	else:
@@ -62,6 +61,7 @@ func damage():
 	$CrosshairHit.visible = true
 	yield(get_tree().create_timer(0.05), "timeout")
 	$CrosshairHit.visible = false
+	get_collider().damage()
 
 # Different scenes to spawn:
 
