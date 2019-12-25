@@ -3,7 +3,7 @@ extends RayCast
 export var autoFire = true
 export var fireRate = 0.1
 export var spread = true
-export var spreadAngle = 1.0
+export var spreadAngle = 1.5
 export var bullet_speed = 500.0
 export var shell_speed = 10.0
 export (PackedScene) var bullet
@@ -15,6 +15,7 @@ export (PackedScene) var blood
 var player
 
 var hold = false
+var firstShoot = true
 
 func _ready():
 	visible = true
@@ -39,6 +40,7 @@ func _input(event):
 				shoot()
 		else:
 			hold = false
+			firstShoot = true
 
 func shoot():
 	if is_colliding():
@@ -51,8 +53,12 @@ func shoot():
 	else:
 		$NozzlePosition.rotation = Vector3()
 	if spread:
-		rotation_degrees = Vector3(rand_range(-spreadAngle,spreadAngle), rand_range(-spreadAngle,spreadAngle), rand_range(-spreadAngle,spreadAngle))
-		
+		if firstShoot == true:
+			rotation_degrees = Vector3()
+			firstShoot = false
+		else:
+			rotation_degrees = Vector3(rand_range(-spreadAngle,spreadAngle), rand_range(-spreadAngle,spreadAngle), rand_range(-spreadAngle,spreadAngle))
+
 	if bullet != null:						# If we have imported a scene for the bullet
 		spawn_bullet()
 	if shell != null:						# If we have imported a scene for the shell

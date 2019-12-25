@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Templates/Player/Abilities/Shoot/Shoot/Shoot.gd" type="Script" id=1]
 [ext_resource path="res://Templates/Player/Abilities/Shoot/Bullet.tscn" type="PackedScene" id=2]
@@ -6,11 +6,6 @@
 [ext_resource path="res://Templates/Player/Abilities/Shoot/Shell.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Templates/Player/Abilities/Shoot/Impact.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Templates/crosshair.png" type="Texture" id=6]
-
-[sub_resource type="CylinderMesh" id=1]
-top_radius = 0.1
-bottom_radius = 0.1
-height = 10.874
 
 [node name="Shoot" type="RayCast"]
 enabled = true
@@ -26,11 +21,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -0.5, -1.2 )
 
 [node name="ShellPosition" type="Position3D" parent="NozzlePosition"]
 transform = Transform( 0.173648, 0.984808, 0, -0.984808, 0.173648, 0, 0, 0, 1, 0.1, 0, 0.1 )
-
-[node name="MeshInstance" type="MeshInstance" parent="NozzlePosition"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 0, 0 )
-mesh = SubResource( 1 )
-material/0 = null
 
 [node name="Crosshair" type="Sprite" parent="."]
 scale = Vector2( 0.1, 0.1 )
