@@ -1,6 +1,6 @@
 extends KinematicBody
 
-export var health = 50
+export var health = 10
 
 func damage():
 	health -= 1
