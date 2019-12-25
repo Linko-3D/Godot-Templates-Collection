@@ -20,6 +20,6 @@ func _process(delta):
 			$Tween.start()
 			forward = false
 		else:
-			$Tween.interpolate_property(self, "translation", translation, starting_position, 0.5/speed  * length, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT, end_pause)
+			$Tween.interpolate_property(self, "translation", translation, starting_position, 0.5/speed * length, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT, end_pause)
 			$Tween.start()
 			forward = true
