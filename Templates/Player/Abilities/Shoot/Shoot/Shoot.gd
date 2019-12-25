@@ -70,7 +70,7 @@ func damage():
 	$CrosshairHit.visible = true
 	yield(get_tree().create_timer(0.05), "timeout")
 	$CrosshairHit.visible = false
-	get_collider().damage()
+	#get_collider().damage()
 
 # Different scenes to spawn:
 
