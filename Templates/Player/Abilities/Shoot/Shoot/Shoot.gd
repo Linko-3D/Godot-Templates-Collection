@@ -1,6 +1,7 @@
 extends RayCast
 
 export var autoFire = true
+export var fireRate = 0.1
 export var spread = false
 export var spreadAngle = 1.0
 export var bullet_speed = 500.0
@@ -19,6 +20,7 @@ func _ready():
 	visible = true
 	player = get_tree().get_nodes_in_group("Player")[0] # Get the target with the first node in the Player group
 	add_exception(player)
+	$FireRate.wait_time = fireRate
 
 func _process(delta):
 	$Crosshair.position = Vector2(OS.window_size.x / 2, OS.window_size.y / 2)
@@ -45,10 +47,10 @@ func shoot():
 				impact()
 		if get_collider().has_method("damage"):
 			damage()
-			
 		$NozzlePosition.look_at(get_collision_point(), Vector3.UP)
 	else:
 		$NozzlePosition.rotation = Vector3()
+	rotation_degrees = Vector3(rand_range(-spreadAngle,spreadAngle), rand_range(-spreadAngle,spreadAngle), rand_range(-spreadAngle,spreadAngle))
 		
 	if bullet != null:						# If we have imported a scene for the bullet
 		spawn_bullet()
