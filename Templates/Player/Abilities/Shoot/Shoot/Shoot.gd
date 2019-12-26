@@ -3,7 +3,7 @@ extends RayCast
 export var autoFire = true
 export var fireRate = 0.1
 export var spread = true
-export var spreadAngle = 1.5
+export var spreadAngle = 1.0
 export var bullet_speed = 500.0
 export var shell_speed = 10.0
 export (PackedScene) var bullet
