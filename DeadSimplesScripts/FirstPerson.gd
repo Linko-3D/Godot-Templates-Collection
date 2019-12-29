@@ -28,8 +28,6 @@ func _physics_process(delta):
 	vector.y -= gravity * delta
 	vector = move_and_slide(vector, Vector3.UP)
 
-
-
 func _input(event):
 	if event is InputEventMouseMotion:
 		rotation_degrees.y -= event.relative.x * mouse_sensitivity / 10
