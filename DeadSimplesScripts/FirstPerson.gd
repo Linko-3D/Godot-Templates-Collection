@@ -1,33 +1,34 @@
 extends KinematicBody
 
-export var speed = 5
-export var jump_height = 5
+export var speed = 6.5
+export var jump_force = 5
 export var mouse_sensitivity = 1.0
 
 var vector = Vector3()
 var gravity = 9.8
 
 func _physics_process(delta):
-	vector.z = 0
-	vector.x = 0
-	
+	var direction = Vector2()
 	if Input.is_action_pressed("ui_up"):
-		vector.z = -1 * speed
+		direction.y -= 1
 	if Input.is_action_pressed("ui_down"):
-		vector.z = 1 * speed
+		direction.y += 1
 	if Input.is_action_pressed("ui_left"):
-		vector.x = -1 * speed
+		direction.x -= 1
 	if Input.is_action_pressed("ui_right"):
-		vector.x = 1 * speed
+		direction.x += 1
+		
+	direction = direction.normalized().rotated(-rotation.y)
+	
+	vector.z = direction.y * speed
+	vector.x = direction.x * speed
+	vector.y -= gravity * delta
 	
 	if is_on_floor() and Input.is_action_just_pressed("ui_accept"):
-		vector.y = jump_height
+		vector.y = jump_force
 	
-	vector = vector.rotated(Vector3.UP, rotation.y)
-	
-	vector.y -= gravity * delta
 	vector = move_and_slide(vector, Vector3.UP)
-
+	
 func _input(event):
 	if event is InputEventMouseMotion:
 		rotation_degrees.y -= event.relative.x * mouse_sensitivity / 10
