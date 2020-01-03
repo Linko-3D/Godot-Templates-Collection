@@ -9,15 +9,15 @@ var gravity = 9.8
 
 func _physics_process(delta):
 	var direction = Vector2()
-	if Input.is_action_pressed("ui_up"):
+	
+	if Input.get_action_strength("ui_up"):
 		direction.y -= 1
-	if Input.is_action_pressed("ui_down"):
+	if Input.get_action_strength("ui_down"):
 		direction.y += 1
-	if Input.is_action_pressed("ui_left"):
+	if Input.get_action_strength("ui_left"):
 		direction.x -= 1
-	if Input.is_action_pressed("ui_right"):
+	if Input.get_action_strength("ui_right"):
 		direction.x += 1
-		
 	direction = direction.normalized().rotated(-rotation.y)
 	
 	vector.z = direction.y * speed
