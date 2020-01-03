@@ -18,11 +18,14 @@ func _physics_process(delta):
 		direction.x -= 1
 	if Input.get_action_strength("ui_right"):
 		direction.x += 1
+	
 	direction = direction.normalized().rotated(-rotation.y)
 	
 	vector.z = direction.y * speed
 	vector.x = direction.x * speed
 	vector.y -= gravity * delta
+	
+	#vector = vector.rotated(Vector3.UP, rotation.y)
 	
 	if is_on_floor() and Input.is_action_just_pressed("ui_accept"):
 		vector.y = jump_force
