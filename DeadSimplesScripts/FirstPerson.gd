@@ -1,3 +1,4 @@
+# First Person Controller
 extends KinematicBody
 
 export var speed = 6.5
@@ -8,7 +9,7 @@ var movement = Vector3()
 var gravity = 9.8
 
 var snap_length = 10
-var snap = Vector3()
+var snap_drection = Vector3()
 
 func _physics_process(delta):
 	var input_axis = Vector2()
@@ -25,14 +26,12 @@ func _physics_process(delta):
 	movement = movement.rotated(Vector3.UP, rotation.y)
 	
 	if is_on_floor():
-		snap = Vector3(0, -snap_length, 0)
+		snap_drection = Vector3(0, -snap_length, 0)
 		if Input.is_action_just_pressed("ui_accept"):
-			snap = Vector3()
+			snap_drection = Vector3()
 			movement.y = jump_force
 	
-	movement = move_and_slide_with_snap(movement, snap, Vector3.UP)
-	
-	print(snap)
+	movement = move_and_slide_with_snap(movement, snap_drection, Vector3.UP)
 	
 func _input(event):
 	if event is InputEventMouseMotion:
