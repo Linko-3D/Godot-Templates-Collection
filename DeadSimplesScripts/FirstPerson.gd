@@ -9,10 +9,11 @@ var gravity = 9.8
 
 func _physics_process(delta):
 	var axis = Vector2()
-	axis = axis.normalized()
 	
 	axis.y += -Input.get_action_strength("ui_up") + Input.get_action_strength("ui_down")
 	axis.x += -Input.get_action_strength("ui_left") + Input.get_action_strength("ui_right")
+	
+	axis = axis.normalized()
 	
 	vector.z = axis.y * speed
 	vector.x = axis.x * speed
