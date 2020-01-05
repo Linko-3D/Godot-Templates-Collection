@@ -14,8 +14,6 @@ func _physics_process(delta):
 	axis.y += -Input.get_action_strength("ui_up") + Input.get_action_strength("ui_down")
 	axis.x += -Input.get_action_strength("ui_left") + Input.get_action_strength("ui_right")
 	
-	print(axis)
-	
 	vector.z = axis.y * speed
 	vector.x = axis.x * speed
 	vector.y -= gravity * delta
