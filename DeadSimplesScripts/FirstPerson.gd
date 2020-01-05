@@ -8,7 +8,7 @@ export var mouse_sensitivity = 1.0
 var movement = Vector3()
 var gravity = 9.8
 
-var snap_length = 10
+var snap_length = 1
 var snap_drection = Vector3()
 
 func _physics_process(delta):
@@ -31,7 +31,7 @@ func _physics_process(delta):
 			snap_drection = Vector3()
 			movement.y = jump_force
 	
-	movement = move_and_slide_with_snap(movement, snap_drection, Vector3.UP)
+	movement = move_and_slide_with_snap(movement, snap_drection, Vector3.UP, false)
 	
 func _input(event):
 	if event is InputEventMouseMotion:
