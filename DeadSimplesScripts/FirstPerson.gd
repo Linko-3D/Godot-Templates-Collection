@@ -8,15 +8,15 @@ var vector = Vector3()
 var gravity = 9.8
 
 func _physics_process(delta):
-	var direction = Vector2()
+	var axis = Vector2()
 	
-	direction.y += -Input.get_action_strength("ui_up") + Input.get_action_strength("ui_down")
-	direction.x += -Input.get_action_strength("ui_left") + Input.get_action_strength("ui_right")
+	axis.y += -Input.get_action_strength("ui_up") + Input.get_action_strength("ui_down")
+	axis.x += -Input.get_action_strength("ui_left") + Input.get_action_strength("ui_right")
 	
-	direction = direction.normalized()
+	axis = axis.normalized()
 	
-	vector.z = direction.y * speed
-	vector.x = direction.x * speed
+	vector.z = axis.y * speed
+	vector.x = axis.x * speed
 	vector.y -= gravity * delta
 	
 	vector = vector.rotated(Vector3.UP, rotation.y)
