@@ -4,27 +4,27 @@ export var speed = 6.5
 export var jump_force = 5
 export var mouse_sensitivity = 1.0
 
-var vector = Vector3()
+var movement = Vector3()
 var gravity = 9.8
 
 func _physics_process(delta):
-	var axis = Vector2()
+	var inputAxis = Vector2()
 	
-	axis.y += -Input.get_action_strength("ui_up") + Input.get_action_strength("ui_down")
-	axis.x += -Input.get_action_strength("ui_left") + Input.get_action_strength("ui_right")
+	inputAxis.y = -Input.get_action_strength("ui_up") + Input.get_action_strength("ui_down")
+	inputAxis.x = -Input.get_action_strength("ui_left") + Input.get_action_strength("ui_right")
 	
-	axis = axis.normalized()
+	inputAxis = inputAxis.normalized()
 	
-	vector.z = axis.y * speed
-	vector.x = axis.x * speed
-	vector.y -= gravity * delta
+	movement.z = inputAxis.y * speed
+	movement.x = inputAxis.x * speed
+	movement.y -= gravity * delta
 	
-	vector = vector.rotated(Vector3.UP, rotation.y)
+	movement = movement.rotated(Vector3.UP, rotation.y)
 	
 	if is_on_floor() and Input.is_action_just_pressed("ui_accept"):
-		vector.y = jump_force
+		movement.y = jump_force
 	
-	vector = move_and_slide(vector, Vector3.UP)
+	movement = move_and_slide(movement, Vector3.UP)
 	
 func _input(event):
 	if event is InputEventMouseMotion:
