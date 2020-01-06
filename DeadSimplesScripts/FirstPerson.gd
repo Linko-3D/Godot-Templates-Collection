@@ -1,4 +1,3 @@
-# First Person Controller
 extends KinematicBody
 
 export var speed = 6.5
