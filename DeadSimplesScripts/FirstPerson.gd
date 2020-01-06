@@ -5,10 +5,8 @@ export var jump_force = 5
 export var mouse_sensitivity = 1.0
 
 var movement = Vector3()
+var snap_drection = Vector3.DOWN
 var gravity = 9.8
-
-var snap_length = 1
-var snap_drection = Vector3()
 
 func _physics_process(delta):
 	var input_axis = Vector2()
@@ -25,12 +23,12 @@ func _physics_process(delta):
 	movement = movement.rotated(Vector3.UP, rotation.y)
 	
 	if is_on_floor():
-		snap_drection = Vector3(0, -snap_length, 0)
+		snap_drection = Vector3.DOWN
 		if Input.is_action_just_pressed("ui_accept"):
-			snap_drection = Vector3()
+			snap_drection = Vector3.ZERO
 			movement.y = jump_force
 	
-	movement = move_and_slide_with_snap(movement, snap_drection, Vector3.UP, false)
+	movement = move_and_slide_with_snap(movement, snap_drection, Vector3.UP, true, 4, deg2rad(90))
 	
 func _input(event):
 	if event is InputEventMouseMotion:
