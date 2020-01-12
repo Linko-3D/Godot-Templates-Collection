@@ -86,6 +86,7 @@ depth = 7.94174
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.88448, 3.95861 )
+current = true
 
 [editable path="MoveToTimer"]
 

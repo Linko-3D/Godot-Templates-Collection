@@ -20,7 +20,7 @@ func _physics_process(delta):
 	movement.x = input_axis.x * speed
 	movement.y -= gravity * delta
 	
-	movement = movement.rotated($Head.global_transform.basis.y, $Head.rotation.y)
+	movement = movement.rotated(global_transform.basis.y, $Head.rotation.y)
 	
 	if is_on_floor():
 		snap_drection = Vector3.DOWN
