@@ -20,7 +20,7 @@ func _physics_process(delta):
 	movement.x = input_axis.x * speed
 	movement.y -= gravity * delta
 	
-	movement = movement.rotated(Vector3.UP, rotation.y)
+	movement = movement.rotated(Vector3.UP, $Head.rotation.y)
 	
 	if is_on_floor():
 		snap_drection = Vector3.DOWN
@@ -32,5 +32,5 @@ func _physics_process(delta):
 	
 func _input(event):
 	if event is InputEventMouseMotion:
-		rotation_degrees.y -= event.relative.x * mouse_sensitivity / 10
-		rotation_degrees.x = clamp(rotation_degrees.x - event.relative.y / 10, -90, 90)
+		$Head.rotation_degrees.y -= event.relative.x * mouse_sensitivity / 10
+		$Head/Camera.rotation_degrees.x = clamp($Head/Camera.rotation_degrees.x - event.relative.y / 10, -90, 90)
