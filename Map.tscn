@@ -58,7 +58,7 @@ height = 1.0
 depth = 30.0
 
 [node name="FirstPerson" parent="." instance=ExtResource( 5 )]
-transform = Transform( -1, 8.74228e-008, 0, -8.74228e-008, -1, 0, 0, 0, 1, 0, 1.81832, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.81832, 0 )
 
 [node name="CSGSphere" type="CSGSphere" parent="."]
 transform = Transform( 7, 0, 0, 0, 7, 0, 0, 0, 7, 9.67597, -2.29818, 2.176 )

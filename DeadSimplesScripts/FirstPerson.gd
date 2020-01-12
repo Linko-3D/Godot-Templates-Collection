@@ -6,7 +6,7 @@ export var mouse_sensitivity = 1.0
 
 var movement = Vector3()
 var snap_drection = Vector3.DOWN
-var gravity = -9.8
+var gravity = 9.8
 
 func _physics_process(delta):
 	var input_axis = Vector2()
