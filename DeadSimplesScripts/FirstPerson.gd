@@ -6,7 +6,7 @@ export var mouse_sensitivity = 1.0
 
 var movement = Vector3()
 var snap_drection = Vector3.DOWN
-var gravity = 9.8
+var gravity = -9.8
 
 func _physics_process(delta):
 	var input_axis = Vector2()
@@ -20,7 +20,7 @@ func _physics_process(delta):
 	movement.x = input_axis.x * speed
 	movement.y -= gravity * delta
 	
-	movement = movement.rotated(Vector3.UP, $Head.rotation.y)
+	movement = movement.rotated($Head.global_transform.basis.y, $Head.rotation.y)
 	
 	if is_on_floor():
 		snap_drection = Vector3.DOWN
