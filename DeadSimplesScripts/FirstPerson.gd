@@ -33,4 +33,5 @@ func _physics_process(delta):
 func _input(event):
 	if event is InputEventMouseMotion:
 		$Head.rotation_degrees.y -= event.relative.x * mouse_sensitivity / 10
-		$Head/Camera.rotation_degrees.x = clamp($Head/Camera.rotation_degrees.x - event.relative.y / 10, -90, 90)
+		$Head/Camera.rotation_degrees.x -= event.relative.y * mouse_sensitivity / 10
+		$Head/Camera.rotation_degrees.x = clamp($Head/Camera.rotation_degrees.x, -90, 90)
