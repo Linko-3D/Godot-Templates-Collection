@@ -30,6 +30,10 @@ Reset="*res://Templates/Singletons/Reset.gd"
 
 settings/stdout/print_fps=true
 
+[display]
+
+window/size/fullscreen=true
+
 [input]
 
 ui_left={
