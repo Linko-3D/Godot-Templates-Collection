@@ -34,5 +34,4 @@ func _input(event):
 	if event is InputEventMouseMotion:
 		rotation_degrees.y -= event.relative.x * mouse_sensitivity / 10
 		$Camera.rotation_degrees.x -= event.relative.y * mouse_sensitivity / 10
-		
 		$Camera.rotation_degrees.x = clamp($Camera.rotation_degrees.x, -90, 90)
