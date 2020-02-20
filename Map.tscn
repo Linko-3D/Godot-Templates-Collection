@@ -1,16 +1,19 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Templates/Interactive/MoveToTimer/MoveToTimer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Templates/Interactive/MoveToSpeed/MoveToSpeed.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Templates/AI/Enemy.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Templates/Interactive/Teleporter/Teleporter.tscn" type="PackedScene" id=4]
-[ext_resource path="res://DeadSimplesScripts/FirstPerson.tscn" type="PackedScene" id=5]
+[ext_resource path="res://DeadSimplesScripts/Player.tscn" type="PackedScene" id=5]
 
 [sub_resource type="CubeMesh" id=1]
 size = Vector3( 1, 1, 1 )
 
 [sub_resource type="BoxShape" id=2]
 extents = Vector3( 0.5, 0.5, 0.5 )
+
+[sub_resource type="SphereMesh" id=3]
+
+[sub_resource type="SphereShape" id=4]
 
 [node name="Map" type="Spatial"]
 
@@ -37,9 +40,6 @@ material/0 = null
 [node name="CollisionShape" type="CollisionShape" parent="RigidBody"]
 shape = SubResource( 2 )
 
-[node name="Enemy" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.09452, 1, 6.68045 )
-
 [node name="Teleporter" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5955, 0, -3.00543 )
 
@@ -49,16 +49,6 @@ use_collision = true
 width = 30.0
 height = 1.0
 depth = 30.0
-
-[node name="CSGBox5" type="CSGBox" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.4909, 0 )
-use_collision = true
-width = 30.0
-height = 1.0
-depth = 30.0
-
-[node name="FirstPerson" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.81832, 0 )
 
 [node name="CSGSphere" type="CSGSphere" parent="."]
 transform = Transform( 7, 0, 0, 0, 7, 0, 0, 0, 7, 9.67597, -2.29818, 2.176 )
@@ -83,6 +73,21 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.41917, 0, -5.74638 )
 use_collision = true
 height = 15.4344
 depth = 7.94174
+
+[node name="Player" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="KinematicBody" type="KinematicBody" parent="." groups=[
+"enemy",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.29884, -4.33193 )
+
+[node name="MeshInstance" type="MeshInstance" parent="KinematicBody"]
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="KinematicBody"]
+shape = SubResource( 4 )
 
 [editable path="MoveToTimer"]
 

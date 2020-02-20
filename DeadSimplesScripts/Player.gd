@@ -28,8 +28,8 @@ func _physics_process(delta):
 			snap_drection = Vector3.ZERO
 			movement.y = jump_force
 	
-	movement = move_and_slide_with_snap(movement, snap_drection, Vector3.UP, true, 4, deg2rad(90))
-	
+	movement = move_and_slide_with_snap(movement, snap_drection, Vector3.UP, true, 4, deg2rad(45))
+
 func _input(event):
 	if event is InputEventMouseMotion:
 		rotation_degrees.y -= event.relative.x * mouse_sensitivity / 10

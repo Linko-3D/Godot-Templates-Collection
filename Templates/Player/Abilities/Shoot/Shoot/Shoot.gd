@@ -19,7 +19,7 @@ var firstShoot = true
 
 func _ready():
 	visible = true
-	player = get_tree().get_nodes_in_group("Player")[0] # Get the target with the first node in the Player group
+	#player = get_tree().get_nodes_in_group("Player")[0] # Get the target with the first node in the Player group
 	add_exception(player)
 	$FireRate.wait_time = fireRate
 
