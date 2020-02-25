@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Templates/Interactive/MoveToTimer/MoveToTimer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Templates/Interactive/MoveToSpeed/MoveToSpeed.tscn" type="PackedScene" id=2]
+[ext_resource path="res://DeadSimplesScripts/Player2D.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Templates/Interactive/Teleporter/Teleporter.tscn" type="PackedScene" id=4]
 [ext_resource path="res://DeadSimplesScripts/Player.tscn" type="PackedScene" id=5]
 
@@ -88,6 +89,9 @@ material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="KinematicBody"]
 shape = SubResource( 4 )
+
+[node name="Player2D" parent="." instance=ExtResource( 3 )]
+position = Vector2( 481, 233 )
 
 [editable path="MoveToTimer"]
 
